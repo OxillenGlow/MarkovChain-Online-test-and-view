@@ -193,15 +193,15 @@
 <body>
     <!-- TOP BAR -->
     <div id="topbar">
-        <strong style="color:#fff;margin-right:10px;">¡ö MARKOV BOT</strong>
+        <strong style="color:#fff;margin-right:10px;">Â¡Ã¶ MARKOV BOT</strong>
         <a href="#sec-train">Train</a>
         <a href="#sec-generate">Generate</a>
         <a href="#sec-scraper">Scraper</a>
         <a href="#sec-knowledge">Knowledge Web</a>
         <a href="#sec-brain">Brain Mgmt</a>
         <span class="sep">|</span>
-        <button id="btn-download-brain" title="Download brain as JSON">¡ý Download Brain</button>
-        <button id="btn-load-brain" title="Load brain from JSON file">¡ü Load Brain</button>
+        <button id="btn-download-brain" title="Download brain as JSON">Â¡Ã½ Download Brain</button>
+        <button id="btn-load-brain" title="Load brain from JSON file">Â¡Ã¼ Load Brain</button>
         <button id="btn-clear-brain" class="danger" title="Clear all stored brain data">? Clear Brain</button>
         <span style="margin-left:auto;font-size:10px;color:#aaa;" id="brain-stats-top">Brain: empty</span>
     </div>
@@ -305,8 +305,8 @@
     <div class="section" id="sec-brain">
         <h2>? Brain Management</h2>
         <div class="row-flex">
-            <button id="btn-download-brain2" class="primary">¡ý Download Brain as .json</button>
-            <button id="btn-load-brain2">¡ü Load Brain from .json</button>
+            <button id="btn-download-brain2" class="primary">Â¡Ã½ Download Brain as .json</button>
+            <button id="btn-load-brain2">Â¡Ã¼ Load Brain from .json</button>
             <button id="btn-clear-brain2" class="danger">? Clear Brain</button>
         </div>
         <div id="brain-info" style="font-size:11px;color:#555;margin-top:6px;">
@@ -428,7 +428,7 @@
                 return text.trim().split(/\s+/).filter(t => t.length > 0);
             }
 
-            // ==================== PROMPT NORMALIZATION (link "un" ¡ú "UN") ====================
+            // ==================== PROMPT NORMALIZATION (link "un" Â¡Ãº "UN") ====================
             function normalizeSeedTokens(tokens) {
                 return tokens.map(token => {
                     if (token.toLowerCase() === 'un') {
