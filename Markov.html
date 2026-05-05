@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markov Bot - 4-gram with Backoff & Attention</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            color: #111;
+        }
+        #topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #333;
+            color: #eee;
+            padding: 8px 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+            border-bottom: 3px solid #555;
+        }
+        #topbar a,
+        #topbar button {
+            color: #eee;
+            background: #555;
+            border: 1px solid #777;
+            padding: 5px 10px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        #topbar a:hover,
+        #topbar button:hover {
+            background: #777;
+        }
+        #topbar span.sep {
+            color: #888;
+            margin: 0 2px;
+        }
+        .section {
+            background: #fafafa;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 12px;
+        }
+        .section h2 {
+            margin: 0 0 8px 0;
+            font-size: 15px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 4px;
+        }
+        textarea {
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            border: 1px solid #999;
+            padding: 6px;
+            background: #fff;
+            resize: vertical;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            border: 1px solid #999;
+            padding: 4px 6px;
+            background: #fff;
+        }
+        button {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            border: 1px solid #666;
+            padding: 5px 12px;
+            cursor: pointer;
+            background: #ddd;
+            color: #111;
+        }
+        button:hover {
+            background: #ccc;
+        }
+        button.primary {
+            background: #444;
+            color: #eee;
+            border-color: #222;
+            font-weight: bold;
+        }
+        button.primary:hover {
+            background: #555;
+        }
+        button.danger {
+            background: #a44;
+            color: #fff;
+            border-color: #622;
+        }
+        button.danger:hover {
+            background: #b55;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 11px;
+        }
+        table th,
+        table td {
+            border: 1px solid #999;
+            padding: 3px 6px;
+            text-align: left;
+            word-break: break-word;
+        }
+        table th {
+            background: #ddd;
+            position: sticky;
+            top: 0;
+        }
+        .scroll-table {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #999;
+        }
+        .status-msg {
+            padding: 4px 8px;
+            margin: 4px 0;
+            font-size: 11px;
+            border-left: 3px solid #888;
+            background: #eee;
+        }
+        .status-msg.good {
+            border-left-color: #3a3;
+            background: #e8f5e8;
+        }
+        .status-msg.warn {
+            border-left-color: #c93;
+            background: #fff8e8;
+        }
+        .status-msg.err {
+            border-left-color: #c33;
+            background: #ffe8e8;
+        }
+        .row-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            margin: 4px 0;
+        }
+        .snapshot-item {
+            border: 1px solid #ccc;
+            padding: 6px;
+            margin: 4px 0;
+            background: #f8f8f8;
+            font-size: 11px;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+        .snapshot-item pre {
+            margin: 2px 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-size: 10px;
+            max-height: 50px;
+            overflow-y: auto;
+        }
+        #scraper-panel {
+            border: 2px dashed #888;
+            padding: 10px;
+            margin-top: 8px;
+            background: #fdfdfd;
+            display: none;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 8px 0;
+        }
+        label {
+            font-weight: bold;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- TOP BAR -->
+    <div id="topbar">
+        <strong style="color:#fff;margin-right:10px;">¡ö MARKOV BOT</strong>
+        <a href="#sec-train">Train</a>
+        <a href="#sec-generate">Generate</a>
+        <a href="#sec-scraper">Scraper</a>
+        <a href="#sec-knowledge">Knowledge Web</a>
+        <a href="#sec-brain">Brain Mgmt</a>
+        <span class="sep">|</span>
+        <button id="btn-download-brain" title="Download brain as JSON">¡ý Download Brain</button>
+        <button id="btn-load-brain" title="Load brain from JSON file">¡ü Load Brain</button>
+        <button id="btn-clear-brain" class="danger" title="Clear all stored brain data">? Clear Brain</button>
+        <span style="margin-left:auto;font-size:10px;color:#aaa;" id="brain-stats-top">Brain: empty</span>
+    </div>
+
+    <!-- TRAINING SECTION -->
+    <div class="section" id="sec-train">
+        <h2>? Training Data</h2>
+        <p style="margin:2px 0;font-size:11px;">Paste text and click <b>Train</b>. The brain is saved in your browser automatically.</p>
+        <textarea id="training-input" rows="10" placeholder="Paste training text here...&#10;The more text, the better the 4-gram model will work."></textarea>
+        <div class="row-flex">
+            <button id="btn-train" class="primary">? Train Brain</button>
+            <button id="btn-append-snapshots" style="background:#ddd;">+ Append All Snapshots</button>
+            <span id="train-status" class="status-msg" style="display:none;"></span>
+        </div>
+        <div id="train-stats" style="font-size:10px;color:#555;margin-top:4px;"></div>
+    </div>
+
+    <!-- GENERATE SECTION -->
+    <div class="section" id="sec-generate">
+        <h2>? Generate Text</h2>
+        <div class="row-flex">
+            <label>Prompt / Seed:</label>
+            <input type="text" id="prompt-input" placeholder="Enter seed text (min 1 word)..." style="flex:1;min-width:200px;">
+        </div>
+        <div class="row-flex">
+            <label>Max words:</label>
+            <input type="number" id="max-words" value="60" min="5" max="500" style="width:70px;">
+            <label>Attention factor:</label>
+            <input type="number" id="attention-factor" value="1.8" min="1.0" max="5.0" step="0.1" style="width:70px;" title="Boost for important seed words (1.0=off)">
+            <button id="btn-generate" class="primary">? Generate</button>
+        </div>
+        <div style="margin-top:8px;">
+            <label>Output:</label>
+            <textarea id="generated-output" rows="6" readonly placeholder="Generated text will appear here..."></textarea>
+        </div>
+        <div id="gen-debug" style="font-size:10px;color:#777;margin-top:2px;"></div>
+    </div>
+
+    <!-- SCRAPER SECTION -->
+    <div class="section" id="sec-scraper">
+        <h2>? Website Scraper</h2>
+        <p style="margin:2px 0;font-size:10px;color:#666;">Fetch text from a URL. If you get a CORS error, use the proxy field (e.g. <i>https://api.allorigins.win/raw?url=</i>) or copy-paste manually.</p>
+        <div class="row-flex">
+            <label>URL:</label>
+            <input type="text" id="scraper-url" placeholder="https://example.com/article" style="flex:1;min-width:250px;">
+            <label title="Optional CORS proxy prefix">Proxy:</label>
+            <input type="text" id="scraper-proxy" placeholder="(optional)" style="width:180px;" title="e.g. https://api.allorigins.win/raw?url=">
+            <button id="btn-fetch-url">? Fetch & Extract</button>
+        </div>
+        <div id="scraper-panel">
+            <strong style="font-size:12px;">Extracted Text:</strong>
+            <textarea id="scraper-extracted" rows="8" readonly placeholder="Fetched content will appear here..."></textarea>
+            <div class="row-flex">
+                <button id="btn-take-snapshot" class="primary">? Take Snapshot</button>
+                <button id="btn-add-scraped-to-training">+ Add to Training Data</button>
+                <span id="scraper-status" style="font-size:10px;color:#555;"></span>
+            </div>
+            <hr>
+            <strong style="font-size:12px;">Saved Snapshots:</strong>
+            <div id="snapshots-list" style="max-height:200px;overflow-y:auto;">
+                <span style="color:#999;font-size:11px;">No snapshots yet.</span>
+            </div>
+            <button id="btn-clear-snapshots" style="margin-top:4px;font-size:10px;">Clear All Snapshots</button>
+        </div>
+    </div>
+
+    <!-- KNOWLEDGE WEB SECTION -->
+    <div class="section" id="sec-knowledge">
+        <h2>? Knowledge Web (N-gram Table)</h2>
+        <div class="row-flex">
+            <label>N-gram level:</label>
+            <select id="knowledge-n-level">
+                <option value="4">4-gram</option>
+                <option value="3">3-gram</option>
+                <option value="2">2-gram</option>
+                <option value="1">1-gram</option>
+            </select>
+            <label>Filter:</label>
+            <input type="text" id="knowledge-filter" placeholder="search context or next word..." style="flex:1;min-width:150px;">
+            <span id="knowledge-count" style="font-size:10px;color:#555;"></span>
+        </div>
+        <div class="scroll-table" id="knowledge-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Context (n words)</th>
+                        <th>Next Word</th>
+                        <th>Count</th>
+                        <th>Probability</th>
+                    </tr>
+                </thead>
+                <tbody id="knowledge-tbody">
+                    <tr><td colspan="5" style="color:#999;">Train the brain first to see knowledge web.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- BRAIN MANAGEMENT SECTION -->
+    <div class="section" id="sec-brain">
+        <h2>? Brain Management</h2>
+        <div class="row-flex">
+            <button id="btn-download-brain2" class="primary">¡ý Download Brain as .json</button>
+            <button id="btn-load-brain2">¡ü Load Brain from .json</button>
+            <button id="btn-clear-brain2" class="danger">? Clear Brain</button>
+        </div>
+        <div id="brain-info" style="font-size:11px;color:#555;margin-top:6px;">
+            Brain status: empty / not trained.
+        </div>
+        <input type="file" id="brain-file-input" accept=".json" style="display:none;">
+    </div>
+
+    <script>
+        (function() {
+            // ==================== STORAGE KEY ====================
+            const STORAGE_KEY = 'markov_bot_brain_v2';
+
+            // ==================== BRAIN DATA STRUCTURE ====================
+            let brain = null;
+
+            function getEmptyBrain() {
+                return {
+                    version: 2,
+                    trainedAt: null,
+                    totalTokens: 0,
+                    uniqueTokens: 0,
+                    ngrams: { '4': {}, '3': {}, '2': {}, '1': {} },
+                    vocabulary: {},
+                    snapshots: []
+                };
+            }
+
+            // ==================== LOAD / SAVE BRAIN ====================
+            function loadBrain() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_KEY);
+                    if (raw) {
+                        const parsed = JSON.parse(raw);
+                        if (parsed && parsed.version === 2 && parsed.ngrams && parsed.vocabulary) {
+                            brain = parsed;
+                            if (!brain.snapshots) brain.snapshots = [];
+                            if (!brain.ngrams['4']) brain.ngrams['4'] = {};
+                            if (!brain.ngrams['3']) brain.ngrams['3'] = {};
+                            if (!brain.ngrams['2']) brain.ngrams['2'] = {};
+                            if (!brain.ngrams['1']) brain.ngrams['1'] = {};
+                            return true;
+                        }
+                    }
+                } catch (e) {
+                    console.warn('Failed to load brain from localStorage:', e);
+                }
+                brain = getEmptyBrain();
+                return false;
+            }
+
+            function saveBrain() {
+                try {
+                    brain.trainedAt = Date.now();
+                    const json = JSON.stringify(brain);
+                    localStorage.setItem(STORAGE_KEY, json);
+                    return true;
+                } catch (e) {
+                    console.error('Failed to save brain:', e);
+                    alert('? Error saving brain to browser storage. It may be too large (' +
+                        (JSON.stringify(brain).length / 1024 / 1024).toFixed(1) + ' MB). Try reducing training data.');
+                    return false;
+                }
+            }
+
+            function clearBrain() {
+                if (confirm('Are you sure you want to clear the entire brain? This cannot be undone.')) {
+                    brain = getEmptyBrain();
+                    localStorage.removeItem(STORAGE_KEY);
+                    updateAllUI();
+                    showStatus('train-status', 'Brain cleared.', 'warn');
+                }
+            }
+
+            function downloadBrainJSON() {
+                const json = JSON.stringify(brain, null, 2);
+                const blob = new Blob([json], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'markov-brain-' + new Date().toISOString().slice(0, 10) + '.json';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            function loadBrainFromFile(file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const parsed = JSON.parse(e.target.result);
+                        if (parsed && parsed.ngrams && parsed.vocabulary) {
+                            parsed.version = 2;
+                            if (!parsed.snapshots) parsed.snapshots = [];
+                            if (!parsed.ngrams['4']) parsed.ngrams['4'] = {};
+                            if (!parsed.ngrams['3']) parsed.ngrams['3'] = {};
+                            if (!parsed.ngrams['2']) parsed.ngrams['2'] = {};
+                            if (!parsed.ngrams['1']) parsed.ngrams['1'] = {};
+                            brain = parsed;
+                            saveBrain();
+                            updateAllUI();
+                            showStatus('train-status', 'Brain loaded from file! (' +
+                                brain.totalTokens + ' tokens)', 'good');
+                            alert('? Brain loaded successfully!');
+                        } else {
+                            alert('? Invalid brain file format.');
+                        }
+                    } catch (err) {
+                        alert('? Error parsing JSON file: ' + err.message);
+                    }
+                };
+                reader.readAsText(file);
+            }
+
+            // ==================== TOKENIZATION ====================
+            function tokenize(text) {
+                if (!text || typeof text !== 'string') return [];
+                return text.trim().split(/\s+/).filter(t => t.length > 0);
+            }
+
+            // ==================== PROMPT NORMALIZATION (link "un" ¡ú "UN") ====================
+            function normalizeSeedTokens(tokens) {
+                return tokens.map(token => {
+                    if (token.toLowerCase() === 'un') {
+                        return 'UN';
+                    }
+                    return token;
+                });
+            }
+
+            // ==================== BUILD N-GRAM MODELS ====================
+            function buildNGramModel(tokens, n) {
+                const model = {};
+                const windowSize = n + 1;
+                if (tokens.length < windowSize) return model;
+                for (let i = 0; i <= tokens.length - windowSize; i++) {
+                    const contextTokens = tokens.slice(i, i + n);
+                    const nextWord = tokens[i + n];
+                    const key = contextTokens.join('|||');
+                    if (!model[key]) model[key] = {};
+                    model[key][nextWord] = (model[key][nextWord] || 0) + 1;
+                }
+                return model;
+            }
+
+            function buildVocabulary(tokens) {
+                const vocab = {};
+                for (const t of tokens) {
+                    vocab[t] = (vocab[t] || 0) + 1;
+                }
+                return vocab;
+            }
+
+            function trainOnText(text) {
+                const tokens = tokenize(text);
+                if (tokens.length < 2) return { success: false, message: 'Need at least 2 tokens to train.' };
+
+                const ngram4 = buildNGramModel(tokens, 4);
+                const ngram3 = buildNGramModel(tokens, 3);
+                const ngram2 = buildNGramModel(tokens, 2);
+                const ngram1 = buildNGramModel(tokens, 1);
+                const vocab = buildVocabulary(tokens);
+
+                if (!brain || !brain.ngrams) brain = getEmptyBrain();
+
+                function mergeModel(target, source) {
+                    for (const [key, nextMap] of Object.entries(source)) {
+                        if (!target[key]) target[key] = {};
+                        for (const [word, count] of Object.entries(nextMap)) {
+                            target[key][word] = (target[key][word] || 0) + count;
+                        }
+                    }
+                }
+
+                mergeModel(brain.ngrams['4'], ngram4);
+                mergeModel(brain.ngrams['3'], ngram3);
+                mergeModel(brain.ngrams['2'], ngram2);
+                mergeModel(brain.ngrams['1'], ngram1);
+
+                for (const [word, count] of Object.entries(vocab)) {
+                    brain.vocabulary[word] = (brain.vocabulary[word] || 0) + count;
+                }
+
+                brain.totalTokens += tokens.length;
+                brain.uniqueTokens = Object.keys(brain.vocabulary).length;
+
+                const saved = saveBrain();
+                const totalNgrams =
+                    Object.keys(brain.ngrams['4']).length +
+                    Object.keys(brain.ngrams['3']).length +
+                    Object.keys(brain.ngrams['2']).length +
+                    Object.keys(brain.ngrams['1']).length;
+
+                return {
+                    success: saved,
+                    message: 'Trained on ' + tokens.length + ' tokens. ' +
+                        'Total brain tokens: ' + brain.totalTokens + '. ' +
+                        'Unique words: ' + brain.uniqueTokens + '. ' +
+                        'N-gram entries: ' + totalNgrams + '. ' +
+                        (saved ? 'Brain saved to browser.' : 'WARNING: Brain not saved!'),
+                    tokens: tokens.length,
+                    totalNgrams: totalNgrams
+                };
+            }
+
+            // ==================== STOP WORDS FOR ATTENTION ====================
+            const STOP_WORDS = new Set([
+                'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
+                'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
+                'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could',
+                'should', 'may', 'might', 'shall', 'can', 'need', 'this', 'that',
+                'these', 'those', 'it', 'its', 'i', 'me', 'my', 'we', 'our', 'you',
+                'your', 'he', 'him', 'his', 'she', 'her', 'they', 'them', 'their',
+                'what', 'which', 'who', 'whom', 'when', 'where', 'why', 'how',
+                'not', 'no', 'nor', 'so', 'if', 'then', 'than', 'too', 'very',
+                'just', 'all', 'each', 'every', 'both', 'few', 'more', 'most',
+                'other', 'some', 'such', 'only', 'own', 'same', 'into', 'over',
+                'from', 'up', 'down', 'out', 'off', 'about', 'above', 'after',
+                'again', 'against', 'as', 'before', 'between', 'during', 'through',
+                'under', 'while', 'any', 'because', 'until', 'now', 'also', 'here',
+                'there', 'like', 'get', 'got', 'make', 'made', 'say', 'said', 'go',
+                'went', 'come', 'came', 'see', 'saw', 'know', 'knew', 'think',
+                'thought', 'take', 'took', 'use', 'used', 'much', 'many', 'well',
+                'back', 'still', 'even', 'way', 'one', 'two', 'first', 'last',
+            ]);
+
+            function extractImportantWords(seedText) {
+                const tokens = tokenize(seedText);
+                const important = new Set();
+                for (const t of tokens) {
+                    const lower = t.toLowerCase().replace(/[^a-z0-9]/g, '');
+                    // Boost all non-stop words, regardless of length
+                    if (!STOP_WORDS.has(lower)) {
+                        important.add(t);
+                    }
+                }
+                // Also keep originally capitalized words as potentially important
+                for (const t of tokens) {
+                    if (/^[A-Z][a-z]{2,}$/.test(t)) {
+                        important.add(t);
+                    }
+                }
+                return important;
+            }
+
+            // ==================== GENERATION WITH BACKOFF & ATTENTION ====================
+            function weightedRandomPick(candidates, attentionSet, attentionFactor) {
+                const entries = Object.entries(candidates);
+                if (entries.length === 0) return null;
+
+                const adjustedWeights = entries.map(([word, count]) => {
+                    let weight = count;
+                    if (attentionSet && attentionSet.has(word) && attentionFactor > 1.0) {
+                        weight = count * attentionFactor;
+                    }
+                    return { word, weight };
+                });
+
+                const totalWeight = adjustedWeights.reduce((sum, item) => sum + item.weight, 0);
+                if (totalWeight <= 0) return entries[Math.floor(Math.random() * entries.length)][0];
+
+                let rand = Math.random() * totalWeight;
+                for (const item of adjustedWeights) {
+                    rand -= item.weight;
+                    if (rand <= 0) return item.word;
+                }
+                return adjustedWeights[adjustedWeights.length - 1].word;
+            }
+
+            function generateText(seedText, maxWords, attentionFactor) {
+                if (!brain || brain.totalTokens < 2) {
+                    return { text: '', debug: 'Brain is empty. Please train first.' };
+                }
+
+                let seedTokens = tokenize(seedText);
+                seedTokens = normalizeSeedTokens(seedTokens);
+
+                if (seedTokens.length === 0) {
+                    return { text: '', debug: 'Please provide a seed/prompt with at least 1 word.' };
+                }
+
+                const importantWords = extractImportantWords(seedText);
+                const generated = [...seedTokens];
+                const maxTotal = seedTokens.length + maxWords;
+                const maxExtra = 20; // safety cap to avoid infinite loops
+                const backoffUsed = { '4': 0, '3': 0, '2': 0, '1': 0, 'random': 0 };
+
+                while (generated.length < maxTotal + maxExtra) {
+                    let nextWord = null;
+                    let usedLevel = null;
+
+                    if (generated.length >= 4) {
+                        const ctx4 = generated.slice(generated.length - 4).join('|||');
+                        const candidates4 = brain.ngrams['4'][ctx4];
+                        if (candidates4 && Object.keys(candidates4).length > 0) {
+                            nextWord = weightedRandomPick(candidates4, importantWords, attentionFactor);
+                            usedLevel = '4';
+                        }
+                    }
+
+                    if (!nextWord && generated.length >= 3) {
+                        const ctx3 = generated.slice(generated.length - 3).join('|||');
+                        const candidates3 = brain.ngrams['3'][ctx3];
+                        if (candidates3 && Object.keys(candidates3).length > 0) {
+                            nextWord = weightedRandomPick(candidates3, importantWords, attentionFactor);
+                            usedLevel = '3';
+                        }
+                    }
+
+                    if (!nextWord && generated.length >= 2) {
+                        const ctx2 = generated.slice(generated.length - 2).join('|||');
+                        const candidates2 = brain.ngrams['2'][ctx2];
+                        if (candidates2 && Object.keys(candidates2).length > 0) {
+                            nextWord = weightedRandomPick(candidates2, importantWords, attentionFactor);
+                            usedLevel = '2';
+                        }
+                    }
+
+                    if (!nextWord && generated.length >= 1) {
+                        const ctx1 = generated[generated.length - 1];
+                        const candidates1 = brain.ngrams['1'][ctx1];
+                        if (candidates1 && Object.keys(candidates1).length > 0) {
+                            nextWord = weightedRandomPick(candidates1, importantWords, attentionFactor);
+                            usedLevel = '1';
+                        }
+                    }
+
+                    if (!nextWord) {
+                        const vocabEntries = Object.entries(brain.vocabulary);
+                        if (vocabEntries.length > 0) {
+                            const pick = weightedRandomPick(
+                                Object.fromEntries(vocabEntries),
+                                importantWords,
+                                attentionFactor
+                            );
+                            nextWord = pick || vocabEntries[Math.floor(Math.random() * vocabEntries.length)][0];
+                            usedLevel = 'random';
+                        } else {
+                            break;
+                        }
+                    }
+
+                    if (!nextWord) break;
+
+                    generated.push(nextWord);
+                    if (usedLevel) backoffUsed[usedLevel] = (backoffUsed[usedLevel] || 0) + 1;
+
+                    // Stop after maxTotal if the last token ends with . ? !
+                    if (generated.length > maxTotal && /[.?!]$/.test(generated[generated.length - 1])) {
+                        break;
+                    }
+                }
+
+                const debugStr =
+                    'Backoff stats: 4-gram=' + backoffUsed['4'] + ' 3-gram=' + backoffUsed['3'] +
+                    ' 2-gram=' + backoffUsed['2'] + ' 1-gram=' + backoffUsed['1'] +
+                    ' random=' + backoffUsed['random'] +
+                    ' | Important words: ' + (importantWords.size > 0 ? [...importantWords].slice(0, 15).join(', ') : 'none') +
+                    (importantWords.size > 15 ? '...' : '') +
+                    ' | Stopped by punctuation: ' + (generated.length > maxTotal && /[.?!]$/.test(generated[generated.length-1]) ? 'yes' : 'no');
+
+                return { text: generated.join(' '), debug: debugStr };
+            }
+
+            // ==================== WEBSITE SCRAPER ====================
+            async function fetchAndExtractText(url, proxyPrefix) {
+                let fetchUrl = url;
+                if (proxyPrefix && proxyPrefix.trim()) {
+                    fetchUrl = proxyPrefix.trim() + encodeURIComponent(url);
+                }
+                const response = await fetch(fetchUrl, {
+                    method: 'GET',
+                    headers: { 'Accept': 'text/html,text/plain,*/*' },
+                });
+                if (!response.ok) throw new Error('HTTP ' + response.status + ': ' + response.statusText);
+                const contentType = response.headers.get('content-type') || '';
+                const rawText = await response.text();
+
+                if (contentType.includes('text/html') || rawText.trim().startsWith('<!DOCTYPE') || rawText.trim().startsWith('<html') || rawText.includes('<body')) {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(rawText, 'text/html');
+                    const removals = doc.querySelectorAll('script, style, nav, header, footer, iframe, noscript, [role="navigation"], .nav, .sidebar, .footer, .header');
+                    removals.forEach(el => el.remove());
+                    const bodyText = doc.body ? doc.body.textContent : doc.documentElement.textContent;
+                    const cleaned = bodyText.replace(/[\t\r]+/g, ' ').replace(/\n{3,}/g, '\n\n').replace(/[ ]{2,}/g, ' ').trim();
+                    return cleaned || '(no text content extracted)';
+                } else {
+                    return rawText.replace(/[\t\r]+/g, ' ').replace(/\n{3,}/g, '\n\n').replace(/[ ]{2,}/g, ' ').trim();
+                }
+            }
+
+            function takeSnapshot(url, text) {
+                if (!text || text.trim().length < 10) {
+                    alert('Not enough text to snapshot. Minimum 10 characters.');
+                    return false;
+                }
+                if (!brain.snapshots) brain.snapshots = [];
+                brain.snapshots.push({
+                    url: url || '(no url)',
+                    text: text.trim().slice(0, 100000),
+                    date: new Date().toISOString()
+                });
+                saveBrain();
+                renderSnapshots();
+                return true;
+            }
+
+            function renderSnapshots() {
+                const container = document.getElementById('snapshots-list');
+                if (!brain.snapshots || brain.snapshots.length === 0) {
+                    container.innerHTML = '<span style="color:#999;font-size:11px;">No snapshots yet.</span>';
+                    return;
+                }
+                let html = '';
+                brain.snapshots.forEach((snap, idx) => {
+                    const preview = snap.text.slice(0, 200).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    html += '<div class="snapshot-item">' +
+                        '<strong>#' + (idx + 1) + '</strong> URL: ' + (snap.url || '(none)').replace(/</g, '&lt;').replace(/>/g, '&gt;') +
+                        ' | Date: ' + (snap.date || '?').slice(0, 10) +
+                        ' | Chars: ' + snap.text.length +
+                        ' <button onclick="window._addSnapshotToTraining(' + idx + ')" style="font-size:10px;padding:2px 6px;">+ Add to Training</button>' +
+                        ' <button onclick="window._removeSnapshot(' + idx + ')" style="font-size:10px;padding:2px 6px;color:#a44;">?</button>' +
+                        '<pre>' + preview + (snap.text.length > 200 ? '...' : '') + '</pre>' +
+                        '</div>';
+                });
+                container.innerHTML = html;
+            }
+
+            window._addSnapshotToTraining = function(idx) {
+                if (brain.snapshots && brain.snapshots[idx]) {
+                    const textarea = document.getElementById('training-input');
+                    const current = textarea.value;
+                    const snapText = brain.snapshots[idx].text;
+                    textarea.value = current + (current ? '\n\n' : '') + snapText;
+                    textarea.scrollTop = textarea.scrollHeight;
+                    showStatus('train-status', 'Snapshot #' + (idx + 1) + ' added to training field.', 'good');
+                    document.getElementById('sec-train').scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+            window._removeSnapshot = function(idx) {
+                if (brain.snapshots && brain.snapshots[idx]) {
+                    brain.snapshots.splice(idx, 1);
+                    saveBrain();
+                    renderSnapshots();
+                }
+            };
+
+            // ==================== KNOWLEDGE WEB TABLE ====================
+            function renderKnowledgeTable(nLevel, filterText) {
+                const tbody = document.getElementById('knowledge-tbody');
+                const countSpan = document.getElementById('knowledge-count');
+                if (!brain || brain.totalTokens < 2) {
+                    tbody.innerHTML = '<tr><td colspan="5" style="color:#999;">Train the brain first to see knowledge web.</td></tr>';
+                    countSpan.textContent = '';
+                    return;
+                }
+                const model = brain.ngrams[String(nLevel)] || {};
+                let entries = [];
+                for (const [context, nextMap] of Object.entries(model)) {
+                    const totalForContext = Object.values(nextMap).reduce((s, c) => s + c, 0);
+                    for (const [nextWord, count] of Object.entries(nextMap)) {
+                        entries.push({
+                            context: context.replace(/\|\|\|/g, ' '),
+                            nextWord: nextWord,
+                            count: count,
+                            probability: totalForContext > 0 ? count / totalForContext : 1
+                        });
+                    }
+                }
+                const filt = (filterText || '').toLowerCase().trim();
+                if (filt) {
+                    entries = entries.filter(e =>
+                        e.context.toLowerCase().includes(filt) || e.nextWord.toLowerCase().includes(filt)
+                    );
+                }
+                entries.sort((a, b) => b.count - a.count);
+                const displayEntries = entries.slice(0, 3000);
+                countSpan.textContent = 'Showing ' + displayEntries.length + ' of ' + entries.length + ' entries.';
+
+                if (displayEntries.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5" style="color:#999;">No matching entries found.</td></tr>';
+                } else {
+                    let html = '';
+                    displayEntries.forEach((e, i) => {
+                        html += '<tr>' +
+                            '<td>' + (i + 1) + '</td>' +
+                            '<td>' + e.context.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</td>' +
+                            '<td>' + e.nextWord.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</td>' +
+                            '<td>' + e.count + '</td>' +
+                            '<td>' + (e.probability * 100).toFixed(2) + '%</td>' +
+                            '</tr>';
+                    });
+                    if (entries.length > 3000) {
+                        html += '<tr><td colspan="5" style="color:#888;font-style:italic;">... and ' + (entries.length - 3000) + ' more entries (use filter to narrow down).</td></tr>';
+                    }
+                    tbody.innerHTML = html;
+                }
+            }
+
+            // ==================== UI HELPERS ====================
+            function showStatus(elementId, message, type) {
+                const el = document.getElementById(elementId);
+                if (!el) return;
+                el.textContent = message;
+                el.style.display = 'block';
+                el.className = 'status-msg ' + (type || '');
+                clearTimeout(el._timeout);
+                el._timeout = setTimeout(() => { el.style.display = 'none'; }, 8000);
+            }
+
+            function updateBrainStats() {
+                const statsEl = document.getElementById('brain-stats-top');
+                const infoEl = document.getElementById('brain-info');
+                if (!brain || brain.totalTokens < 2) {
+                    statsEl.textContent = 'Brain: empty';
+                    infoEl.innerHTML = 'Brain status: <b>empty / not trained.</b>';
+                    return;
+                }
+                const sizeKB = (JSON.stringify(brain).length / 1024).toFixed(1);
+                const totalNgrams =
+                    Object.keys(brain.ngrams['4']).length +
+                    Object.keys(brain.ngrams['3']).length +
+                    Object.keys(brain.ngrams['2']).length +
+                    Object.keys(brain.ngrams['1']).length;
+                statsEl.textContent = 'Brain: ' + brain.totalTokens + ' tokens | ' + brain.uniqueTokens +
+                    ' unique | ' + totalNgrams + ' n-grams | ' + sizeKB + ' KB';
+                infoEl.innerHTML = 'Brain status: <b>active</b><br>' +
+                    'Tokens: ' + brain.totalTokens + ' | Unique words: ' + brain.uniqueTokens + '<br>' +
+                    '4-gram entries: ' + Object.keys(brain.ngrams['4']).length + '<br>' +
+                    '3-gram entries: ' + Object.keys(brain.ngrams['3']).length + '<br>' +
+                    '2-gram entries: ' + Object.keys(brain.ngrams['2']).length + '<br>' +
+                    '1-gram entries: ' + Object.keys(brain.ngrams['1']).length + '<br>' +
+                    'Snapshots: ' + (brain.snapshots ? brain.snapshots.length : 0) + '<br>' +
+                    'Storage size: ~' + sizeKB + ' KB<br>' +
+                    'Last trained: ' + (brain.trainedAt ? new Date(brain.trainedAt).toLocaleString() : 'unknown');
+            }
+
+            function updateAllUI() {
+                updateBrainStats();
+                renderSnapshots();
+                const nLevel = parseInt(document.getElementById('knowledge-n-level').value) || 4;
+                const filter = document.getElementById('knowledge-filter').value;
+                renderKnowledgeTable(nLevel, filter);
+            }
+
+            // ==================== EVENT HANDLERS ====================
+            document.getElementById('btn-train').addEventListener('click', function() {
+                const text = document.getElementById('training-input').value;
+                if (!text.trim()) {
+                    showStatus('train-status', 'Please paste some training text first.', 'warn');
+                    return;
+                }
+                const result = trainOnText(text);
+                if (result.success) {
+                    showStatus('train-status', result.message, 'good');
+                } else {
+                    showStatus('train-status', result.message, 'err');
+                }
+                document.getElementById('train-stats').textContent =
+                    'Last training: ' + (result.tokens || 0) + ' tokens processed. ' +
+                    'Total n-gram entries: ' + (result.totalNgrams || 0) + '.';
+                updateAllUI();
+                const nLevel = parseInt(document.getElementById('knowledge-n-level').value) || 4;
+                renderKnowledgeTable(nLevel, document.getElementById('knowledge-filter').value);
+            });
+
+            document.getElementById('btn-append-snapshots').addEventListener('click', function() {
+                if (!brain.snapshots || brain.snapshots.length === 0) {
+                    alert('No snapshots to append. Use the Scraper to take snapshots first.');
+                    return;
+                }
+                const textarea = document.getElementById('training-input');
+                const allText = brain.snapshots.map(s => s.text).join('\n\n');
+                textarea.value = textarea.value + (textarea.value ? '\n\n' : '') + allText;
+                textarea.scrollTop = textarea.scrollHeight;
+                showStatus('train-status', 'All ' + brain.snapshots.length + ' snapshots appended to training field.', 'good');
+                document.getElementById('sec-train').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.getElementById('btn-generate').addEventListener('click', function() {
+                const seed = document.getElementById('prompt-input').value;
+                const maxWords = parseInt(document.getElementById('max-words').value) || 60;
+                const attentionFactor = parseFloat(document.getElementById('attention-factor').value) || 1.8;
+                if (!brain || brain.totalTokens < 2) {
+                    document.getElementById('generated-output').value = '[Brain is empty. Please train first.]';
+                    document.getElementById('gen-debug').textContent = '';
+                    return;
+                }
+                const result = generateText(seed, maxWords, attentionFactor);
+                document.getElementById('generated-output').value = result.text || '[Generation failed]';
+                document.getElementById('gen-debug').textContent = result.debug || '';
+            });
+
+            document.getElementById('btn-fetch-url').addEventListener('click', async function() {
+                const url = document.getElementById('scraper-url').value.trim();
+                const proxy = document.getElementById('scraper-proxy').value.trim();
+                if (!url) {
+                    alert('Please enter a URL.');
+                    return;
+                }
+                const panel = document.getElementById('scraper-panel');
+                const extractedArea = document.getElementById('scraper-extracted');
+                const statusSpan = document.getElementById('scraper-status');
+                panel.style.display = 'block';
+                extractedArea.value = 'Fetching...';
+                statusSpan.textContent = 'Loading...';
+                try {
+                    const text = await fetchAndExtractText(url, proxy);
+                    extractedArea.value = text.slice(0, 200000);
+                    statusSpan.textContent = 'Fetched ' + text.length + ' chars.';
+                    statusSpan.style.color = '#3a3';
+                } catch (err) {
+                    // Provide a clear error message even if err.message is undefined
+                    const errorMsg = (err && (err.message || err.toString())) || 'Unknown error';
+                    console.error('Fetch error:', err);
+                    extractedArea.value = 'ERROR: ' + errorMsg +
+                        '\n\nTip: If this is a CORS error, try using a CORS proxy (enter a proxy URL above) or copy-paste the text manually into the Training section.';
+                    statusSpan.textContent = 'Fetch failed: ' + errorMsg;
+                    statusSpan.style.color = '#c33';
+                }
+            });
+
+            document.getElementById('btn-take-snapshot').addEventListener('click', function() {
+                const url = document.getElementById('scraper-url').value.trim();
+                const text = document.getElementById('scraper-extracted').value;
+                if (!text || text.startsWith('ERROR:') || text === 'Fetching...') {
+                    alert('No valid text to snapshot. Fetch a URL first.');
+                    return;
+                }
+                if (takeSnapshot(url, text)) {
+                    document.getElementById('scraper-status').textContent = 'Snapshot taken! Total: ' + (brain.snapshots ? brain.snapshots.length : 0);
+                    document.getElementById('scraper-status').style.color = '#3a3';
+                }
+                updateAllUI();
+            });
+
+            document.getElementById('btn-add-scraped-to-training').addEventListener('click', function() {
+                const text = document.getElementById('scraper-extracted').value;
+                if (!text || text.startsWith('ERROR:') || text === 'Fetching...') {
+                    alert('No valid text to add. Fetch a URL first.');
+                    return;
+                }
+                const textarea = document.getElementById('training-input');
+                textarea.value = textarea.value + (textarea.value ? '\n\n' : '') + text;
+                textarea.scrollTop = textarea.scrollHeight;
+                showStatus('train-status', 'Scraped text added to training field.', 'good');
+                document.getElementById('sec-train').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.getElementById('btn-clear-snapshots').addEventListener('click', function() {
+                if (confirm('Clear all snapshots?')) {
+                    brain.snapshots = [];
+                    saveBrain();
+                    renderSnapshots();
+                    updateBrainStats();
+                }
+            });
+
+            document.getElementById('btn-download-brain').addEventListener('click', downloadBrainJSON);
+            document.getElementById('btn-download-brain2').addEventListener('click', downloadBrainJSON);
+
+            document.getElementById('btn-load-brain').addEventListener('click', function() {
+                document.getElementById('brain-file-input').click();
+            });
+            document.getElementById('btn-load-brain2').addEventListener('click', function() {
+                document.getElementById('brain-file-input').click();
+            });
+
+            document.getElementById('brain-file-input').addEventListener('change', function(e) {
+                if (e.target.files && e.target.files[0]) {
+                    loadBrainFromFile(e.target.files[0]);
+                    e.target.value = '';
+                }
+            });
+
+            document.getElementById('btn-clear-brain').addEventListener('click', clearBrain);
+            document.getElementById('btn-clear-brain2').addEventListener('click', clearBrain);
+
+            document.getElementById('knowledge-n-level').addEventListener('change', function() {
+                const nLevel = parseInt(this.value) || 4;
+                const filter = document.getElementById('knowledge-filter').value;
+                renderKnowledgeTable(nLevel, filter);
+            });
+
+            document.getElementById('knowledge-filter').addEventListener('input', function() {
+                const nLevel = parseInt(document.getElementById('knowledge-n-level').value) || 4;
+                renderKnowledgeTable(nLevel, this.value);
+            });
+
+            // ==================== INITIALIZATION ====================
+            function init() {
+                const loaded = loadBrain();
+                if (!loaded) {
+                    brain = getEmptyBrain();
+                }
+                updateAllUI();
+                const nLevel = parseInt(document.getElementById('knowledge-n-level').value) || 4;
+                renderKnowledgeTable(nLevel, '');
+                if (brain.snapshots && brain.snapshots.length > 0) {
+                    document.getElementById('scraper-panel').style.display = 'block';
+                }
+                console.log('Markov Bot initialized. Brain loaded:', loaded,
+                    'Tokens:', brain.totalTokens,
+                    'Storage:', (JSON.stringify(brain).length / 1024).toFixed(1), 'KB');
+            }
+
+            init();
+
+            // ==================== KEYBOARD SHORTCUTS ====================
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'Enter' && document.activeElement === document.getElementById('training-input')) {
+                    e.preventDefault();
+                    document.getElementById('btn-train').click();
+                }
+                if (e.ctrlKey && e.key === 'g' && document.activeElement !== document.getElementById('training-input')) {
+                    e.preventDefault();
+                    document.getElementById('btn-generate').click();
+                }
+            });
+
+            console.log('? Markov Bot ready. Features: 4-gram + backoff + attention + scraper + knowledge web + JSON export/import.');
+            console.log('   Training data:', document.getElementById('training-input').placeholder);
+            console.log('   Brain stored in localStorage key:', STORAGE_KEY);
+        })();
+    </script>
+</body>
+</html>
