@@ -1,10 +1,9 @@
-# Markov Chain — Online Test & View
-
-Generate text with a Markov chain directly in your browser. Train your own 4-gram model, scrape websites for data, and explore the knowledge web with an intuitive chart — all free and client-side. Your "brain", the JSON file, stays in your browser's local storage *or alternatively in downloaded*. Have a 4-gram 3-gram → 2-gram → 1-gram model all in one.
+# Markov Chain — Online Train, run & View
+Quickly and interactively generate text with a Markov chain directly in your browser. Train your own multi-gram model, scrape websites for data, and view and expli the knowledge web with an _intuitive chart_ — all free and client-side. Your "brain", the JSON file, stays in your browser's local storage *or alternatively in downloaded*. Have a 4-gram 3-gram → 2-gram → 1-gram model all in one.
 ## Try it now online
 
-👉 **Go to [the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html) to try out.** 
-How to [use](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#quick-start) for more info
+👉 **Go to [the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html) to try out, write a seed (message) and click generate!** 
+###### How to [use](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#quick-start) for more info
 ###### If you like it, please become a stargazer, ie. click the star button on top 
 ## Features
 
