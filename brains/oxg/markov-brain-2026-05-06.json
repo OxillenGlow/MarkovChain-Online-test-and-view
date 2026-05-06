@@ -1,0 +1,8287 @@
+{
+  "version": 2,
+  "trainedAt": 1777987635175,
+  "totalTokens": 1221,
+  "uniqueTokens": 455,
+  "ngrams": {
+    "1": {
+      "24": {
+        "hours,": 1
+      },
+      "510": {
+        "million": 1
+      },
+      "2026": {
+        "ends": 1
+      },
+      "2028": {
+        "starts": 1
+      },
+      "12742": {
+        "kilometers": 1
+      },
+      "36525": {
+        "days": 1
+      },
+      "hi": {
+        "i": 1,
+        "it": 1
+      },
+      "i": {
+        "am": 1
+      },
+      "am": {
+        "a": 1
+      },
+      "a": {
+        "dumb": 1,
+        "ball,": 1,
+        "diameter": 1,
+        "surface": 1,
+        "solid": 1,
+        "liquid": 1,
+        "thick": 1,
+        "thin": 1,
+        "protective": 1,
+        "suitable": 1,
+        "republic": 2,
+        "dictatorship": 2,
+        "table": 2,
+        "organization": 2,
+        "great": 2,
+        "salutation.": 1,
+        "CORS": 2,
+        "proxy": 1,
+        "pre-alpha": 2,
+        "clear": 2,
+        "dedicated": 2,
+        "bridge,": 2,
+        "\"cozy": 2,
+        "private": 1
+      },
+      "dumb": {
+        "guy": 1
+      },
+      "guy": {
+        "called": 1
+      },
+      "called": {
+        "sam.": 1
+      },
+      "What": {
+        "is": 1
+      },
+      "is": {
+        "the": 8,
+        "mostly": 1,
+        "covered": 1,
+        "land": 1,
+        "causing": 2,
+        "growing": 2,
+        "more": 2,
+        "hi": 1,
+        "a": 2,
+        "as": 2,
+        "currently": 2,
+        "directly": 2,
+        "technically": 1
+      },
+      "the": {
+        "earth": 1,
+        "third": 1,
+        "Sun": 3,
+        "atmosphere": 1,
+        "remaining": 1,
+        "planet": 1,
+        "Moon,": 1,
+        "only": 1,
+        "universe": 1,
+        "world?": 1,
+        "current": 4,
+        "largest": 2,
+        "globe": 2,
+        "internet,": 2,
+        "lingering": 2,
+        "COVID": 2,
+        "global": 2,
+        "positive": 2,
+        "United": 2,
+        "world": 5,
+        "superpowers": 2,
+        "RedCross": 2,
+        "text": 1,
+        "Training": 1,
+        "same": 2,
+        "host": 2,
+        "euphoria.io": 2,
+        "server": 2,
+        "user": 2,
+        "Euphoria": 4,
+        "comics.": 2,
+        "Heim": 2,
+        "xkcd": 2,
+        "features": 2,
+        "world.": 2,
+        "present": 2,
+        "homepage": 1,
+        "Earth": 1,
+        "time": 1
+      },
+      "earth": {
+        "?": 1
+      },
+      "?": {
+        "Earth": 1,
+        "the": 3
+      },
+      "Earth": {
+        "a": 1,
+        "orbits": 1,
+        "is": 1,
+        "nextyear:": 1
+      },
+      "ball,": {
+        "it": 1
+      },
+      "it": {
+        "is": 2,
+        "has": 1
+      },
+      "third": {
+        "planet": 1
+      },
+      "planet": {
+        "from": 1,
+        "has": 1
+      },
+      "from": {
+        "the": 2,
+        "around": 2
+      },
+      "Sun": {
+        "and": 1,
+        "once": 1,
+        "engulfs": 1
+      },
+      "and": {
+        "it": 1,
+        "a": 2,
+        "oxygen": 1,
+        "carbon": 1,
+        "the": 5,
+        "rotates": 1,
+        "night": 1,
+        "stabilizes": 1,
+        "India": 2,
+        "record": 2,
+        "Gaza,": 2,
+        "wind": 2,
+        "species": 2,
+        "international": 2,
+        "more": 2,
+        "China": 2,
+        "real-time": 2,
+        "all": 2,
+        "is": 2,
+        "later": 2,
+        "mailing": 2,
+        "others": 2,
+        "does": 2
+      },
+      "has": {
+        "a": 3,
+        "one": 1,
+        "about": 4,
+        "dropped": 2,
+        "left.": 2
+      },
+      "diameter": {
+        "of": 1
+      },
+      "of": {
+        "510": 1,
+        "about": 1,
+        "hot": 1,
+        "Earth's": 1,
+        "the": 8,
+        "lives,": 2,
+        "chat": 2
+      },
+      "about": {
+        "12742": 1,
+        "71%": 1,
+        "eight": 4
+      },
+      "kilometers": {
+        "with": 1,
+        "Earth's": 1
+      },
+      "with": {
+        "a": 1,
+        "trace": 1,
+        "the": 4,
+        "plastic,": 2,
+        "chinese": 2,
+        "React/Reflux": 2,
+        "fans": 2,
+        "friends,": 2
+      },
+      "surface": {
+        "area": 1,
+        "is": 1
+      },
+      "area": {
+        "of": 1
+      },
+      "million": {
+        "square": 1
+      },
+      "square": {
+        "kilometers": 1
+      },
+      "Earth's": {
+        "structure": 1,
+        "surface": 1,
+        "tilt": 1
+      },
+      "structure": {
+        "includes": 1
+      },
+      "includes": {
+        "a": 1
+      },
+      "solid": {
+        "iron": 1
+      },
+      "iron": {
+        "inner": 1
+      },
+      "inner": {
+        "core,": 1
+      },
+      "core,": {
+        "a": 2
+      },
+      "liquid": {
+        "outer": 1,
+        "water,": 1
+      },
+      "outer": {
+        "core,": 1
+      },
+      "thick": {
+        "mantle": 1
+      },
+      "mantle": {
+        "of": 1
+      },
+      "hot": {
+        "rock,": 1
+      },
+      "rock,": {
+        "and": 1
+      },
+      "thin": {
+        "crust": 1
+      },
+      "crust": {
+        "where": 1
+      },
+      "where": {
+        "we": 1
+      },
+      "we": {
+        "live": 1
+      },
+      "live": {
+        "the": 1
+      },
+      "atmosphere": {
+        "is": 1
+      },
+      "mostly": {
+        "nitrogen": 1
+      },
+      "nitrogen": {
+        "(78%)": 1
+      },
+      "(78%)": {
+        "and": 1
+      },
+      "oxygen": {
+        "(21%)": 1
+      },
+      "(21%)": {
+        "with": 1
+      },
+      "trace": {
+        "gases": 1
+      },
+      "gases": {
+        "like": 1
+      },
+      "like": {
+        "argon": 1,
+        "Ukraine": 2,
+        "solar": 2
+      },
+      "argon": {
+        "and": 1
+      },
+      "carbon": {
+        "dioxide": 1
+      },
+      "dioxide": {
+        "about": 1
+      },
+      "71%": {
+        "of": 1
+      },
+      "covered": {
+        "by": 1
+      },
+      "by": {
+        "water,": 1
+      },
+      "water,": {
+        "mainly": 1,
+        "a": 1
+      },
+      "mainly": {
+        "oceans,": 1
+      },
+      "oceans,": {
+        "and": 1
+      },
+      "remaining": {
+        "29%": 1
+      },
+      "29%": {
+        "is": 1
+      },
+      "land": {
+        "divided": 1
+      },
+      "divided": {
+        "into": 1
+      },
+      "into": {
+        "seven": 1,
+        "the": 1
+      },
+      "seven": {
+        "continents": 1
+      },
+      "continents": {
+        "Earth": 1
+      },
+      "orbits": {
+        "the": 1
+      },
+      "once": {
+        "every": 1,
+        "everyone": 2
+      },
+      "every": {
+        "24": 1,
+        "36525": 1
+      },
+      "days": {
+        "(one": 1
+      },
+      "(one": {
+        "year)": 1
+      },
+      "year)": {
+        "and": 1
+      },
+      "rotates": {
+        "on": 1
+      },
+      "on": {
+        "its": 1,
+        "fossil": 2,
+        "the": 6
+      },
+      "its": {
+        "axis": 1
+      },
+      "axis": {
+        "every": 1
+      },
+      "hours,": {
+        "giving": 1
+      },
+      "giving": {
+        "us": 1,
+        "aid": 2
+      },
+      "us": {
+        "day": 1
+      },
+      "day": {
+        "and": 1
+      },
+      "night": {
+        "the": 1
+      },
+      "one": {
+        "natural": 1
+      },
+      "natural": {
+        "satellite,": 1
+      },
+      "satellite,": {
+        "the": 1
+      },
+      "Moon,": {
+        "which": 1
+      },
+      "which": {
+        "affects": 1
+      },
+      "affects": {
+        "ocean": 1
+      },
+      "ocean": {
+        "tides": 1
+      },
+      "tides": {
+        "and": 1
+      },
+      "stabilizes": {
+        "Earth's": 1
+      },
+      "tilt": {
+        "Earth": 1
+      },
+      "only": {
+        "known": 1,
+        "connection": 2
+      },
+      "known": {
+        "place": 1
+      },
+      "place": {
+        "in": 1
+      },
+      "in": {
+        "the": 1,
+        "nearly": 4,
+        "China": 2,
+        "places": 2,
+        "need": 2,
+        "Randall": 2,
+        "Comics:": 2,
+        "xkcd's": 2
+      },
+      "universe": {
+        "that": 1
+      },
+      "that": {
+        "supports": 1,
+        "handles": 2,
+        "blends": 2,
+        "focuses": 2
+      },
+      "supports": {
+        "life,": 1
+      },
+      "life,": {
+        "thanks": 1
+      },
+      "thanks": {
+        "to": 1
+      },
+      "to": {
+        "liquid": 1,
+        "other": 2,
+        "fetch": 1,
+        "xkcd": 2,
+        "transmit": 2,
+        "provide": 2,
+        "xkcd:": 2,
+        "discuss": 2,
+        "euphoria.leet.nu.": 2,
+        "connect": 2,
+        "help": 2,
+        "connection": 2
+      },
+      "protective": {
+        "magnetic": 1
+      },
+      "magnetic": {
+        "field,": 1
+      },
+      "field,": {
+        "and": 1
+      },
+      "suitable": {
+        "distance": 1
+      },
+      "distance": {
+        "from": 1
+      },
+      "what": {
+        "is": 5
+      },
+      "world?": {
+        "the": 1
+      },
+      "current": {
+        "world": 4
+      },
+      "world": {
+        "has": 4,
+        "today": 2,
+        "?": 3
+      },
+      "eight": {
+        "billion": 4
+      },
+      "billion": {
+        "people": 4
+      },
+      "people": {
+        "living": 4,
+        "in": 2,
+        "connect": 2
+      },
+      "living": {
+        "in": 4
+      },
+      "nearly": {
+        "two": 4
+      },
+      "two": {
+        "hundred": 4
+      },
+      "hundred": {
+        "countries,": 4
+      },
+      "countries,": {
+        "with": 4
+      },
+      "largest": {
+        "populations": 2
+      },
+      "populations": {
+        "in": 2
+      },
+      "China": {
+        "and": 2,
+        ",": 2
+      },
+      "India": {
+        "climate": 2
+      },
+      "climate": {
+        "change": 2
+      },
+      "change": {
+        "is": 2
+      },
+      "causing": {
+        "rising": 2
+      },
+      "rising": {
+        "sea": 2
+      },
+      "sea": {
+        "levels,": 2
+      },
+      "levels,": {
+        "stronger": 2
+      },
+      "stronger": {
+        "storms,": 2
+      },
+      "storms,": {
+        "and": 2
+      },
+      "record": {
+        "heatwaves": 2
+      },
+      "heatwaves": {
+        "across": 2
+      },
+      "across": {
+        "many": 2
+      },
+      "many": {
+        "regions": 2
+      },
+      "regions": {
+        "technology": 2
+      },
+      "technology": {
+        "connects": 2
+      },
+      "connects": {
+        "the": 2
+      },
+      "globe": {
+        "through": 2
+      },
+      "through": {
+        "smartphones,": 2,
+        "the": 2
+      },
+      "smartphones,": {
+        "satellites,": 2
+      },
+      "satellites,": {
+        "and": 2
+      },
+      "internet,": {
+        "but": 2
+      },
+      "but": {
+        "digital": 2,
+        "still": 2,
+        "separate": 2
+      },
+      "digital": {
+        "divides": 2
+      },
+      "divides": {
+        "still": 2
+      },
+      "still": {
+        "exist": 2,
+        "too": 2
+      },
+      "exist": {
+        "major": 2
+      },
+      "major": {
+        "challenges": 2
+      },
+      "challenges": {
+        "include": 2
+      },
+      "include": {
+        "poverty,": 2,
+        "UN": 2
+      },
+      "poverty,": {
+        "war": 2
+      },
+      "war": {
+        "in": 2
+      },
+      "places": {
+        "like": 2
+      },
+      "Ukraine": {
+        "and": 2
+      },
+      "Gaza,": {
+        "and": 2
+      },
+      "lingering": {
+        "effects": 2
+      },
+      "effects": {
+        "of": 2
+      },
+      "COVID": {
+        "pandemic": 2
+      },
+      "pandemic": {
+        "the": 2
+      },
+      "global": {
+        "economy": 2
+      },
+      "economy": {
+        "runs": 2
+      },
+      "runs": {
+        "on": 2
+      },
+      "fossil": {
+        "fuels,": 2
+      },
+      "fuels,": {
+        "renewable": 2
+      },
+      "renewable": {
+        "energy": 2
+      },
+      "energy": {
+        "like": 2
+      },
+      "solar": {
+        "and": 2
+      },
+      "wind": {
+        "is": 2
+      },
+      "growing": {
+        "fast": 2
+      },
+      "fast": {
+        "but": 2
+      },
+      "too": {
+        "slow": 2
+      },
+      "slow": {
+        "oceans": 2
+      },
+      "oceans": {
+        "are": 2
+      },
+      "are": {
+        "filling": 2,
+        "shrinking,": 2,
+        "disappearing": 2,
+        "technically": 1
+      },
+      "filling": {
+        "with": 2
+      },
+      "plastic,": {
+        "forests": 2
+      },
+      "forests": {
+        "are": 2
+      },
+      "shrinking,": {
+        "and": 2
+      },
+      "species": {
+        "are": 2
+      },
+      "disappearing": {
+        "at": 2
+      },
+      "at": {
+        "an": 2,
+        "euphoria.io/room/xkcd": 2
+      },
+      "an": {
+        "alarming": 2,
+        "official": 2
+      },
+      "alarming": {
+        "rate": 2
+      },
+      "rate": {
+        "on": 2
+      },
+      "positive": {
+        "side,": 2
+      },
+      "side,": {
+        "vaccines": 2
+      },
+      "vaccines": {
+        "save": 2
+      },
+      "save": {
+        "millions": 2
+      },
+      "millions": {
+        "of": 2
+      },
+      "lives,": {
+        "extreme": 2
+      },
+      "extreme": {
+        "poverty": 2
+      },
+      "poverty": {
+        "has": 2
+      },
+      "dropped": {
+        "sharply,": 2
+      },
+      "sharply,": {
+        "and": 2
+      },
+      "international": {
+        "cooperation": 2
+      },
+      "cooperation": {
+        "continues": 2
+      },
+      "continues": {
+        "through": 2
+      },
+      "United": {
+        "Nations": 2
+      },
+      "Nations": {
+        "the": 2
+      },
+      "today": {
+        "is": 2
+      },
+      "more": {
+        "connected": 2,
+        "fragile": 2
+      },
+      "connected": {
+        "and": 2,
+        "clients.": 2
+      },
+      "fragile": {
+        "than": 2
+      },
+      "than": {
+        "ever": 2
+      },
+      "ever": {
+        "before": 2
+      },
+      "superpowers": {
+        "US": 2
+      },
+      "US": {
+        ",": 2,
+        "president": 1
+      },
+      ",": {
+        "a": 10,
+        "the": 2,
+        "for": 2,
+        "Free": 2
+      },
+      "republic": {
+        "(democracy)": 2
+      },
+      "(democracy)": {
+        "and": 2
+      },
+      "dictatorship": {
+        "(communism": 2
+      },
+      "(communism": {
+        "with": 2
+      },
+      "chinese": {
+        "values": 2
+      },
+      "values": {
+        "(semi": 2
+      },
+      "(semi": {
+        "free": 2
+      },
+      "free": {
+        "market)).": 2
+      },
+      "market)).": {
+        "World": 2
+      },
+      "World": {
+        "bodies": 2
+      },
+      "bodies": {
+        "include": 2
+      },
+      "UN": {
+        ",": 2
+      },
+      "table": {
+        "for": 2
+      },
+      "for": {
+        "talkes,": 2,
+        "giving": 2,
+        "helping": 2,
+        "an": 2,
+        "data": 2,
+        "readers": 2,
+        "online": 2,
+        "euphoria.leet.nu_instant.leet.nu": 1
+      },
+      "talkes,": {
+        "NATO": 2
+      },
+      "NATO": {
+        ",": 2
+      },
+      "organization": {
+        "for": 2
+      },
+      "aid": {
+        "to": 2
+      },
+      "other": {
+        "countries": 2
+      },
+      "countries": {
+        ",": 2
+      },
+      "RedCross": {
+        ",": 2
+      },
+      "helping": {
+        "people": 2
+      },
+      "need": {
+        ",": 2
+      },
+      "Free": {
+        "Liniux": 2
+      },
+      "Liniux": {
+        "Foundation": 2
+      },
+      "Foundation": {
+        ",": 2
+      },
+      "great": {
+        "thing.": 2
+      },
+      "ERROR:": {
+        "Failed": 1
+      },
+      "Failed": {
+        "to": 1
+      },
+      "fetch": {
+        "Tip:": 1
+      },
+      "Tip:": {
+        "If": 1
+      },
+      "If": {
+        "this": 1
+      },
+      "this": {
+        "is": 1
+      },
+      "CORS": {
+        "error,": 1,
+        "proxy": 1
+      },
+      "error,": {
+        "try": 1
+      },
+      "try": {
+        "using": 1
+      },
+      "using": {
+        "a": 1,
+        "the": 2
+      },
+      "proxy": {
+        "(enter": 1,
+        "URL": 1
+      },
+      "(enter": {
+        "a": 1
+      },
+      "URL": {
+        "above)": 1
+      },
+      "above)": {
+        "or": 1
+      },
+      "or": {
+        "copy-paste": 1,
+        "didn't": 2,
+        "euphoria": 1,
+        "instant": 1
+      },
+      "copy-paste": {
+        "the": 1
+      },
+      "text": {
+        "manually": 1
+      },
+      "manually": {
+        "into": 1
+      },
+      "Training": {
+        "section.": 1
+      },
+      "\"Euphoria\"": {
+        "are": 1
+      },
+      "technically": {
+        "part": 2
+      },
+      "part": {
+        "of": 2
+      },
+      "same": {
+        "real-time": 2
+      },
+      "real-time": {
+        "community": 2,
+        "messaging.": 2
+      },
+      "community": {
+        "platform.": 2,
+        "with": 2
+      },
+      "platform.": {
+        "Their": 2,
+        "It": 2
+      },
+      "Their": {
+        "only": 2
+      },
+      "connection": {
+        "to": 2,
+        "attempts.": 2
+      },
+      "xkcd": {
+        "is": 2,
+        "has": 2,
+        "webcomic.": 2
+      },
+      "as": {
+        "the": 2,
+        "a": 6
+      },
+      "host": {
+        "for": 2
+      },
+      "official": {
+        "chatroom": 2
+      },
+      "chatroom": {
+        "referenced": 2,
+        "hosted": 2,
+        "is": 2
+      },
+      "referenced": {
+        "in": 4
+      },
+      "Randall": {
+        "Munroe's": 2
+      },
+      "Munroe's": {
+        "webcomics.": 2
+      },
+      "webcomics.": {
+        "Heim": 2
+      },
+      "Heim": {
+        "Server": 2,
+        "back-end": 2
+      },
+      "Server": {
+        "API:": 2
+      },
+      "API:": {
+        "The": 2
+      },
+      "The": {
+        "backend": 2,
+        "webcomic": 2,
+        "Sun": 1
+      },
+      "backend": {
+        "of": 2
+      },
+      "euphoria.io": {
+        "platform.": 2
+      },
+      "It": {
+        "includes:": 2
+      },
+      "includes:": {
+        "·": 2
+      },
+      "·": {
+        "Back-end": 2,
+        "Communication": 2,
+        "Database:": 2,
+        "Front-end": 2,
+        "State:": 2,
+        "Official": 2,
+        "Referenced": 2,
+        "Platform": 2,
+        "Community": 2,
+        "leet.nu:": 2,
+        "instant.leet.nu/about.html:": 1,
+        "instant.leet.nu": 1
+      },
+      "Back-end": {
+        "logic:": 2
+      },
+      "logic:": {
+        "A": 2
+      },
+      "A": {
+        "Go": 2,
+        "platform": 2,
+        "minimalist,": 2
+      },
+      "Go": {
+        "server": 2
+      },
+      "server": {
+        "that": 2,
+        "and": 2,
+        "see": 1
+      },
+      "handles": {
+        "chat": 2
+      },
+      "chat": {
+        "rooms,": 4,
+        "started": 2,
+        "site": 2
+      },
+      "rooms,": {
+        "user": 2,
+        "forums,": 2
+      },
+      "user": {
+        "permissions,": 2,
+        "interface.": 2
+      },
+      "permissions,": {
+        "and": 2
+      },
+      "messaging.": {
+        "·": 2
+      },
+      "Communication": {
+        "protocol:": 2
+      },
+      "protocol:": {
+        "Uses": 2
+      },
+      "Uses": {
+        "WebSockets": 2,
+        "PostgreSQL": 2
+      },
+      "WebSockets": {
+        "to": 2
+      },
+      "transmit": {
+        "JSON": 2
+      },
+      "JSON": {
+        "data": 2
+      },
+      "data": {
+        "between": 2,
+        "persistence.": 2
+      },
+      "between": {
+        "the": 2
+      },
+      "all": {
+        "connected": 2
+      },
+      "clients.": {
+        "·": 2
+      },
+      "Database:": {
+        "Uses": 2
+      },
+      "PostgreSQL": {
+        "for": 2
+      },
+      "persistence.": {
+        "·": 2
+      },
+      "Front-end": {
+        "client:": 2
+      },
+      "client:": {
+        "Built": 2
+      },
+      "Built": {
+        "with": 2
+      },
+      "React/Reflux": {
+        "to": 2
+      },
+      "provide": {
+        "the": 2
+      },
+      "interface.": {
+        "·": 2
+      },
+      "State:": {
+        "It's": 2
+      },
+      "It's": {
+        "marked": 2,
+        "described": 2
+      },
+      "marked": {
+        "as": 2
+      },
+      "pre-alpha": {
+        "release": 2
+      },
+      "release": {
+        "and": 2
+      },
+      "currently": {
+        "not": 2
+      },
+      "not": {
+        "under": 2,
+        "store": 2
+      },
+      "under": {
+        "active": 2
+      },
+      "active": {
+        "development.": 2
+      },
+      "development.": {
+        "Connection": 2
+      },
+      "Connection": {
+        "to": 2
+      },
+      "xkcd:": {
+        "There's": 2
+      },
+      "There's": {
+        "a": 2
+      },
+      "clear": {
+        "but": 2
+      },
+      "separate": {
+        "connection.": 2
+      },
+      "connection.": {
+        "·": 2
+      },
+      "Official": {
+        "Chatroom:": 2
+      },
+      "Chatroom:": {
+        "The": 2
+      },
+      "webcomic": {
+        "xkcd": 2
+      },
+      "dedicated": {
+        "chatroom": 2
+      },
+      "hosted": {
+        "on": 2
+      },
+      "Euphoria": {
+        "platform": 2,
+        "community": 2,
+        "is": 1
+      },
+      "platform": {
+        "for": 2,
+        "being": 2
+      },
+      "readers": {
+        "to": 2
+      },
+      "discuss": {
+        "the": 2
+      },
+      "comics.": {
+        "·": 2
+      },
+      "Referenced": {
+        "in": 2
+      },
+      "Comics:": {
+        "This": 2
+      },
+      "This": {
+        "chatroom": 2,
+        "chat": 2,
+        "setup": 2,
+        "website": 3
+      },
+      "directly": {
+        "referenced": 2
+      },
+      "xkcd's": {
+        "Comic": 2
+      },
+      "Comic": {
+        "#1506": 2
+      },
+      "#1506": {
+        "(\"xkcloud\").": 2
+      },
+      "(\"xkcloud\").": {
+        "·": 2
+      },
+      "Platform": {
+        "Evolution:": 2
+      },
+      "Evolution:": {
+        "This": 2
+      },
+      "started": {
+        "at": 2
+      },
+      "euphoria.io/room/xkcd": {
+        "and": 2
+      },
+      "later": {
+        "moved": 2
+      },
+      "moved": {
+        "to": 2
+      },
+      "euphoria.leet.nu.": {
+        "·": 2
+      },
+      "Community": {
+        "Bridge:": 2
+      },
+      "Bridge:": {
+        "This": 2
+      },
+      "setup": {
+        "serves": 2
+      },
+      "serves": {
+        "as": 2
+      },
+      "bridge,": {
+        "using": 2
+      },
+      "back-end": {
+        "to": 2
+      },
+      "connect": {
+        "the": 2,
+        "with": 2
+      },
+      "fans": {
+        "of": 2
+      },
+      "euphoria.leet.nu:": {
+        "A": 1
+      },
+      "being": {
+        "built": 2
+      },
+      "built": {
+        "for": 2
+      },
+      "online": {
+        "communities.": 2
+      },
+      "communities.": {
+        "It's": 2
+      },
+      "described": {
+        "as": 2
+      },
+      "\"cozy": {
+        "realtime": 2
+      },
+      "realtime": {
+        "discussion": 2
+      },
+      "discussion": {
+        "space\"": 2
+      },
+      "space\"": {
+        "that": 2
+      },
+      "blends": {
+        "the": 2
+      },
+      "features": {
+        "of": 2
+      },
+      "forums,": {
+        "and": 2
+      },
+      "mailing": {
+        "lists,": 2
+      },
+      "lists,": {
+        "designed": 2
+      },
+      "designed": {
+        "to": 2
+      },
+      "help": {
+        "people": 2
+      },
+      "friends,": {
+        "groups,": 2
+      },
+      "groups,": {
+        "and": 2
+      },
+      "others": {
+        "from": 2
+      },
+      "around": {
+        "the": 2
+      },
+      "world.": {
+        "·": 2
+      },
+      "leet.nu:": {
+        "This": 3
+      },
+      "website": {
+        "couldn't": 2,
+        "is": 1
+      },
+      "couldn't": {
+        "be": 2
+      },
+      "be": {
+        "loaded": 2
+      },
+      "loaded": {
+        "or": 2
+      },
+      "didn't": {
+        "respond": 2
+      },
+      "respond": {
+        "to": 2
+      },
+      "attempts.": {
+        "·": 2
+      },
+      "instant.leet.nu/about.html:": {
+        "A": 1
+      },
+      "minimalist,": {
+        "ephemeral": 2
+      },
+      "ephemeral": {
+        "chat": 2
+      },
+      "site": {
+        "that": 2
+      },
+      "focuses": {
+        "on": 2
+      },
+      "present": {
+        "moment": 2
+      },
+      "moment": {
+        "and": 2
+      },
+      "does": {
+        "not": 2
+      },
+      "store": {
+        "any": 2
+      },
+      "any": {
+        "messages": 2
+      },
+      "messages": {
+        "once": 2
+      },
+      "everyone": {
+        "has": 2
+      },
+      "euphoria.leet.nu": {
+        "or": 1
+      },
+      "euphoria": {
+        ":": 1
+      },
+      ":": {
+        "A": 2
+      },
+      "instant.leet.nu": {
+        "or": 1
+      },
+      "instant": {
+        ":": 1
+      },
+      "homepage": {
+        "for": 1
+      },
+      "euphoria.leet.nu_instant.leet.nu": {
+        "leet.nu": 1
+      },
+      "leet.nu": {
+        "also": 1
+      },
+      "also": {
+        "hosts": 1
+      },
+      "hosts": {
+        "a": 1
+      },
+      "private": {
+        "whitelist": 1
+      },
+      "whitelist": {
+        "Minecraft": 1
+      },
+      "Minecraft": {
+        "server": 1
+      },
+      "see": {
+        "euphoria.leet.nj/room/minecraft!": 1
+      },
+      "DOOOM": {
+        "trump": 1
+      },
+      "trump": {
+        "away:": 1
+      },
+      "away:": {
+        "Next": 1
+      },
+      "Next": {
+        "US": 1
+      },
+      "president": {
+        "assumes": 1
+      },
+      "assumes": {
+        "office": 1
+      },
+      "office": {
+        "suneatsearth:": 1
+      },
+      "suneatsearth:": {
+        "The": 1
+      },
+      "engulfs": {
+        "the": 1
+      },
+      "nextyear:": {
+        "2026": 1
+      },
+      "ends": {
+        "2028:": 1
+      },
+      "2028:": {
+        "2028": 1
+      },
+      "starts": {
+        "in:": 1
+      },
+      "in:": {
+        "DOOMClock:": 1
+      },
+      "DOOMClock:": {
+        "the": 1
+      },
+      "time": {
+        "DOOM": 1
+      },
+      "DOOM": {
+        "happens": 1
+      }
+    },
+    "2": {
+      "hi|||i": {
+        "am": 1
+      },
+      "i|||am": {
+        "a": 1
+      },
+      "am|||a": {
+        "dumb": 1
+      },
+      "a|||dumb": {
+        "guy": 1
+      },
+      "dumb|||guy": {
+        "called": 1
+      },
+      "guy|||called": {
+        "sam.": 1
+      },
+      "What|||is": {
+        "the": 1
+      },
+      "is|||the": {
+        "earth": 1,
+        "third": 1,
+        "only": 1,
+        "world?": 1,
+        "world": 3,
+        "homepage": 1
+      },
+      "the|||earth": {
+        "?": 1
+      },
+      "earth|||?": {
+        "Earth": 1
+      },
+      "?|||Earth": {
+        "a": 1
+      },
+      "Earth|||a": {
+        "ball,": 1
+      },
+      "a|||ball,": {
+        "it": 1
+      },
+      "ball,|||it": {
+        "is": 1
+      },
+      "it|||is": {
+        "the": 1,
+        "a": 1
+      },
+      "the|||third": {
+        "planet": 1
+      },
+      "third|||planet": {
+        "from": 1
+      },
+      "planet|||from": {
+        "the": 1
+      },
+      "from|||the": {
+        "Sun": 2
+      },
+      "the|||Sun": {
+        "and": 1,
+        "once": 1
+      },
+      "Sun|||and": {
+        "it": 1
+      },
+      "and|||it": {
+        "has": 1
+      },
+      "it|||has": {
+        "a": 1
+      },
+      "has|||a": {
+        "diameter": 1,
+        "dedicated": 2
+      },
+      "a|||diameter": {
+        "of": 1
+      },
+      "diameter|||of": {
+        "about": 1
+      },
+      "of|||about": {
+        "12742": 1
+      },
+      "about|||12742": {
+        "kilometers": 1
+      },
+      "12742|||kilometers": {
+        "with": 1
+      },
+      "kilometers|||with": {
+        "a": 1
+      },
+      "with|||a": {
+        "surface": 1
+      },
+      "a|||surface": {
+        "area": 1
+      },
+      "surface|||area": {
+        "of": 1
+      },
+      "area|||of": {
+        "510": 1
+      },
+      "of|||510": {
+        "million": 1
+      },
+      "510|||million": {
+        "square": 1
+      },
+      "million|||square": {
+        "kilometers": 1
+      },
+      "square|||kilometers": {
+        "Earth's": 1
+      },
+      "kilometers|||Earth's": {
+        "structure": 1
+      },
+      "Earth's|||structure": {
+        "includes": 1
+      },
+      "structure|||includes": {
+        "a": 1
+      },
+      "includes|||a": {
+        "solid": 1
+      },
+      "a|||solid": {
+        "iron": 1
+      },
+      "solid|||iron": {
+        "inner": 1
+      },
+      "iron|||inner": {
+        "core,": 1
+      },
+      "inner|||core,": {
+        "a": 1
+      },
+      "core,|||a": {
+        "liquid": 1,
+        "thick": 1
+      },
+      "a|||liquid": {
+        "outer": 1
+      },
+      "liquid|||outer": {
+        "core,": 1
+      },
+      "outer|||core,": {
+        "a": 1
+      },
+      "a|||thick": {
+        "mantle": 1
+      },
+      "thick|||mantle": {
+        "of": 1
+      },
+      "mantle|||of": {
+        "hot": 1
+      },
+      "of|||hot": {
+        "rock,": 1
+      },
+      "hot|||rock,": {
+        "and": 1
+      },
+      "rock,|||and": {
+        "a": 1
+      },
+      "and|||a": {
+        "thin": 1,
+        "suitable": 1
+      },
+      "a|||thin": {
+        "crust": 1
+      },
+      "thin|||crust": {
+        "where": 1
+      },
+      "crust|||where": {
+        "we": 1
+      },
+      "where|||we": {
+        "live": 1
+      },
+      "we|||live": {
+        "the": 1
+      },
+      "live|||the": {
+        "atmosphere": 1
+      },
+      "the|||atmosphere": {
+        "is": 1
+      },
+      "atmosphere|||is": {
+        "mostly": 1
+      },
+      "is|||mostly": {
+        "nitrogen": 1
+      },
+      "mostly|||nitrogen": {
+        "(78%)": 1
+      },
+      "nitrogen|||(78%)": {
+        "and": 1
+      },
+      "(78%)|||and": {
+        "oxygen": 1
+      },
+      "and|||oxygen": {
+        "(21%)": 1
+      },
+      "oxygen|||(21%)": {
+        "with": 1
+      },
+      "(21%)|||with": {
+        "trace": 1
+      },
+      "with|||trace": {
+        "gases": 1
+      },
+      "trace|||gases": {
+        "like": 1
+      },
+      "gases|||like": {
+        "argon": 1
+      },
+      "like|||argon": {
+        "and": 1
+      },
+      "argon|||and": {
+        "carbon": 1
+      },
+      "and|||carbon": {
+        "dioxide": 1
+      },
+      "carbon|||dioxide": {
+        "about": 1
+      },
+      "dioxide|||about": {
+        "71%": 1
+      },
+      "about|||71%": {
+        "of": 1
+      },
+      "71%|||of": {
+        "Earth's": 1
+      },
+      "of|||Earth's": {
+        "surface": 1
+      },
+      "Earth's|||surface": {
+        "is": 1
+      },
+      "surface|||is": {
+        "covered": 1
+      },
+      "is|||covered": {
+        "by": 1
+      },
+      "covered|||by": {
+        "water,": 1
+      },
+      "by|||water,": {
+        "mainly": 1
+      },
+      "water,|||mainly": {
+        "oceans,": 1
+      },
+      "mainly|||oceans,": {
+        "and": 1
+      },
+      "oceans,|||and": {
+        "the": 1
+      },
+      "and|||the": {
+        "remaining": 1,
+        "internet,": 2,
+        "lingering": 2
+      },
+      "the|||remaining": {
+        "29%": 1
+      },
+      "remaining|||29%": {
+        "is": 1
+      },
+      "29%|||is": {
+        "land": 1
+      },
+      "is|||land": {
+        "divided": 1
+      },
+      "land|||divided": {
+        "into": 1
+      },
+      "divided|||into": {
+        "seven": 1
+      },
+      "into|||seven": {
+        "continents": 1
+      },
+      "seven|||continents": {
+        "Earth": 1
+      },
+      "continents|||Earth": {
+        "orbits": 1
+      },
+      "Earth|||orbits": {
+        "the": 1
+      },
+      "orbits|||the": {
+        "Sun": 1
+      },
+      "Sun|||once": {
+        "every": 1
+      },
+      "once|||every": {
+        "36525": 1
+      },
+      "every|||36525": {
+        "days": 1
+      },
+      "36525|||days": {
+        "(one": 1
+      },
+      "days|||(one": {
+        "year)": 1
+      },
+      "(one|||year)": {
+        "and": 1
+      },
+      "year)|||and": {
+        "rotates": 1
+      },
+      "and|||rotates": {
+        "on": 1
+      },
+      "rotates|||on": {
+        "its": 1
+      },
+      "on|||its": {
+        "axis": 1
+      },
+      "its|||axis": {
+        "every": 1
+      },
+      "axis|||every": {
+        "24": 1
+      },
+      "every|||24": {
+        "hours,": 1
+      },
+      "24|||hours,": {
+        "giving": 1
+      },
+      "hours,|||giving": {
+        "us": 1
+      },
+      "giving|||us": {
+        "day": 1
+      },
+      "us|||day": {
+        "and": 1
+      },
+      "day|||and": {
+        "night": 1
+      },
+      "and|||night": {
+        "the": 1
+      },
+      "night|||the": {
+        "planet": 1
+      },
+      "the|||planet": {
+        "has": 1
+      },
+      "planet|||has": {
+        "one": 1
+      },
+      "has|||one": {
+        "natural": 1
+      },
+      "one|||natural": {
+        "satellite,": 1
+      },
+      "natural|||satellite,": {
+        "the": 1
+      },
+      "satellite,|||the": {
+        "Moon,": 1
+      },
+      "the|||Moon,": {
+        "which": 1
+      },
+      "Moon,|||which": {
+        "affects": 1
+      },
+      "which|||affects": {
+        "ocean": 1
+      },
+      "affects|||ocean": {
+        "tides": 1
+      },
+      "ocean|||tides": {
+        "and": 1
+      },
+      "tides|||and": {
+        "stabilizes": 1
+      },
+      "and|||stabilizes": {
+        "Earth's": 1
+      },
+      "stabilizes|||Earth's": {
+        "tilt": 1
+      },
+      "Earth's|||tilt": {
+        "Earth": 1
+      },
+      "tilt|||Earth": {
+        "is": 1
+      },
+      "Earth|||is": {
+        "the": 1
+      },
+      "the|||only": {
+        "known": 1
+      },
+      "only|||known": {
+        "place": 1
+      },
+      "known|||place": {
+        "in": 1
+      },
+      "place|||in": {
+        "the": 1
+      },
+      "in|||the": {
+        "universe": 1
+      },
+      "the|||universe": {
+        "that": 1
+      },
+      "universe|||that": {
+        "supports": 1
+      },
+      "that|||supports": {
+        "life,": 1
+      },
+      "supports|||life,": {
+        "thanks": 1
+      },
+      "life,|||thanks": {
+        "to": 1
+      },
+      "thanks|||to": {
+        "liquid": 1
+      },
+      "to|||liquid": {
+        "water,": 1
+      },
+      "liquid|||water,": {
+        "a": 1
+      },
+      "water,|||a": {
+        "protective": 1
+      },
+      "a|||protective": {
+        "magnetic": 1
+      },
+      "protective|||magnetic": {
+        "field,": 1
+      },
+      "magnetic|||field,": {
+        "and": 1
+      },
+      "field,|||and": {
+        "a": 1
+      },
+      "a|||suitable": {
+        "distance": 1
+      },
+      "suitable|||distance": {
+        "from": 1
+      },
+      "distance|||from": {
+        "the": 1
+      },
+      "what|||is": {
+        "the": 4,
+        "hi": 1
+      },
+      "the|||world?": {
+        "the": 1
+      },
+      "world?|||the": {
+        "current": 1
+      },
+      "the|||current": {
+        "world": 4
+      },
+      "current|||world": {
+        "has": 4
+      },
+      "world|||has": {
+        "about": 4
+      },
+      "has|||about": {
+        "eight": 4
+      },
+      "about|||eight": {
+        "billion": 4
+      },
+      "eight|||billion": {
+        "people": 4
+      },
+      "billion|||people": {
+        "living": 4
+      },
+      "people|||living": {
+        "in": 4
+      },
+      "living|||in": {
+        "nearly": 4
+      },
+      "in|||nearly": {
+        "two": 4
+      },
+      "nearly|||two": {
+        "hundred": 4
+      },
+      "two|||hundred": {
+        "countries,": 4
+      },
+      "hundred|||countries,": {
+        "with": 4
+      },
+      "countries,|||with": {
+        "the": 4
+      },
+      "with|||the": {
+        "largest": 2,
+        "superpowers": 2
+      },
+      "the|||largest": {
+        "populations": 2
+      },
+      "largest|||populations": {
+        "in": 2
+      },
+      "populations|||in": {
+        "China": 2
+      },
+      "in|||China": {
+        "and": 2
+      },
+      "China|||and": {
+        "India": 2
+      },
+      "and|||India": {
+        "climate": 2
+      },
+      "India|||climate": {
+        "change": 2
+      },
+      "climate|||change": {
+        "is": 2
+      },
+      "change|||is": {
+        "causing": 2
+      },
+      "is|||causing": {
+        "rising": 2
+      },
+      "causing|||rising": {
+        "sea": 2
+      },
+      "rising|||sea": {
+        "levels,": 2
+      },
+      "sea|||levels,": {
+        "stronger": 2
+      },
+      "levels,|||stronger": {
+        "storms,": 2
+      },
+      "stronger|||storms,": {
+        "and": 2
+      },
+      "storms,|||and": {
+        "record": 2
+      },
+      "and|||record": {
+        "heatwaves": 2
+      },
+      "record|||heatwaves": {
+        "across": 2
+      },
+      "heatwaves|||across": {
+        "many": 2
+      },
+      "across|||many": {
+        "regions": 2
+      },
+      "many|||regions": {
+        "technology": 2
+      },
+      "regions|||technology": {
+        "connects": 2
+      },
+      "technology|||connects": {
+        "the": 2
+      },
+      "connects|||the": {
+        "globe": 2
+      },
+      "the|||globe": {
+        "through": 2
+      },
+      "globe|||through": {
+        "smartphones,": 2
+      },
+      "through|||smartphones,": {
+        "satellites,": 2
+      },
+      "smartphones,|||satellites,": {
+        "and": 2
+      },
+      "satellites,|||and": {
+        "the": 2
+      },
+      "the|||internet,": {
+        "but": 2
+      },
+      "internet,|||but": {
+        "digital": 2
+      },
+      "but|||digital": {
+        "divides": 2
+      },
+      "digital|||divides": {
+        "still": 2
+      },
+      "divides|||still": {
+        "exist": 2
+      },
+      "still|||exist": {
+        "major": 2
+      },
+      "exist|||major": {
+        "challenges": 2
+      },
+      "major|||challenges": {
+        "include": 2
+      },
+      "challenges|||include": {
+        "poverty,": 2
+      },
+      "include|||poverty,": {
+        "war": 2
+      },
+      "poverty,|||war": {
+        "in": 2
+      },
+      "war|||in": {
+        "places": 2
+      },
+      "in|||places": {
+        "like": 2
+      },
+      "places|||like": {
+        "Ukraine": 2
+      },
+      "like|||Ukraine": {
+        "and": 2
+      },
+      "Ukraine|||and": {
+        "Gaza,": 2
+      },
+      "and|||Gaza,": {
+        "and": 2
+      },
+      "Gaza,|||and": {
+        "the": 2
+      },
+      "the|||lingering": {
+        "effects": 2
+      },
+      "lingering|||effects": {
+        "of": 2
+      },
+      "effects|||of": {
+        "the": 2
+      },
+      "of|||the": {
+        "COVID": 2,
+        "same": 2,
+        "euphoria.io": 2,
+        "xkcd": 2
+      },
+      "the|||COVID": {
+        "pandemic": 2
+      },
+      "COVID|||pandemic": {
+        "the": 2
+      },
+      "pandemic|||the": {
+        "global": 2
+      },
+      "the|||global": {
+        "economy": 2
+      },
+      "global|||economy": {
+        "runs": 2
+      },
+      "economy|||runs": {
+        "on": 2
+      },
+      "runs|||on": {
+        "fossil": 2
+      },
+      "on|||fossil": {
+        "fuels,": 2
+      },
+      "fossil|||fuels,": {
+        "renewable": 2
+      },
+      "fuels,|||renewable": {
+        "energy": 2
+      },
+      "renewable|||energy": {
+        "like": 2
+      },
+      "energy|||like": {
+        "solar": 2
+      },
+      "like|||solar": {
+        "and": 2
+      },
+      "solar|||and": {
+        "wind": 2
+      },
+      "and|||wind": {
+        "is": 2
+      },
+      "wind|||is": {
+        "growing": 2
+      },
+      "is|||growing": {
+        "fast": 2
+      },
+      "growing|||fast": {
+        "but": 2
+      },
+      "fast|||but": {
+        "still": 2
+      },
+      "but|||still": {
+        "too": 2
+      },
+      "still|||too": {
+        "slow": 2
+      },
+      "too|||slow": {
+        "oceans": 2
+      },
+      "slow|||oceans": {
+        "are": 2
+      },
+      "oceans|||are": {
+        "filling": 2
+      },
+      "are|||filling": {
+        "with": 2
+      },
+      "filling|||with": {
+        "plastic,": 2
+      },
+      "with|||plastic,": {
+        "forests": 2
+      },
+      "plastic,|||forests": {
+        "are": 2
+      },
+      "forests|||are": {
+        "shrinking,": 2
+      },
+      "are|||shrinking,": {
+        "and": 2
+      },
+      "shrinking,|||and": {
+        "species": 2
+      },
+      "and|||species": {
+        "are": 2
+      },
+      "species|||are": {
+        "disappearing": 2
+      },
+      "are|||disappearing": {
+        "at": 2
+      },
+      "disappearing|||at": {
+        "an": 2
+      },
+      "at|||an": {
+        "alarming": 2
+      },
+      "an|||alarming": {
+        "rate": 2
+      },
+      "alarming|||rate": {
+        "on": 2
+      },
+      "rate|||on": {
+        "the": 2
+      },
+      "on|||the": {
+        "positive": 2,
+        "Euphoria": 2,
+        "present": 2
+      },
+      "the|||positive": {
+        "side,": 2
+      },
+      "positive|||side,": {
+        "vaccines": 2
+      },
+      "side,|||vaccines": {
+        "save": 2
+      },
+      "vaccines|||save": {
+        "millions": 2
+      },
+      "save|||millions": {
+        "of": 2
+      },
+      "millions|||of": {
+        "lives,": 2
+      },
+      "of|||lives,": {
+        "extreme": 2
+      },
+      "lives,|||extreme": {
+        "poverty": 2
+      },
+      "extreme|||poverty": {
+        "has": 2
+      },
+      "poverty|||has": {
+        "dropped": 2
+      },
+      "has|||dropped": {
+        "sharply,": 2
+      },
+      "dropped|||sharply,": {
+        "and": 2
+      },
+      "sharply,|||and": {
+        "international": 2
+      },
+      "and|||international": {
+        "cooperation": 2
+      },
+      "international|||cooperation": {
+        "continues": 2
+      },
+      "cooperation|||continues": {
+        "through": 2
+      },
+      "continues|||through": {
+        "the": 2
+      },
+      "through|||the": {
+        "United": 2
+      },
+      "the|||United": {
+        "Nations": 2
+      },
+      "United|||Nations": {
+        "the": 2
+      },
+      "Nations|||the": {
+        "world": 2
+      },
+      "the|||world": {
+        "today": 2,
+        "?": 3
+      },
+      "world|||today": {
+        "is": 2
+      },
+      "today|||is": {
+        "more": 2
+      },
+      "is|||more": {
+        "connected": 2
+      },
+      "more|||connected": {
+        "and": 2
+      },
+      "connected|||and": {
+        "more": 2
+      },
+      "and|||more": {
+        "fragile": 2
+      },
+      "more|||fragile": {
+        "than": 2
+      },
+      "fragile|||than": {
+        "ever": 2
+      },
+      "than|||ever": {
+        "before": 2
+      },
+      "world|||?": {
+        "the": 3
+      },
+      "?|||the": {
+        "current": 3
+      },
+      "the|||superpowers": {
+        "US": 2
+      },
+      "superpowers|||US": {
+        ",": 2
+      },
+      "US|||,": {
+        "a": 2
+      },
+      ",|||a": {
+        "republic": 2,
+        "dictatorship": 2,
+        "table": 2,
+        "organization": 2,
+        "great": 2
+      },
+      "a|||republic": {
+        "(democracy)": 2
+      },
+      "republic|||(democracy)": {
+        "and": 2
+      },
+      "(democracy)|||and": {
+        "China": 2
+      },
+      "and|||China": {
+        ",": 2
+      },
+      "China|||,": {
+        "a": 2
+      },
+      "a|||dictatorship": {
+        "(communism": 2
+      },
+      "dictatorship|||(communism": {
+        "with": 2
+      },
+      "(communism|||with": {
+        "chinese": 2
+      },
+      "with|||chinese": {
+        "values": 2
+      },
+      "chinese|||values": {
+        "(semi": 2
+      },
+      "values|||(semi": {
+        "free": 2
+      },
+      "(semi|||free": {
+        "market)).": 2
+      },
+      "free|||market)).": {
+        "World": 2
+      },
+      "market)).|||World": {
+        "bodies": 2
+      },
+      "World|||bodies": {
+        "include": 2
+      },
+      "bodies|||include": {
+        "UN": 2
+      },
+      "include|||UN": {
+        ",": 2
+      },
+      "UN|||,": {
+        "a": 2
+      },
+      "a|||table": {
+        "for": 2
+      },
+      "table|||for": {
+        "talkes,": 2
+      },
+      "for|||talkes,": {
+        "NATO": 2
+      },
+      "talkes,|||NATO": {
+        ",": 2
+      },
+      "NATO|||,": {
+        "a": 2
+      },
+      "a|||organization": {
+        "for": 2
+      },
+      "organization|||for": {
+        "giving": 2
+      },
+      "for|||giving": {
+        "aid": 2
+      },
+      "giving|||aid": {
+        "to": 2
+      },
+      "aid|||to": {
+        "other": 2
+      },
+      "to|||other": {
+        "countries": 2
+      },
+      "other|||countries": {
+        ",": 2
+      },
+      "countries|||,": {
+        "the": 2
+      },
+      ",|||the": {
+        "RedCross": 2
+      },
+      "the|||RedCross": {
+        ",": 2
+      },
+      "RedCross|||,": {
+        "for": 2
+      },
+      ",|||for": {
+        "helping": 2
+      },
+      "for|||helping": {
+        "people": 2
+      },
+      "helping|||people": {
+        "in": 2
+      },
+      "people|||in": {
+        "need": 2
+      },
+      "in|||need": {
+        ",": 2
+      },
+      "need|||,": {
+        "Free": 2
+      },
+      ",|||Free": {
+        "Liniux": 2
+      },
+      "Free|||Liniux": {
+        "Foundation": 2
+      },
+      "Liniux|||Foundation": {
+        ",": 2
+      },
+      "Foundation|||,": {
+        "a": 2
+      },
+      "a|||great": {
+        "thing.": 2
+      },
+      "is|||hi": {
+        "it": 1
+      },
+      "hi|||it": {
+        "is": 1
+      },
+      "is|||a": {
+        "salutation.": 1,
+        "CORS": 1
+      },
+      "ERROR:|||Failed": {
+        "to": 1
+      },
+      "Failed|||to": {
+        "fetch": 1
+      },
+      "to|||fetch": {
+        "Tip:": 1
+      },
+      "fetch|||Tip:": {
+        "If": 1
+      },
+      "Tip:|||If": {
+        "this": 1
+      },
+      "If|||this": {
+        "is": 1
+      },
+      "this|||is": {
+        "a": 1
+      },
+      "a|||CORS": {
+        "error,": 1,
+        "proxy": 1
+      },
+      "CORS|||error,": {
+        "try": 1
+      },
+      "error,|||try": {
+        "using": 1
+      },
+      "try|||using": {
+        "a": 1
+      },
+      "using|||a": {
+        "CORS": 1
+      },
+      "CORS|||proxy": {
+        "(enter": 1
+      },
+      "proxy|||(enter": {
+        "a": 1
+      },
+      "(enter|||a": {
+        "proxy": 1
+      },
+      "a|||proxy": {
+        "URL": 1
+      },
+      "proxy|||URL": {
+        "above)": 1
+      },
+      "URL|||above)": {
+        "or": 1
+      },
+      "above)|||or": {
+        "copy-paste": 1
+      },
+      "or|||copy-paste": {
+        "the": 1
+      },
+      "copy-paste|||the": {
+        "text": 1
+      },
+      "the|||text": {
+        "manually": 1
+      },
+      "text|||manually": {
+        "into": 1
+      },
+      "manually|||into": {
+        "the": 1
+      },
+      "into|||the": {
+        "Training": 1
+      },
+      "the|||Training": {
+        "section.": 1
+      },
+      "\"Euphoria\"|||are": {
+        "technically": 1
+      },
+      "are|||technically": {
+        "part": 1
+      },
+      "technically|||part": {
+        "of": 2
+      },
+      "part|||of": {
+        "the": 2
+      },
+      "the|||same": {
+        "real-time": 2
+      },
+      "same|||real-time": {
+        "community": 2
+      },
+      "real-time|||community": {
+        "platform.": 2
+      },
+      "community|||platform.": {
+        "Their": 2
+      },
+      "platform.|||Their": {
+        "only": 2
+      },
+      "Their|||only": {
+        "connection": 2
+      },
+      "only|||connection": {
+        "to": 2
+      },
+      "connection|||to": {
+        "xkcd": 2
+      },
+      "to|||xkcd": {
+        "is": 2
+      },
+      "xkcd|||is": {
+        "as": 2
+      },
+      "is|||as": {
+        "the": 2
+      },
+      "as|||the": {
+        "host": 2
+      },
+      "the|||host": {
+        "for": 2
+      },
+      "host|||for": {
+        "an": 2
+      },
+      "for|||an": {
+        "official": 2
+      },
+      "an|||official": {
+        "chatroom": 2
+      },
+      "official|||chatroom": {
+        "referenced": 2
+      },
+      "chatroom|||referenced": {
+        "in": 2
+      },
+      "referenced|||in": {
+        "Randall": 2,
+        "xkcd's": 2
+      },
+      "in|||Randall": {
+        "Munroe's": 2
+      },
+      "Randall|||Munroe's": {
+        "webcomics.": 2
+      },
+      "Munroe's|||webcomics.": {
+        "Heim": 2
+      },
+      "webcomics.|||Heim": {
+        "Server": 2
+      },
+      "Heim|||Server": {
+        "API:": 2
+      },
+      "Server|||API:": {
+        "The": 2
+      },
+      "API:|||The": {
+        "backend": 2
+      },
+      "The|||backend": {
+        "of": 2
+      },
+      "backend|||of": {
+        "the": 2
+      },
+      "the|||euphoria.io": {
+        "platform.": 2
+      },
+      "euphoria.io|||platform.": {
+        "It": 2
+      },
+      "platform.|||It": {
+        "includes:": 2
+      },
+      "It|||includes:": {
+        "·": 2
+      },
+      "includes:|||·": {
+        "Back-end": 2
+      },
+      "·|||Back-end": {
+        "logic:": 2
+      },
+      "Back-end|||logic:": {
+        "A": 2
+      },
+      "logic:|||A": {
+        "Go": 2
+      },
+      "A|||Go": {
+        "server": 2
+      },
+      "Go|||server": {
+        "that": 2
+      },
+      "server|||that": {
+        "handles": 2
+      },
+      "that|||handles": {
+        "chat": 2
+      },
+      "handles|||chat": {
+        "rooms,": 2
+      },
+      "chat|||rooms,": {
+        "user": 2,
+        "forums,": 2
+      },
+      "rooms,|||user": {
+        "permissions,": 2
+      },
+      "user|||permissions,": {
+        "and": 2
+      },
+      "permissions,|||and": {
+        "real-time": 2
+      },
+      "and|||real-time": {
+        "messaging.": 2
+      },
+      "real-time|||messaging.": {
+        "·": 2
+      },
+      "messaging.|||·": {
+        "Communication": 2
+      },
+      "·|||Communication": {
+        "protocol:": 2
+      },
+      "Communication|||protocol:": {
+        "Uses": 2
+      },
+      "protocol:|||Uses": {
+        "WebSockets": 2
+      },
+      "Uses|||WebSockets": {
+        "to": 2
+      },
+      "WebSockets|||to": {
+        "transmit": 2
+      },
+      "to|||transmit": {
+        "JSON": 2
+      },
+      "transmit|||JSON": {
+        "data": 2
+      },
+      "JSON|||data": {
+        "between": 2
+      },
+      "data|||between": {
+        "the": 2
+      },
+      "between|||the": {
+        "server": 2
+      },
+      "the|||server": {
+        "and": 2
+      },
+      "server|||and": {
+        "all": 2
+      },
+      "and|||all": {
+        "connected": 2
+      },
+      "all|||connected": {
+        "clients.": 2
+      },
+      "connected|||clients.": {
+        "·": 2
+      },
+      "clients.|||·": {
+        "Database:": 2
+      },
+      "·|||Database:": {
+        "Uses": 2
+      },
+      "Database:|||Uses": {
+        "PostgreSQL": 2
+      },
+      "Uses|||PostgreSQL": {
+        "for": 2
+      },
+      "PostgreSQL|||for": {
+        "data": 2
+      },
+      "for|||data": {
+        "persistence.": 2
+      },
+      "data|||persistence.": {
+        "·": 2
+      },
+      "persistence.|||·": {
+        "Front-end": 2
+      },
+      "·|||Front-end": {
+        "client:": 2
+      },
+      "Front-end|||client:": {
+        "Built": 2
+      },
+      "client:|||Built": {
+        "with": 2
+      },
+      "Built|||with": {
+        "React/Reflux": 2
+      },
+      "with|||React/Reflux": {
+        "to": 2
+      },
+      "React/Reflux|||to": {
+        "provide": 2
+      },
+      "to|||provide": {
+        "the": 2
+      },
+      "provide|||the": {
+        "user": 2
+      },
+      "the|||user": {
+        "interface.": 2
+      },
+      "user|||interface.": {
+        "·": 2
+      },
+      "interface.|||·": {
+        "State:": 2
+      },
+      "·|||State:": {
+        "It's": 2
+      },
+      "State:|||It's": {
+        "marked": 2
+      },
+      "It's|||marked": {
+        "as": 2
+      },
+      "marked|||as": {
+        "a": 2
+      },
+      "as|||a": {
+        "pre-alpha": 2,
+        "bridge,": 2,
+        "\"cozy": 2
+      },
+      "a|||pre-alpha": {
+        "release": 2
+      },
+      "pre-alpha|||release": {
+        "and": 2
+      },
+      "release|||and": {
+        "is": 2
+      },
+      "and|||is": {
+        "currently": 2
+      },
+      "is|||currently": {
+        "not": 2
+      },
+      "currently|||not": {
+        "under": 2
+      },
+      "not|||under": {
+        "active": 2
+      },
+      "under|||active": {
+        "development.": 2
+      },
+      "active|||development.": {
+        "Connection": 2
+      },
+      "development.|||Connection": {
+        "to": 2
+      },
+      "Connection|||to": {
+        "xkcd:": 2
+      },
+      "to|||xkcd:": {
+        "There's": 2
+      },
+      "xkcd:|||There's": {
+        "a": 2
+      },
+      "There's|||a": {
+        "clear": 2
+      },
+      "a|||clear": {
+        "but": 2
+      },
+      "clear|||but": {
+        "separate": 2
+      },
+      "but|||separate": {
+        "connection.": 2
+      },
+      "separate|||connection.": {
+        "·": 2
+      },
+      "connection.|||·": {
+        "Official": 2
+      },
+      "·|||Official": {
+        "Chatroom:": 2
+      },
+      "Official|||Chatroom:": {
+        "The": 2
+      },
+      "Chatroom:|||The": {
+        "webcomic": 2
+      },
+      "The|||webcomic": {
+        "xkcd": 2
+      },
+      "webcomic|||xkcd": {
+        "has": 2
+      },
+      "xkcd|||has": {
+        "a": 2
+      },
+      "a|||dedicated": {
+        "chatroom": 2
+      },
+      "dedicated|||chatroom": {
+        "hosted": 2
+      },
+      "chatroom|||hosted": {
+        "on": 2
+      },
+      "hosted|||on": {
+        "the": 2
+      },
+      "the|||Euphoria": {
+        "platform": 2,
+        "community": 2
+      },
+      "Euphoria|||platform": {
+        "for": 2
+      },
+      "platform|||for": {
+        "readers": 2
+      },
+      "for|||readers": {
+        "to": 2
+      },
+      "readers|||to": {
+        "discuss": 2
+      },
+      "to|||discuss": {
+        "the": 2
+      },
+      "discuss|||the": {
+        "comics.": 2
+      },
+      "the|||comics.": {
+        "·": 2
+      },
+      "comics.|||·": {
+        "Referenced": 2
+      },
+      "·|||Referenced": {
+        "in": 2
+      },
+      "Referenced|||in": {
+        "Comics:": 2
+      },
+      "in|||Comics:": {
+        "This": 2
+      },
+      "Comics:|||This": {
+        "chatroom": 2
+      },
+      "This|||chatroom": {
+        "is": 2
+      },
+      "chatroom|||is": {
+        "directly": 2
+      },
+      "is|||directly": {
+        "referenced": 2
+      },
+      "directly|||referenced": {
+        "in": 2
+      },
+      "in|||xkcd's": {
+        "Comic": 2
+      },
+      "xkcd's|||Comic": {
+        "#1506": 2
+      },
+      "Comic|||#1506": {
+        "(\"xkcloud\").": 2
+      },
+      "#1506|||(\"xkcloud\").": {
+        "·": 2
+      },
+      "(\"xkcloud\").|||·": {
+        "Platform": 2
+      },
+      "·|||Platform": {
+        "Evolution:": 2
+      },
+      "Platform|||Evolution:": {
+        "This": 2
+      },
+      "Evolution:|||This": {
+        "chat": 2
+      },
+      "This|||chat": {
+        "started": 2
+      },
+      "chat|||started": {
+        "at": 2
+      },
+      "started|||at": {
+        "euphoria.io/room/xkcd": 2
+      },
+      "at|||euphoria.io/room/xkcd": {
+        "and": 2
+      },
+      "euphoria.io/room/xkcd|||and": {
+        "later": 2
+      },
+      "and|||later": {
+        "moved": 2
+      },
+      "later|||moved": {
+        "to": 2
+      },
+      "moved|||to": {
+        "euphoria.leet.nu.": 2
+      },
+      "to|||euphoria.leet.nu.": {
+        "·": 2
+      },
+      "euphoria.leet.nu.|||·": {
+        "Community": 2
+      },
+      "·|||Community": {
+        "Bridge:": 2
+      },
+      "Community|||Bridge:": {
+        "This": 2
+      },
+      "Bridge:|||This": {
+        "setup": 2
+      },
+      "This|||setup": {
+        "serves": 2
+      },
+      "setup|||serves": {
+        "as": 2
+      },
+      "serves|||as": {
+        "a": 2
+      },
+      "a|||bridge,": {
+        "using": 2
+      },
+      "bridge,|||using": {
+        "the": 2
+      },
+      "using|||the": {
+        "Heim": 2
+      },
+      "the|||Heim": {
+        "back-end": 2
+      },
+      "Heim|||back-end": {
+        "to": 2
+      },
+      "back-end|||to": {
+        "connect": 2
+      },
+      "to|||connect": {
+        "the": 2
+      },
+      "connect|||the": {
+        "Euphoria": 2
+      },
+      "Euphoria|||community": {
+        "with": 2
+      },
+      "community|||with": {
+        "fans": 2
+      },
+      "with|||fans": {
+        "of": 2
+      },
+      "fans|||of": {
+        "the": 2
+      },
+      "the|||xkcd": {
+        "webcomic.": 2
+      },
+      "euphoria.leet.nu:|||A": {
+        "platform": 1
+      },
+      "A|||platform": {
+        "being": 2
+      },
+      "platform|||being": {
+        "built": 2
+      },
+      "being|||built": {
+        "for": 2
+      },
+      "built|||for": {
+        "online": 2
+      },
+      "for|||online": {
+        "communities.": 2
+      },
+      "online|||communities.": {
+        "It's": 2
+      },
+      "communities.|||It's": {
+        "described": 2
+      },
+      "It's|||described": {
+        "as": 2
+      },
+      "described|||as": {
+        "a": 2
+      },
+      "a|||\"cozy": {
+        "realtime": 2
+      },
+      "\"cozy|||realtime": {
+        "discussion": 2
+      },
+      "realtime|||discussion": {
+        "space\"": 2
+      },
+      "discussion|||space\"": {
+        "that": 2
+      },
+      "space\"|||that": {
+        "blends": 2
+      },
+      "that|||blends": {
+        "the": 2
+      },
+      "blends|||the": {
+        "features": 2
+      },
+      "the|||features": {
+        "of": 2
+      },
+      "features|||of": {
+        "chat": 2
+      },
+      "of|||chat": {
+        "rooms,": 2
+      },
+      "rooms,|||forums,": {
+        "and": 2
+      },
+      "forums,|||and": {
+        "mailing": 2
+      },
+      "and|||mailing": {
+        "lists,": 2
+      },
+      "mailing|||lists,": {
+        "designed": 2
+      },
+      "lists,|||designed": {
+        "to": 2
+      },
+      "designed|||to": {
+        "help": 2
+      },
+      "to|||help": {
+        "people": 2
+      },
+      "help|||people": {
+        "connect": 2
+      },
+      "people|||connect": {
+        "with": 2
+      },
+      "connect|||with": {
+        "friends,": 2
+      },
+      "with|||friends,": {
+        "groups,": 2
+      },
+      "friends,|||groups,": {
+        "and": 2
+      },
+      "groups,|||and": {
+        "others": 2
+      },
+      "and|||others": {
+        "from": 2
+      },
+      "others|||from": {
+        "around": 2
+      },
+      "from|||around": {
+        "the": 2
+      },
+      "around|||the": {
+        "world.": 2
+      },
+      "the|||world.": {
+        "·": 2
+      },
+      "world.|||·": {
+        "leet.nu:": 2
+      },
+      "·|||leet.nu:": {
+        "This": 2
+      },
+      "leet.nu:|||This": {
+        "website": 3
+      },
+      "This|||website": {
+        "couldn't": 2,
+        "is": 1
+      },
+      "website|||couldn't": {
+        "be": 2
+      },
+      "couldn't|||be": {
+        "loaded": 2
+      },
+      "be|||loaded": {
+        "or": 2
+      },
+      "loaded|||or": {
+        "didn't": 2
+      },
+      "or|||didn't": {
+        "respond": 2
+      },
+      "didn't|||respond": {
+        "to": 2
+      },
+      "respond|||to": {
+        "connection": 2
+      },
+      "to|||connection": {
+        "attempts.": 2
+      },
+      "connection|||attempts.": {
+        "·": 2
+      },
+      "attempts.|||·": {
+        "instant.leet.nu/about.html:": 1,
+        "instant.leet.nu": 1
+      },
+      "·|||instant.leet.nu/about.html:": {
+        "A": 1
+      },
+      "instant.leet.nu/about.html:|||A": {
+        "minimalist,": 1
+      },
+      "A|||minimalist,": {
+        "ephemeral": 2
+      },
+      "minimalist,|||ephemeral": {
+        "chat": 2
+      },
+      "ephemeral|||chat": {
+        "site": 2
+      },
+      "chat|||site": {
+        "that": 2
+      },
+      "site|||that": {
+        "focuses": 2
+      },
+      "that|||focuses": {
+        "on": 2
+      },
+      "focuses|||on": {
+        "the": 2
+      },
+      "the|||present": {
+        "moment": 2
+      },
+      "present|||moment": {
+        "and": 2
+      },
+      "moment|||and": {
+        "does": 2
+      },
+      "and|||does": {
+        "not": 2
+      },
+      "does|||not": {
+        "store": 2
+      },
+      "not|||store": {
+        "any": 2
+      },
+      "store|||any": {
+        "messages": 2
+      },
+      "any|||messages": {
+        "once": 2
+      },
+      "messages|||once": {
+        "everyone": 2
+      },
+      "once|||everyone": {
+        "has": 2
+      },
+      "everyone|||has": {
+        "left.": 2
+      },
+      "euphoria.leet.nu|||or": {
+        "euphoria": 1
+      },
+      "or|||euphoria": {
+        ":": 1
+      },
+      "euphoria|||:": {
+        "A": 1
+      },
+      ":|||A": {
+        "platform": 1,
+        "minimalist,": 1
+      },
+      "·|||instant.leet.nu": {
+        "or": 1
+      },
+      "instant.leet.nu|||or": {
+        "instant": 1
+      },
+      "or|||instant": {
+        ":": 1
+      },
+      "instant|||:": {
+        "A": 1
+      },
+      "Euphoria|||is": {
+        "technically": 1
+      },
+      "is|||technically": {
+        "part": 1
+      },
+      "website|||is": {
+        "the": 1
+      },
+      "the|||homepage": {
+        "for": 1
+      },
+      "homepage|||for": {
+        "euphoria.leet.nu_instant.leet.nu": 1
+      },
+      "for|||euphoria.leet.nu_instant.leet.nu": {
+        "leet.nu": 1
+      },
+      "euphoria.leet.nu_instant.leet.nu|||leet.nu": {
+        "also": 1
+      },
+      "leet.nu|||also": {
+        "hosts": 1
+      },
+      "also|||hosts": {
+        "a": 1
+      },
+      "hosts|||a": {
+        "private": 1
+      },
+      "a|||private": {
+        "whitelist": 1
+      },
+      "private|||whitelist": {
+        "Minecraft": 1
+      },
+      "whitelist|||Minecraft": {
+        "server": 1
+      },
+      "Minecraft|||server": {
+        "see": 1
+      },
+      "server|||see": {
+        "euphoria.leet.nj/room/minecraft!": 1
+      },
+      "DOOOM|||trump": {
+        "away:": 1
+      },
+      "trump|||away:": {
+        "Next": 1
+      },
+      "away:|||Next": {
+        "US": 1
+      },
+      "Next|||US": {
+        "president": 1
+      },
+      "US|||president": {
+        "assumes": 1
+      },
+      "president|||assumes": {
+        "office": 1
+      },
+      "assumes|||office": {
+        "suneatsearth:": 1
+      },
+      "office|||suneatsearth:": {
+        "The": 1
+      },
+      "suneatsearth:|||The": {
+        "Sun": 1
+      },
+      "The|||Sun": {
+        "engulfs": 1
+      },
+      "Sun|||engulfs": {
+        "the": 1
+      },
+      "engulfs|||the": {
+        "Earth": 1
+      },
+      "the|||Earth": {
+        "nextyear:": 1
+      },
+      "Earth|||nextyear:": {
+        "2026": 1
+      },
+      "nextyear:|||2026": {
+        "ends": 1
+      },
+      "2026|||ends": {
+        "2028:": 1
+      },
+      "ends|||2028:": {
+        "2028": 1
+      },
+      "2028:|||2028": {
+        "starts": 1
+      },
+      "2028|||starts": {
+        "in:": 1
+      },
+      "starts|||in:": {
+        "DOOMClock:": 1
+      },
+      "in:|||DOOMClock:": {
+        "the": 1
+      },
+      "DOOMClock:|||the": {
+        "time": 1
+      },
+      "the|||time": {
+        "DOOM": 1
+      },
+      "time|||DOOM": {
+        "happens": 1
+      }
+    },
+    "3": {
+      "hi|||i|||am": {
+        "a": 1
+      },
+      "i|||am|||a": {
+        "dumb": 1
+      },
+      "am|||a|||dumb": {
+        "guy": 1
+      },
+      "a|||dumb|||guy": {
+        "called": 1
+      },
+      "dumb|||guy|||called": {
+        "sam.": 1
+      },
+      "What|||is|||the": {
+        "earth": 1
+      },
+      "is|||the|||earth": {
+        "?": 1
+      },
+      "the|||earth|||?": {
+        "Earth": 1
+      },
+      "earth|||?|||Earth": {
+        "a": 1
+      },
+      "?|||Earth|||a": {
+        "ball,": 1
+      },
+      "Earth|||a|||ball,": {
+        "it": 1
+      },
+      "a|||ball,|||it": {
+        "is": 1
+      },
+      "ball,|||it|||is": {
+        "the": 1
+      },
+      "it|||is|||the": {
+        "third": 1
+      },
+      "is|||the|||third": {
+        "planet": 1
+      },
+      "the|||third|||planet": {
+        "from": 1
+      },
+      "third|||planet|||from": {
+        "the": 1
+      },
+      "planet|||from|||the": {
+        "Sun": 1
+      },
+      "from|||the|||Sun": {
+        "and": 1
+      },
+      "the|||Sun|||and": {
+        "it": 1
+      },
+      "Sun|||and|||it": {
+        "has": 1
+      },
+      "and|||it|||has": {
+        "a": 1
+      },
+      "it|||has|||a": {
+        "diameter": 1
+      },
+      "has|||a|||diameter": {
+        "of": 1
+      },
+      "a|||diameter|||of": {
+        "about": 1
+      },
+      "diameter|||of|||about": {
+        "12742": 1
+      },
+      "of|||about|||12742": {
+        "kilometers": 1
+      },
+      "about|||12742|||kilometers": {
+        "with": 1
+      },
+      "12742|||kilometers|||with": {
+        "a": 1
+      },
+      "kilometers|||with|||a": {
+        "surface": 1
+      },
+      "with|||a|||surface": {
+        "area": 1
+      },
+      "a|||surface|||area": {
+        "of": 1
+      },
+      "surface|||area|||of": {
+        "510": 1
+      },
+      "area|||of|||510": {
+        "million": 1
+      },
+      "of|||510|||million": {
+        "square": 1
+      },
+      "510|||million|||square": {
+        "kilometers": 1
+      },
+      "million|||square|||kilometers": {
+        "Earth's": 1
+      },
+      "square|||kilometers|||Earth's": {
+        "structure": 1
+      },
+      "kilometers|||Earth's|||structure": {
+        "includes": 1
+      },
+      "Earth's|||structure|||includes": {
+        "a": 1
+      },
+      "structure|||includes|||a": {
+        "solid": 1
+      },
+      "includes|||a|||solid": {
+        "iron": 1
+      },
+      "a|||solid|||iron": {
+        "inner": 1
+      },
+      "solid|||iron|||inner": {
+        "core,": 1
+      },
+      "iron|||inner|||core,": {
+        "a": 1
+      },
+      "inner|||core,|||a": {
+        "liquid": 1
+      },
+      "core,|||a|||liquid": {
+        "outer": 1
+      },
+      "a|||liquid|||outer": {
+        "core,": 1
+      },
+      "liquid|||outer|||core,": {
+        "a": 1
+      },
+      "outer|||core,|||a": {
+        "thick": 1
+      },
+      "core,|||a|||thick": {
+        "mantle": 1
+      },
+      "a|||thick|||mantle": {
+        "of": 1
+      },
+      "thick|||mantle|||of": {
+        "hot": 1
+      },
+      "mantle|||of|||hot": {
+        "rock,": 1
+      },
+      "of|||hot|||rock,": {
+        "and": 1
+      },
+      "hot|||rock,|||and": {
+        "a": 1
+      },
+      "rock,|||and|||a": {
+        "thin": 1
+      },
+      "and|||a|||thin": {
+        "crust": 1
+      },
+      "a|||thin|||crust": {
+        "where": 1
+      },
+      "thin|||crust|||where": {
+        "we": 1
+      },
+      "crust|||where|||we": {
+        "live": 1
+      },
+      "where|||we|||live": {
+        "the": 1
+      },
+      "we|||live|||the": {
+        "atmosphere": 1
+      },
+      "live|||the|||atmosphere": {
+        "is": 1
+      },
+      "the|||atmosphere|||is": {
+        "mostly": 1
+      },
+      "atmosphere|||is|||mostly": {
+        "nitrogen": 1
+      },
+      "is|||mostly|||nitrogen": {
+        "(78%)": 1
+      },
+      "mostly|||nitrogen|||(78%)": {
+        "and": 1
+      },
+      "nitrogen|||(78%)|||and": {
+        "oxygen": 1
+      },
+      "(78%)|||and|||oxygen": {
+        "(21%)": 1
+      },
+      "and|||oxygen|||(21%)": {
+        "with": 1
+      },
+      "oxygen|||(21%)|||with": {
+        "trace": 1
+      },
+      "(21%)|||with|||trace": {
+        "gases": 1
+      },
+      "with|||trace|||gases": {
+        "like": 1
+      },
+      "trace|||gases|||like": {
+        "argon": 1
+      },
+      "gases|||like|||argon": {
+        "and": 1
+      },
+      "like|||argon|||and": {
+        "carbon": 1
+      },
+      "argon|||and|||carbon": {
+        "dioxide": 1
+      },
+      "and|||carbon|||dioxide": {
+        "about": 1
+      },
+      "carbon|||dioxide|||about": {
+        "71%": 1
+      },
+      "dioxide|||about|||71%": {
+        "of": 1
+      },
+      "about|||71%|||of": {
+        "Earth's": 1
+      },
+      "71%|||of|||Earth's": {
+        "surface": 1
+      },
+      "of|||Earth's|||surface": {
+        "is": 1
+      },
+      "Earth's|||surface|||is": {
+        "covered": 1
+      },
+      "surface|||is|||covered": {
+        "by": 1
+      },
+      "is|||covered|||by": {
+        "water,": 1
+      },
+      "covered|||by|||water,": {
+        "mainly": 1
+      },
+      "by|||water,|||mainly": {
+        "oceans,": 1
+      },
+      "water,|||mainly|||oceans,": {
+        "and": 1
+      },
+      "mainly|||oceans,|||and": {
+        "the": 1
+      },
+      "oceans,|||and|||the": {
+        "remaining": 1
+      },
+      "and|||the|||remaining": {
+        "29%": 1
+      },
+      "the|||remaining|||29%": {
+        "is": 1
+      },
+      "remaining|||29%|||is": {
+        "land": 1
+      },
+      "29%|||is|||land": {
+        "divided": 1
+      },
+      "is|||land|||divided": {
+        "into": 1
+      },
+      "land|||divided|||into": {
+        "seven": 1
+      },
+      "divided|||into|||seven": {
+        "continents": 1
+      },
+      "into|||seven|||continents": {
+        "Earth": 1
+      },
+      "seven|||continents|||Earth": {
+        "orbits": 1
+      },
+      "continents|||Earth|||orbits": {
+        "the": 1
+      },
+      "Earth|||orbits|||the": {
+        "Sun": 1
+      },
+      "orbits|||the|||Sun": {
+        "once": 1
+      },
+      "the|||Sun|||once": {
+        "every": 1
+      },
+      "Sun|||once|||every": {
+        "36525": 1
+      },
+      "once|||every|||36525": {
+        "days": 1
+      },
+      "every|||36525|||days": {
+        "(one": 1
+      },
+      "36525|||days|||(one": {
+        "year)": 1
+      },
+      "days|||(one|||year)": {
+        "and": 1
+      },
+      "(one|||year)|||and": {
+        "rotates": 1
+      },
+      "year)|||and|||rotates": {
+        "on": 1
+      },
+      "and|||rotates|||on": {
+        "its": 1
+      },
+      "rotates|||on|||its": {
+        "axis": 1
+      },
+      "on|||its|||axis": {
+        "every": 1
+      },
+      "its|||axis|||every": {
+        "24": 1
+      },
+      "axis|||every|||24": {
+        "hours,": 1
+      },
+      "every|||24|||hours,": {
+        "giving": 1
+      },
+      "24|||hours,|||giving": {
+        "us": 1
+      },
+      "hours,|||giving|||us": {
+        "day": 1
+      },
+      "giving|||us|||day": {
+        "and": 1
+      },
+      "us|||day|||and": {
+        "night": 1
+      },
+      "day|||and|||night": {
+        "the": 1
+      },
+      "and|||night|||the": {
+        "planet": 1
+      },
+      "night|||the|||planet": {
+        "has": 1
+      },
+      "the|||planet|||has": {
+        "one": 1
+      },
+      "planet|||has|||one": {
+        "natural": 1
+      },
+      "has|||one|||natural": {
+        "satellite,": 1
+      },
+      "one|||natural|||satellite,": {
+        "the": 1
+      },
+      "natural|||satellite,|||the": {
+        "Moon,": 1
+      },
+      "satellite,|||the|||Moon,": {
+        "which": 1
+      },
+      "the|||Moon,|||which": {
+        "affects": 1
+      },
+      "Moon,|||which|||affects": {
+        "ocean": 1
+      },
+      "which|||affects|||ocean": {
+        "tides": 1
+      },
+      "affects|||ocean|||tides": {
+        "and": 1
+      },
+      "ocean|||tides|||and": {
+        "stabilizes": 1
+      },
+      "tides|||and|||stabilizes": {
+        "Earth's": 1
+      },
+      "and|||stabilizes|||Earth's": {
+        "tilt": 1
+      },
+      "stabilizes|||Earth's|||tilt": {
+        "Earth": 1
+      },
+      "Earth's|||tilt|||Earth": {
+        "is": 1
+      },
+      "tilt|||Earth|||is": {
+        "the": 1
+      },
+      "Earth|||is|||the": {
+        "only": 1
+      },
+      "is|||the|||only": {
+        "known": 1
+      },
+      "the|||only|||known": {
+        "place": 1
+      },
+      "only|||known|||place": {
+        "in": 1
+      },
+      "known|||place|||in": {
+        "the": 1
+      },
+      "place|||in|||the": {
+        "universe": 1
+      },
+      "in|||the|||universe": {
+        "that": 1
+      },
+      "the|||universe|||that": {
+        "supports": 1
+      },
+      "universe|||that|||supports": {
+        "life,": 1
+      },
+      "that|||supports|||life,": {
+        "thanks": 1
+      },
+      "supports|||life,|||thanks": {
+        "to": 1
+      },
+      "life,|||thanks|||to": {
+        "liquid": 1
+      },
+      "thanks|||to|||liquid": {
+        "water,": 1
+      },
+      "to|||liquid|||water,": {
+        "a": 1
+      },
+      "liquid|||water,|||a": {
+        "protective": 1
+      },
+      "water,|||a|||protective": {
+        "magnetic": 1
+      },
+      "a|||protective|||magnetic": {
+        "field,": 1
+      },
+      "protective|||magnetic|||field,": {
+        "and": 1
+      },
+      "magnetic|||field,|||and": {
+        "a": 1
+      },
+      "field,|||and|||a": {
+        "suitable": 1
+      },
+      "and|||a|||suitable": {
+        "distance": 1
+      },
+      "a|||suitable|||distance": {
+        "from": 1
+      },
+      "suitable|||distance|||from": {
+        "the": 1
+      },
+      "distance|||from|||the": {
+        "Sun": 1
+      },
+      "what|||is|||the": {
+        "world?": 1,
+        "world": 3
+      },
+      "is|||the|||world?": {
+        "the": 1
+      },
+      "the|||world?|||the": {
+        "current": 1
+      },
+      "world?|||the|||current": {
+        "world": 1
+      },
+      "the|||current|||world": {
+        "has": 4
+      },
+      "current|||world|||has": {
+        "about": 4
+      },
+      "world|||has|||about": {
+        "eight": 4
+      },
+      "has|||about|||eight": {
+        "billion": 4
+      },
+      "about|||eight|||billion": {
+        "people": 4
+      },
+      "eight|||billion|||people": {
+        "living": 4
+      },
+      "billion|||people|||living": {
+        "in": 4
+      },
+      "people|||living|||in": {
+        "nearly": 4
+      },
+      "living|||in|||nearly": {
+        "two": 4
+      },
+      "in|||nearly|||two": {
+        "hundred": 4
+      },
+      "nearly|||two|||hundred": {
+        "countries,": 4
+      },
+      "two|||hundred|||countries,": {
+        "with": 4
+      },
+      "hundred|||countries,|||with": {
+        "the": 4
+      },
+      "countries,|||with|||the": {
+        "largest": 2,
+        "superpowers": 2
+      },
+      "with|||the|||largest": {
+        "populations": 2
+      },
+      "the|||largest|||populations": {
+        "in": 2
+      },
+      "largest|||populations|||in": {
+        "China": 2
+      },
+      "populations|||in|||China": {
+        "and": 2
+      },
+      "in|||China|||and": {
+        "India": 2
+      },
+      "China|||and|||India": {
+        "climate": 2
+      },
+      "and|||India|||climate": {
+        "change": 2
+      },
+      "India|||climate|||change": {
+        "is": 2
+      },
+      "climate|||change|||is": {
+        "causing": 2
+      },
+      "change|||is|||causing": {
+        "rising": 2
+      },
+      "is|||causing|||rising": {
+        "sea": 2
+      },
+      "causing|||rising|||sea": {
+        "levels,": 2
+      },
+      "rising|||sea|||levels,": {
+        "stronger": 2
+      },
+      "sea|||levels,|||stronger": {
+        "storms,": 2
+      },
+      "levels,|||stronger|||storms,": {
+        "and": 2
+      },
+      "stronger|||storms,|||and": {
+        "record": 2
+      },
+      "storms,|||and|||record": {
+        "heatwaves": 2
+      },
+      "and|||record|||heatwaves": {
+        "across": 2
+      },
+      "record|||heatwaves|||across": {
+        "many": 2
+      },
+      "heatwaves|||across|||many": {
+        "regions": 2
+      },
+      "across|||many|||regions": {
+        "technology": 2
+      },
+      "many|||regions|||technology": {
+        "connects": 2
+      },
+      "regions|||technology|||connects": {
+        "the": 2
+      },
+      "technology|||connects|||the": {
+        "globe": 2
+      },
+      "connects|||the|||globe": {
+        "through": 2
+      },
+      "the|||globe|||through": {
+        "smartphones,": 2
+      },
+      "globe|||through|||smartphones,": {
+        "satellites,": 2
+      },
+      "through|||smartphones,|||satellites,": {
+        "and": 2
+      },
+      "smartphones,|||satellites,|||and": {
+        "the": 2
+      },
+      "satellites,|||and|||the": {
+        "internet,": 2
+      },
+      "and|||the|||internet,": {
+        "but": 2
+      },
+      "the|||internet,|||but": {
+        "digital": 2
+      },
+      "internet,|||but|||digital": {
+        "divides": 2
+      },
+      "but|||digital|||divides": {
+        "still": 2
+      },
+      "digital|||divides|||still": {
+        "exist": 2
+      },
+      "divides|||still|||exist": {
+        "major": 2
+      },
+      "still|||exist|||major": {
+        "challenges": 2
+      },
+      "exist|||major|||challenges": {
+        "include": 2
+      },
+      "major|||challenges|||include": {
+        "poverty,": 2
+      },
+      "challenges|||include|||poverty,": {
+        "war": 2
+      },
+      "include|||poverty,|||war": {
+        "in": 2
+      },
+      "poverty,|||war|||in": {
+        "places": 2
+      },
+      "war|||in|||places": {
+        "like": 2
+      },
+      "in|||places|||like": {
+        "Ukraine": 2
+      },
+      "places|||like|||Ukraine": {
+        "and": 2
+      },
+      "like|||Ukraine|||and": {
+        "Gaza,": 2
+      },
+      "Ukraine|||and|||Gaza,": {
+        "and": 2
+      },
+      "and|||Gaza,|||and": {
+        "the": 2
+      },
+      "Gaza,|||and|||the": {
+        "lingering": 2
+      },
+      "and|||the|||lingering": {
+        "effects": 2
+      },
+      "the|||lingering|||effects": {
+        "of": 2
+      },
+      "lingering|||effects|||of": {
+        "the": 2
+      },
+      "effects|||of|||the": {
+        "COVID": 2
+      },
+      "of|||the|||COVID": {
+        "pandemic": 2
+      },
+      "the|||COVID|||pandemic": {
+        "the": 2
+      },
+      "COVID|||pandemic|||the": {
+        "global": 2
+      },
+      "pandemic|||the|||global": {
+        "economy": 2
+      },
+      "the|||global|||economy": {
+        "runs": 2
+      },
+      "global|||economy|||runs": {
+        "on": 2
+      },
+      "economy|||runs|||on": {
+        "fossil": 2
+      },
+      "runs|||on|||fossil": {
+        "fuels,": 2
+      },
+      "on|||fossil|||fuels,": {
+        "renewable": 2
+      },
+      "fossil|||fuels,|||renewable": {
+        "energy": 2
+      },
+      "fuels,|||renewable|||energy": {
+        "like": 2
+      },
+      "renewable|||energy|||like": {
+        "solar": 2
+      },
+      "energy|||like|||solar": {
+        "and": 2
+      },
+      "like|||solar|||and": {
+        "wind": 2
+      },
+      "solar|||and|||wind": {
+        "is": 2
+      },
+      "and|||wind|||is": {
+        "growing": 2
+      },
+      "wind|||is|||growing": {
+        "fast": 2
+      },
+      "is|||growing|||fast": {
+        "but": 2
+      },
+      "growing|||fast|||but": {
+        "still": 2
+      },
+      "fast|||but|||still": {
+        "too": 2
+      },
+      "but|||still|||too": {
+        "slow": 2
+      },
+      "still|||too|||slow": {
+        "oceans": 2
+      },
+      "too|||slow|||oceans": {
+        "are": 2
+      },
+      "slow|||oceans|||are": {
+        "filling": 2
+      },
+      "oceans|||are|||filling": {
+        "with": 2
+      },
+      "are|||filling|||with": {
+        "plastic,": 2
+      },
+      "filling|||with|||plastic,": {
+        "forests": 2
+      },
+      "with|||plastic,|||forests": {
+        "are": 2
+      },
+      "plastic,|||forests|||are": {
+        "shrinking,": 2
+      },
+      "forests|||are|||shrinking,": {
+        "and": 2
+      },
+      "are|||shrinking,|||and": {
+        "species": 2
+      },
+      "shrinking,|||and|||species": {
+        "are": 2
+      },
+      "and|||species|||are": {
+        "disappearing": 2
+      },
+      "species|||are|||disappearing": {
+        "at": 2
+      },
+      "are|||disappearing|||at": {
+        "an": 2
+      },
+      "disappearing|||at|||an": {
+        "alarming": 2
+      },
+      "at|||an|||alarming": {
+        "rate": 2
+      },
+      "an|||alarming|||rate": {
+        "on": 2
+      },
+      "alarming|||rate|||on": {
+        "the": 2
+      },
+      "rate|||on|||the": {
+        "positive": 2
+      },
+      "on|||the|||positive": {
+        "side,": 2
+      },
+      "the|||positive|||side,": {
+        "vaccines": 2
+      },
+      "positive|||side,|||vaccines": {
+        "save": 2
+      },
+      "side,|||vaccines|||save": {
+        "millions": 2
+      },
+      "vaccines|||save|||millions": {
+        "of": 2
+      },
+      "save|||millions|||of": {
+        "lives,": 2
+      },
+      "millions|||of|||lives,": {
+        "extreme": 2
+      },
+      "of|||lives,|||extreme": {
+        "poverty": 2
+      },
+      "lives,|||extreme|||poverty": {
+        "has": 2
+      },
+      "extreme|||poverty|||has": {
+        "dropped": 2
+      },
+      "poverty|||has|||dropped": {
+        "sharply,": 2
+      },
+      "has|||dropped|||sharply,": {
+        "and": 2
+      },
+      "dropped|||sharply,|||and": {
+        "international": 2
+      },
+      "sharply,|||and|||international": {
+        "cooperation": 2
+      },
+      "and|||international|||cooperation": {
+        "continues": 2
+      },
+      "international|||cooperation|||continues": {
+        "through": 2
+      },
+      "cooperation|||continues|||through": {
+        "the": 2
+      },
+      "continues|||through|||the": {
+        "United": 2
+      },
+      "through|||the|||United": {
+        "Nations": 2
+      },
+      "the|||United|||Nations": {
+        "the": 2
+      },
+      "United|||Nations|||the": {
+        "world": 2
+      },
+      "Nations|||the|||world": {
+        "today": 2
+      },
+      "the|||world|||today": {
+        "is": 2
+      },
+      "world|||today|||is": {
+        "more": 2
+      },
+      "today|||is|||more": {
+        "connected": 2
+      },
+      "is|||more|||connected": {
+        "and": 2
+      },
+      "more|||connected|||and": {
+        "more": 2
+      },
+      "connected|||and|||more": {
+        "fragile": 2
+      },
+      "and|||more|||fragile": {
+        "than": 2
+      },
+      "more|||fragile|||than": {
+        "ever": 2
+      },
+      "fragile|||than|||ever": {
+        "before": 2
+      },
+      "is|||the|||world": {
+        "?": 3
+      },
+      "the|||world|||?": {
+        "the": 3
+      },
+      "world|||?|||the": {
+        "current": 3
+      },
+      "?|||the|||current": {
+        "world": 3
+      },
+      "with|||the|||superpowers": {
+        "US": 2
+      },
+      "the|||superpowers|||US": {
+        ",": 2
+      },
+      "superpowers|||US|||,": {
+        "a": 2
+      },
+      "US|||,|||a": {
+        "republic": 2
+      },
+      ",|||a|||republic": {
+        "(democracy)": 2
+      },
+      "a|||republic|||(democracy)": {
+        "and": 2
+      },
+      "republic|||(democracy)|||and": {
+        "China": 2
+      },
+      "(democracy)|||and|||China": {
+        ",": 2
+      },
+      "and|||China|||,": {
+        "a": 2
+      },
+      "China|||,|||a": {
+        "dictatorship": 2
+      },
+      ",|||a|||dictatorship": {
+        "(communism": 2
+      },
+      "a|||dictatorship|||(communism": {
+        "with": 2
+      },
+      "dictatorship|||(communism|||with": {
+        "chinese": 2
+      },
+      "(communism|||with|||chinese": {
+        "values": 2
+      },
+      "with|||chinese|||values": {
+        "(semi": 2
+      },
+      "chinese|||values|||(semi": {
+        "free": 2
+      },
+      "values|||(semi|||free": {
+        "market)).": 2
+      },
+      "(semi|||free|||market)).": {
+        "World": 2
+      },
+      "free|||market)).|||World": {
+        "bodies": 2
+      },
+      "market)).|||World|||bodies": {
+        "include": 2
+      },
+      "World|||bodies|||include": {
+        "UN": 2
+      },
+      "bodies|||include|||UN": {
+        ",": 2
+      },
+      "include|||UN|||,": {
+        "a": 2
+      },
+      "UN|||,|||a": {
+        "table": 2
+      },
+      ",|||a|||table": {
+        "for": 2
+      },
+      "a|||table|||for": {
+        "talkes,": 2
+      },
+      "table|||for|||talkes,": {
+        "NATO": 2
+      },
+      "for|||talkes,|||NATO": {
+        ",": 2
+      },
+      "talkes,|||NATO|||,": {
+        "a": 2
+      },
+      "NATO|||,|||a": {
+        "organization": 2
+      },
+      ",|||a|||organization": {
+        "for": 2
+      },
+      "a|||organization|||for": {
+        "giving": 2
+      },
+      "organization|||for|||giving": {
+        "aid": 2
+      },
+      "for|||giving|||aid": {
+        "to": 2
+      },
+      "giving|||aid|||to": {
+        "other": 2
+      },
+      "aid|||to|||other": {
+        "countries": 2
+      },
+      "to|||other|||countries": {
+        ",": 2
+      },
+      "other|||countries|||,": {
+        "the": 2
+      },
+      "countries|||,|||the": {
+        "RedCross": 2
+      },
+      ",|||the|||RedCross": {
+        ",": 2
+      },
+      "the|||RedCross|||,": {
+        "for": 2
+      },
+      "RedCross|||,|||for": {
+        "helping": 2
+      },
+      ",|||for|||helping": {
+        "people": 2
+      },
+      "for|||helping|||people": {
+        "in": 2
+      },
+      "helping|||people|||in": {
+        "need": 2
+      },
+      "people|||in|||need": {
+        ",": 2
+      },
+      "in|||need|||,": {
+        "Free": 2
+      },
+      "need|||,|||Free": {
+        "Liniux": 2
+      },
+      ",|||Free|||Liniux": {
+        "Foundation": 2
+      },
+      "Free|||Liniux|||Foundation": {
+        ",": 2
+      },
+      "Liniux|||Foundation|||,": {
+        "a": 2
+      },
+      "Foundation|||,|||a": {
+        "great": 2
+      },
+      ",|||a|||great": {
+        "thing.": 2
+      },
+      "what|||is|||hi": {
+        "it": 1
+      },
+      "is|||hi|||it": {
+        "is": 1
+      },
+      "hi|||it|||is": {
+        "a": 1
+      },
+      "it|||is|||a": {
+        "salutation.": 1
+      },
+      "ERROR:|||Failed|||to": {
+        "fetch": 1
+      },
+      "Failed|||to|||fetch": {
+        "Tip:": 1
+      },
+      "to|||fetch|||Tip:": {
+        "If": 1
+      },
+      "fetch|||Tip:|||If": {
+        "this": 1
+      },
+      "Tip:|||If|||this": {
+        "is": 1
+      },
+      "If|||this|||is": {
+        "a": 1
+      },
+      "this|||is|||a": {
+        "CORS": 1
+      },
+      "is|||a|||CORS": {
+        "error,": 1
+      },
+      "a|||CORS|||error,": {
+        "try": 1
+      },
+      "CORS|||error,|||try": {
+        "using": 1
+      },
+      "error,|||try|||using": {
+        "a": 1
+      },
+      "try|||using|||a": {
+        "CORS": 1
+      },
+      "using|||a|||CORS": {
+        "proxy": 1
+      },
+      "a|||CORS|||proxy": {
+        "(enter": 1
+      },
+      "CORS|||proxy|||(enter": {
+        "a": 1
+      },
+      "proxy|||(enter|||a": {
+        "proxy": 1
+      },
+      "(enter|||a|||proxy": {
+        "URL": 1
+      },
+      "a|||proxy|||URL": {
+        "above)": 1
+      },
+      "proxy|||URL|||above)": {
+        "or": 1
+      },
+      "URL|||above)|||or": {
+        "copy-paste": 1
+      },
+      "above)|||or|||copy-paste": {
+        "the": 1
+      },
+      "or|||copy-paste|||the": {
+        "text": 1
+      },
+      "copy-paste|||the|||text": {
+        "manually": 1
+      },
+      "the|||text|||manually": {
+        "into": 1
+      },
+      "text|||manually|||into": {
+        "the": 1
+      },
+      "manually|||into|||the": {
+        "Training": 1
+      },
+      "into|||the|||Training": {
+        "section.": 1
+      },
+      "\"Euphoria\"|||are|||technically": {
+        "part": 1
+      },
+      "are|||technically|||part": {
+        "of": 1
+      },
+      "technically|||part|||of": {
+        "the": 2
+      },
+      "part|||of|||the": {
+        "same": 2
+      },
+      "of|||the|||same": {
+        "real-time": 2
+      },
+      "the|||same|||real-time": {
+        "community": 2
+      },
+      "same|||real-time|||community": {
+        "platform.": 2
+      },
+      "real-time|||community|||platform.": {
+        "Their": 2
+      },
+      "community|||platform.|||Their": {
+        "only": 2
+      },
+      "platform.|||Their|||only": {
+        "connection": 2
+      },
+      "Their|||only|||connection": {
+        "to": 2
+      },
+      "only|||connection|||to": {
+        "xkcd": 2
+      },
+      "connection|||to|||xkcd": {
+        "is": 2
+      },
+      "to|||xkcd|||is": {
+        "as": 2
+      },
+      "xkcd|||is|||as": {
+        "the": 2
+      },
+      "is|||as|||the": {
+        "host": 2
+      },
+      "as|||the|||host": {
+        "for": 2
+      },
+      "the|||host|||for": {
+        "an": 2
+      },
+      "host|||for|||an": {
+        "official": 2
+      },
+      "for|||an|||official": {
+        "chatroom": 2
+      },
+      "an|||official|||chatroom": {
+        "referenced": 2
+      },
+      "official|||chatroom|||referenced": {
+        "in": 2
+      },
+      "chatroom|||referenced|||in": {
+        "Randall": 2
+      },
+      "referenced|||in|||Randall": {
+        "Munroe's": 2
+      },
+      "in|||Randall|||Munroe's": {
+        "webcomics.": 2
+      },
+      "Randall|||Munroe's|||webcomics.": {
+        "Heim": 2
+      },
+      "Munroe's|||webcomics.|||Heim": {
+        "Server": 2
+      },
+      "webcomics.|||Heim|||Server": {
+        "API:": 2
+      },
+      "Heim|||Server|||API:": {
+        "The": 2
+      },
+      "Server|||API:|||The": {
+        "backend": 2
+      },
+      "API:|||The|||backend": {
+        "of": 2
+      },
+      "The|||backend|||of": {
+        "the": 2
+      },
+      "backend|||of|||the": {
+        "euphoria.io": 2
+      },
+      "of|||the|||euphoria.io": {
+        "platform.": 2
+      },
+      "the|||euphoria.io|||platform.": {
+        "It": 2
+      },
+      "euphoria.io|||platform.|||It": {
+        "includes:": 2
+      },
+      "platform.|||It|||includes:": {
+        "·": 2
+      },
+      "It|||includes:|||·": {
+        "Back-end": 2
+      },
+      "includes:|||·|||Back-end": {
+        "logic:": 2
+      },
+      "·|||Back-end|||logic:": {
+        "A": 2
+      },
+      "Back-end|||logic:|||A": {
+        "Go": 2
+      },
+      "logic:|||A|||Go": {
+        "server": 2
+      },
+      "A|||Go|||server": {
+        "that": 2
+      },
+      "Go|||server|||that": {
+        "handles": 2
+      },
+      "server|||that|||handles": {
+        "chat": 2
+      },
+      "that|||handles|||chat": {
+        "rooms,": 2
+      },
+      "handles|||chat|||rooms,": {
+        "user": 2
+      },
+      "chat|||rooms,|||user": {
+        "permissions,": 2
+      },
+      "rooms,|||user|||permissions,": {
+        "and": 2
+      },
+      "user|||permissions,|||and": {
+        "real-time": 2
+      },
+      "permissions,|||and|||real-time": {
+        "messaging.": 2
+      },
+      "and|||real-time|||messaging.": {
+        "·": 2
+      },
+      "real-time|||messaging.|||·": {
+        "Communication": 2
+      },
+      "messaging.|||·|||Communication": {
+        "protocol:": 2
+      },
+      "·|||Communication|||protocol:": {
+        "Uses": 2
+      },
+      "Communication|||protocol:|||Uses": {
+        "WebSockets": 2
+      },
+      "protocol:|||Uses|||WebSockets": {
+        "to": 2
+      },
+      "Uses|||WebSockets|||to": {
+        "transmit": 2
+      },
+      "WebSockets|||to|||transmit": {
+        "JSON": 2
+      },
+      "to|||transmit|||JSON": {
+        "data": 2
+      },
+      "transmit|||JSON|||data": {
+        "between": 2
+      },
+      "JSON|||data|||between": {
+        "the": 2
+      },
+      "data|||between|||the": {
+        "server": 2
+      },
+      "between|||the|||server": {
+        "and": 2
+      },
+      "the|||server|||and": {
+        "all": 2
+      },
+      "server|||and|||all": {
+        "connected": 2
+      },
+      "and|||all|||connected": {
+        "clients.": 2
+      },
+      "all|||connected|||clients.": {
+        "·": 2
+      },
+      "connected|||clients.|||·": {
+        "Database:": 2
+      },
+      "clients.|||·|||Database:": {
+        "Uses": 2
+      },
+      "·|||Database:|||Uses": {
+        "PostgreSQL": 2
+      },
+      "Database:|||Uses|||PostgreSQL": {
+        "for": 2
+      },
+      "Uses|||PostgreSQL|||for": {
+        "data": 2
+      },
+      "PostgreSQL|||for|||data": {
+        "persistence.": 2
+      },
+      "for|||data|||persistence.": {
+        "·": 2
+      },
+      "data|||persistence.|||·": {
+        "Front-end": 2
+      },
+      "persistence.|||·|||Front-end": {
+        "client:": 2
+      },
+      "·|||Front-end|||client:": {
+        "Built": 2
+      },
+      "Front-end|||client:|||Built": {
+        "with": 2
+      },
+      "client:|||Built|||with": {
+        "React/Reflux": 2
+      },
+      "Built|||with|||React/Reflux": {
+        "to": 2
+      },
+      "with|||React/Reflux|||to": {
+        "provide": 2
+      },
+      "React/Reflux|||to|||provide": {
+        "the": 2
+      },
+      "to|||provide|||the": {
+        "user": 2
+      },
+      "provide|||the|||user": {
+        "interface.": 2
+      },
+      "the|||user|||interface.": {
+        "·": 2
+      },
+      "user|||interface.|||·": {
+        "State:": 2
+      },
+      "interface.|||·|||State:": {
+        "It's": 2
+      },
+      "·|||State:|||It's": {
+        "marked": 2
+      },
+      "State:|||It's|||marked": {
+        "as": 2
+      },
+      "It's|||marked|||as": {
+        "a": 2
+      },
+      "marked|||as|||a": {
+        "pre-alpha": 2
+      },
+      "as|||a|||pre-alpha": {
+        "release": 2
+      },
+      "a|||pre-alpha|||release": {
+        "and": 2
+      },
+      "pre-alpha|||release|||and": {
+        "is": 2
+      },
+      "release|||and|||is": {
+        "currently": 2
+      },
+      "and|||is|||currently": {
+        "not": 2
+      },
+      "is|||currently|||not": {
+        "under": 2
+      },
+      "currently|||not|||under": {
+        "active": 2
+      },
+      "not|||under|||active": {
+        "development.": 2
+      },
+      "under|||active|||development.": {
+        "Connection": 2
+      },
+      "active|||development.|||Connection": {
+        "to": 2
+      },
+      "development.|||Connection|||to": {
+        "xkcd:": 2
+      },
+      "Connection|||to|||xkcd:": {
+        "There's": 2
+      },
+      "to|||xkcd:|||There's": {
+        "a": 2
+      },
+      "xkcd:|||There's|||a": {
+        "clear": 2
+      },
+      "There's|||a|||clear": {
+        "but": 2
+      },
+      "a|||clear|||but": {
+        "separate": 2
+      },
+      "clear|||but|||separate": {
+        "connection.": 2
+      },
+      "but|||separate|||connection.": {
+        "·": 2
+      },
+      "separate|||connection.|||·": {
+        "Official": 2
+      },
+      "connection.|||·|||Official": {
+        "Chatroom:": 2
+      },
+      "·|||Official|||Chatroom:": {
+        "The": 2
+      },
+      "Official|||Chatroom:|||The": {
+        "webcomic": 2
+      },
+      "Chatroom:|||The|||webcomic": {
+        "xkcd": 2
+      },
+      "The|||webcomic|||xkcd": {
+        "has": 2
+      },
+      "webcomic|||xkcd|||has": {
+        "a": 2
+      },
+      "xkcd|||has|||a": {
+        "dedicated": 2
+      },
+      "has|||a|||dedicated": {
+        "chatroom": 2
+      },
+      "a|||dedicated|||chatroom": {
+        "hosted": 2
+      },
+      "dedicated|||chatroom|||hosted": {
+        "on": 2
+      },
+      "chatroom|||hosted|||on": {
+        "the": 2
+      },
+      "hosted|||on|||the": {
+        "Euphoria": 2
+      },
+      "on|||the|||Euphoria": {
+        "platform": 2
+      },
+      "the|||Euphoria|||platform": {
+        "for": 2
+      },
+      "Euphoria|||platform|||for": {
+        "readers": 2
+      },
+      "platform|||for|||readers": {
+        "to": 2
+      },
+      "for|||readers|||to": {
+        "discuss": 2
+      },
+      "readers|||to|||discuss": {
+        "the": 2
+      },
+      "to|||discuss|||the": {
+        "comics.": 2
+      },
+      "discuss|||the|||comics.": {
+        "·": 2
+      },
+      "the|||comics.|||·": {
+        "Referenced": 2
+      },
+      "comics.|||·|||Referenced": {
+        "in": 2
+      },
+      "·|||Referenced|||in": {
+        "Comics:": 2
+      },
+      "Referenced|||in|||Comics:": {
+        "This": 2
+      },
+      "in|||Comics:|||This": {
+        "chatroom": 2
+      },
+      "Comics:|||This|||chatroom": {
+        "is": 2
+      },
+      "This|||chatroom|||is": {
+        "directly": 2
+      },
+      "chatroom|||is|||directly": {
+        "referenced": 2
+      },
+      "is|||directly|||referenced": {
+        "in": 2
+      },
+      "directly|||referenced|||in": {
+        "xkcd's": 2
+      },
+      "referenced|||in|||xkcd's": {
+        "Comic": 2
+      },
+      "in|||xkcd's|||Comic": {
+        "#1506": 2
+      },
+      "xkcd's|||Comic|||#1506": {
+        "(\"xkcloud\").": 2
+      },
+      "Comic|||#1506|||(\"xkcloud\").": {
+        "·": 2
+      },
+      "#1506|||(\"xkcloud\").|||·": {
+        "Platform": 2
+      },
+      "(\"xkcloud\").|||·|||Platform": {
+        "Evolution:": 2
+      },
+      "·|||Platform|||Evolution:": {
+        "This": 2
+      },
+      "Platform|||Evolution:|||This": {
+        "chat": 2
+      },
+      "Evolution:|||This|||chat": {
+        "started": 2
+      },
+      "This|||chat|||started": {
+        "at": 2
+      },
+      "chat|||started|||at": {
+        "euphoria.io/room/xkcd": 2
+      },
+      "started|||at|||euphoria.io/room/xkcd": {
+        "and": 2
+      },
+      "at|||euphoria.io/room/xkcd|||and": {
+        "later": 2
+      },
+      "euphoria.io/room/xkcd|||and|||later": {
+        "moved": 2
+      },
+      "and|||later|||moved": {
+        "to": 2
+      },
+      "later|||moved|||to": {
+        "euphoria.leet.nu.": 2
+      },
+      "moved|||to|||euphoria.leet.nu.": {
+        "·": 2
+      },
+      "to|||euphoria.leet.nu.|||·": {
+        "Community": 2
+      },
+      "euphoria.leet.nu.|||·|||Community": {
+        "Bridge:": 2
+      },
+      "·|||Community|||Bridge:": {
+        "This": 2
+      },
+      "Community|||Bridge:|||This": {
+        "setup": 2
+      },
+      "Bridge:|||This|||setup": {
+        "serves": 2
+      },
+      "This|||setup|||serves": {
+        "as": 2
+      },
+      "setup|||serves|||as": {
+        "a": 2
+      },
+      "serves|||as|||a": {
+        "bridge,": 2
+      },
+      "as|||a|||bridge,": {
+        "using": 2
+      },
+      "a|||bridge,|||using": {
+        "the": 2
+      },
+      "bridge,|||using|||the": {
+        "Heim": 2
+      },
+      "using|||the|||Heim": {
+        "back-end": 2
+      },
+      "the|||Heim|||back-end": {
+        "to": 2
+      },
+      "Heim|||back-end|||to": {
+        "connect": 2
+      },
+      "back-end|||to|||connect": {
+        "the": 2
+      },
+      "to|||connect|||the": {
+        "Euphoria": 2
+      },
+      "connect|||the|||Euphoria": {
+        "community": 2
+      },
+      "the|||Euphoria|||community": {
+        "with": 2
+      },
+      "Euphoria|||community|||with": {
+        "fans": 2
+      },
+      "community|||with|||fans": {
+        "of": 2
+      },
+      "with|||fans|||of": {
+        "the": 2
+      },
+      "fans|||of|||the": {
+        "xkcd": 2
+      },
+      "of|||the|||xkcd": {
+        "webcomic.": 2
+      },
+      "euphoria.leet.nu:|||A|||platform": {
+        "being": 1
+      },
+      "A|||platform|||being": {
+        "built": 2
+      },
+      "platform|||being|||built": {
+        "for": 2
+      },
+      "being|||built|||for": {
+        "online": 2
+      },
+      "built|||for|||online": {
+        "communities.": 2
+      },
+      "for|||online|||communities.": {
+        "It's": 2
+      },
+      "online|||communities.|||It's": {
+        "described": 2
+      },
+      "communities.|||It's|||described": {
+        "as": 2
+      },
+      "It's|||described|||as": {
+        "a": 2
+      },
+      "described|||as|||a": {
+        "\"cozy": 2
+      },
+      "as|||a|||\"cozy": {
+        "realtime": 2
+      },
+      "a|||\"cozy|||realtime": {
+        "discussion": 2
+      },
+      "\"cozy|||realtime|||discussion": {
+        "space\"": 2
+      },
+      "realtime|||discussion|||space\"": {
+        "that": 2
+      },
+      "discussion|||space\"|||that": {
+        "blends": 2
+      },
+      "space\"|||that|||blends": {
+        "the": 2
+      },
+      "that|||blends|||the": {
+        "features": 2
+      },
+      "blends|||the|||features": {
+        "of": 2
+      },
+      "the|||features|||of": {
+        "chat": 2
+      },
+      "features|||of|||chat": {
+        "rooms,": 2
+      },
+      "of|||chat|||rooms,": {
+        "forums,": 2
+      },
+      "chat|||rooms,|||forums,": {
+        "and": 2
+      },
+      "rooms,|||forums,|||and": {
+        "mailing": 2
+      },
+      "forums,|||and|||mailing": {
+        "lists,": 2
+      },
+      "and|||mailing|||lists,": {
+        "designed": 2
+      },
+      "mailing|||lists,|||designed": {
+        "to": 2
+      },
+      "lists,|||designed|||to": {
+        "help": 2
+      },
+      "designed|||to|||help": {
+        "people": 2
+      },
+      "to|||help|||people": {
+        "connect": 2
+      },
+      "help|||people|||connect": {
+        "with": 2
+      },
+      "people|||connect|||with": {
+        "friends,": 2
+      },
+      "connect|||with|||friends,": {
+        "groups,": 2
+      },
+      "with|||friends,|||groups,": {
+        "and": 2
+      },
+      "friends,|||groups,|||and": {
+        "others": 2
+      },
+      "groups,|||and|||others": {
+        "from": 2
+      },
+      "and|||others|||from": {
+        "around": 2
+      },
+      "others|||from|||around": {
+        "the": 2
+      },
+      "from|||around|||the": {
+        "world.": 2
+      },
+      "around|||the|||world.": {
+        "·": 2
+      },
+      "the|||world.|||·": {
+        "leet.nu:": 2
+      },
+      "world.|||·|||leet.nu:": {
+        "This": 2
+      },
+      "·|||leet.nu:|||This": {
+        "website": 2
+      },
+      "leet.nu:|||This|||website": {
+        "couldn't": 2,
+        "is": 1
+      },
+      "This|||website|||couldn't": {
+        "be": 2
+      },
+      "website|||couldn't|||be": {
+        "loaded": 2
+      },
+      "couldn't|||be|||loaded": {
+        "or": 2
+      },
+      "be|||loaded|||or": {
+        "didn't": 2
+      },
+      "loaded|||or|||didn't": {
+        "respond": 2
+      },
+      "or|||didn't|||respond": {
+        "to": 2
+      },
+      "didn't|||respond|||to": {
+        "connection": 2
+      },
+      "respond|||to|||connection": {
+        "attempts.": 2
+      },
+      "to|||connection|||attempts.": {
+        "·": 2
+      },
+      "connection|||attempts.|||·": {
+        "instant.leet.nu/about.html:": 1,
+        "instant.leet.nu": 1
+      },
+      "attempts.|||·|||instant.leet.nu/about.html:": {
+        "A": 1
+      },
+      "·|||instant.leet.nu/about.html:|||A": {
+        "minimalist,": 1
+      },
+      "instant.leet.nu/about.html:|||A|||minimalist,": {
+        "ephemeral": 1
+      },
+      "A|||minimalist,|||ephemeral": {
+        "chat": 2
+      },
+      "minimalist,|||ephemeral|||chat": {
+        "site": 2
+      },
+      "ephemeral|||chat|||site": {
+        "that": 2
+      },
+      "chat|||site|||that": {
+        "focuses": 2
+      },
+      "site|||that|||focuses": {
+        "on": 2
+      },
+      "that|||focuses|||on": {
+        "the": 2
+      },
+      "focuses|||on|||the": {
+        "present": 2
+      },
+      "on|||the|||present": {
+        "moment": 2
+      },
+      "the|||present|||moment": {
+        "and": 2
+      },
+      "present|||moment|||and": {
+        "does": 2
+      },
+      "moment|||and|||does": {
+        "not": 2
+      },
+      "and|||does|||not": {
+        "store": 2
+      },
+      "does|||not|||store": {
+        "any": 2
+      },
+      "not|||store|||any": {
+        "messages": 2
+      },
+      "store|||any|||messages": {
+        "once": 2
+      },
+      "any|||messages|||once": {
+        "everyone": 2
+      },
+      "messages|||once|||everyone": {
+        "has": 2
+      },
+      "once|||everyone|||has": {
+        "left.": 2
+      },
+      "euphoria.leet.nu|||or|||euphoria": {
+        ":": 1
+      },
+      "or|||euphoria|||:": {
+        "A": 1
+      },
+      "euphoria|||:|||A": {
+        "platform": 1
+      },
+      ":|||A|||platform": {
+        "being": 1
+      },
+      "attempts.|||·|||instant.leet.nu": {
+        "or": 1
+      },
+      "·|||instant.leet.nu|||or": {
+        "instant": 1
+      },
+      "instant.leet.nu|||or|||instant": {
+        ":": 1
+      },
+      "or|||instant|||:": {
+        "A": 1
+      },
+      "instant|||:|||A": {
+        "minimalist,": 1
+      },
+      ":|||A|||minimalist,": {
+        "ephemeral": 1
+      },
+      "Euphoria|||is|||technically": {
+        "part": 1
+      },
+      "is|||technically|||part": {
+        "of": 1
+      },
+      "This|||website|||is": {
+        "the": 1
+      },
+      "website|||is|||the": {
+        "homepage": 1
+      },
+      "is|||the|||homepage": {
+        "for": 1
+      },
+      "the|||homepage|||for": {
+        "euphoria.leet.nu_instant.leet.nu": 1
+      },
+      "homepage|||for|||euphoria.leet.nu_instant.leet.nu": {
+        "leet.nu": 1
+      },
+      "for|||euphoria.leet.nu_instant.leet.nu|||leet.nu": {
+        "also": 1
+      },
+      "euphoria.leet.nu_instant.leet.nu|||leet.nu|||also": {
+        "hosts": 1
+      },
+      "leet.nu|||also|||hosts": {
+        "a": 1
+      },
+      "also|||hosts|||a": {
+        "private": 1
+      },
+      "hosts|||a|||private": {
+        "whitelist": 1
+      },
+      "a|||private|||whitelist": {
+        "Minecraft": 1
+      },
+      "private|||whitelist|||Minecraft": {
+        "server": 1
+      },
+      "whitelist|||Minecraft|||server": {
+        "see": 1
+      },
+      "Minecraft|||server|||see": {
+        "euphoria.leet.nj/room/minecraft!": 1
+      },
+      "DOOOM|||trump|||away:": {
+        "Next": 1
+      },
+      "trump|||away:|||Next": {
+        "US": 1
+      },
+      "away:|||Next|||US": {
+        "president": 1
+      },
+      "Next|||US|||president": {
+        "assumes": 1
+      },
+      "US|||president|||assumes": {
+        "office": 1
+      },
+      "president|||assumes|||office": {
+        "suneatsearth:": 1
+      },
+      "assumes|||office|||suneatsearth:": {
+        "The": 1
+      },
+      "office|||suneatsearth:|||The": {
+        "Sun": 1
+      },
+      "suneatsearth:|||The|||Sun": {
+        "engulfs": 1
+      },
+      "The|||Sun|||engulfs": {
+        "the": 1
+      },
+      "Sun|||engulfs|||the": {
+        "Earth": 1
+      },
+      "engulfs|||the|||Earth": {
+        "nextyear:": 1
+      },
+      "the|||Earth|||nextyear:": {
+        "2026": 1
+      },
+      "Earth|||nextyear:|||2026": {
+        "ends": 1
+      },
+      "nextyear:|||2026|||ends": {
+        "2028:": 1
+      },
+      "2026|||ends|||2028:": {
+        "2028": 1
+      },
+      "ends|||2028:|||2028": {
+        "starts": 1
+      },
+      "2028:|||2028|||starts": {
+        "in:": 1
+      },
+      "2028|||starts|||in:": {
+        "DOOMClock:": 1
+      },
+      "starts|||in:|||DOOMClock:": {
+        "the": 1
+      },
+      "in:|||DOOMClock:|||the": {
+        "time": 1
+      },
+      "DOOMClock:|||the|||time": {
+        "DOOM": 1
+      },
+      "the|||time|||DOOM": {
+        "happens": 1
+      }
+    },
+    "4": {
+      "hi|||i|||am|||a": {
+        "dumb": 1
+      },
+      "i|||am|||a|||dumb": {
+        "guy": 1
+      },
+      "am|||a|||dumb|||guy": {
+        "called": 1
+      },
+      "a|||dumb|||guy|||called": {
+        "sam.": 1
+      },
+      "What|||is|||the|||earth": {
+        "?": 1
+      },
+      "is|||the|||earth|||?": {
+        "Earth": 1
+      },
+      "the|||earth|||?|||Earth": {
+        "a": 1
+      },
+      "earth|||?|||Earth|||a": {
+        "ball,": 1
+      },
+      "?|||Earth|||a|||ball,": {
+        "it": 1
+      },
+      "Earth|||a|||ball,|||it": {
+        "is": 1
+      },
+      "a|||ball,|||it|||is": {
+        "the": 1
+      },
+      "ball,|||it|||is|||the": {
+        "third": 1
+      },
+      "it|||is|||the|||third": {
+        "planet": 1
+      },
+      "is|||the|||third|||planet": {
+        "from": 1
+      },
+      "the|||third|||planet|||from": {
+        "the": 1
+      },
+      "third|||planet|||from|||the": {
+        "Sun": 1
+      },
+      "planet|||from|||the|||Sun": {
+        "and": 1
+      },
+      "from|||the|||Sun|||and": {
+        "it": 1
+      },
+      "the|||Sun|||and|||it": {
+        "has": 1
+      },
+      "Sun|||and|||it|||has": {
+        "a": 1
+      },
+      "and|||it|||has|||a": {
+        "diameter": 1
+      },
+      "it|||has|||a|||diameter": {
+        "of": 1
+      },
+      "has|||a|||diameter|||of": {
+        "about": 1
+      },
+      "a|||diameter|||of|||about": {
+        "12742": 1
+      },
+      "diameter|||of|||about|||12742": {
+        "kilometers": 1
+      },
+      "of|||about|||12742|||kilometers": {
+        "with": 1
+      },
+      "about|||12742|||kilometers|||with": {
+        "a": 1
+      },
+      "12742|||kilometers|||with|||a": {
+        "surface": 1
+      },
+      "kilometers|||with|||a|||surface": {
+        "area": 1
+      },
+      "with|||a|||surface|||area": {
+        "of": 1
+      },
+      "a|||surface|||area|||of": {
+        "510": 1
+      },
+      "surface|||area|||of|||510": {
+        "million": 1
+      },
+      "area|||of|||510|||million": {
+        "square": 1
+      },
+      "of|||510|||million|||square": {
+        "kilometers": 1
+      },
+      "510|||million|||square|||kilometers": {
+        "Earth's": 1
+      },
+      "million|||square|||kilometers|||Earth's": {
+        "structure": 1
+      },
+      "square|||kilometers|||Earth's|||structure": {
+        "includes": 1
+      },
+      "kilometers|||Earth's|||structure|||includes": {
+        "a": 1
+      },
+      "Earth's|||structure|||includes|||a": {
+        "solid": 1
+      },
+      "structure|||includes|||a|||solid": {
+        "iron": 1
+      },
+      "includes|||a|||solid|||iron": {
+        "inner": 1
+      },
+      "a|||solid|||iron|||inner": {
+        "core,": 1
+      },
+      "solid|||iron|||inner|||core,": {
+        "a": 1
+      },
+      "iron|||inner|||core,|||a": {
+        "liquid": 1
+      },
+      "inner|||core,|||a|||liquid": {
+        "outer": 1
+      },
+      "core,|||a|||liquid|||outer": {
+        "core,": 1
+      },
+      "a|||liquid|||outer|||core,": {
+        "a": 1
+      },
+      "liquid|||outer|||core,|||a": {
+        "thick": 1
+      },
+      "outer|||core,|||a|||thick": {
+        "mantle": 1
+      },
+      "core,|||a|||thick|||mantle": {
+        "of": 1
+      },
+      "a|||thick|||mantle|||of": {
+        "hot": 1
+      },
+      "thick|||mantle|||of|||hot": {
+        "rock,": 1
+      },
+      "mantle|||of|||hot|||rock,": {
+        "and": 1
+      },
+      "of|||hot|||rock,|||and": {
+        "a": 1
+      },
+      "hot|||rock,|||and|||a": {
+        "thin": 1
+      },
+      "rock,|||and|||a|||thin": {
+        "crust": 1
+      },
+      "and|||a|||thin|||crust": {
+        "where": 1
+      },
+      "a|||thin|||crust|||where": {
+        "we": 1
+      },
+      "thin|||crust|||where|||we": {
+        "live": 1
+      },
+      "crust|||where|||we|||live": {
+        "the": 1
+      },
+      "where|||we|||live|||the": {
+        "atmosphere": 1
+      },
+      "we|||live|||the|||atmosphere": {
+        "is": 1
+      },
+      "live|||the|||atmosphere|||is": {
+        "mostly": 1
+      },
+      "the|||atmosphere|||is|||mostly": {
+        "nitrogen": 1
+      },
+      "atmosphere|||is|||mostly|||nitrogen": {
+        "(78%)": 1
+      },
+      "is|||mostly|||nitrogen|||(78%)": {
+        "and": 1
+      },
+      "mostly|||nitrogen|||(78%)|||and": {
+        "oxygen": 1
+      },
+      "nitrogen|||(78%)|||and|||oxygen": {
+        "(21%)": 1
+      },
+      "(78%)|||and|||oxygen|||(21%)": {
+        "with": 1
+      },
+      "and|||oxygen|||(21%)|||with": {
+        "trace": 1
+      },
+      "oxygen|||(21%)|||with|||trace": {
+        "gases": 1
+      },
+      "(21%)|||with|||trace|||gases": {
+        "like": 1
+      },
+      "with|||trace|||gases|||like": {
+        "argon": 1
+      },
+      "trace|||gases|||like|||argon": {
+        "and": 1
+      },
+      "gases|||like|||argon|||and": {
+        "carbon": 1
+      },
+      "like|||argon|||and|||carbon": {
+        "dioxide": 1
+      },
+      "argon|||and|||carbon|||dioxide": {
+        "about": 1
+      },
+      "and|||carbon|||dioxide|||about": {
+        "71%": 1
+      },
+      "carbon|||dioxide|||about|||71%": {
+        "of": 1
+      },
+      "dioxide|||about|||71%|||of": {
+        "Earth's": 1
+      },
+      "about|||71%|||of|||Earth's": {
+        "surface": 1
+      },
+      "71%|||of|||Earth's|||surface": {
+        "is": 1
+      },
+      "of|||Earth's|||surface|||is": {
+        "covered": 1
+      },
+      "Earth's|||surface|||is|||covered": {
+        "by": 1
+      },
+      "surface|||is|||covered|||by": {
+        "water,": 1
+      },
+      "is|||covered|||by|||water,": {
+        "mainly": 1
+      },
+      "covered|||by|||water,|||mainly": {
+        "oceans,": 1
+      },
+      "by|||water,|||mainly|||oceans,": {
+        "and": 1
+      },
+      "water,|||mainly|||oceans,|||and": {
+        "the": 1
+      },
+      "mainly|||oceans,|||and|||the": {
+        "remaining": 1
+      },
+      "oceans,|||and|||the|||remaining": {
+        "29%": 1
+      },
+      "and|||the|||remaining|||29%": {
+        "is": 1
+      },
+      "the|||remaining|||29%|||is": {
+        "land": 1
+      },
+      "remaining|||29%|||is|||land": {
+        "divided": 1
+      },
+      "29%|||is|||land|||divided": {
+        "into": 1
+      },
+      "is|||land|||divided|||into": {
+        "seven": 1
+      },
+      "land|||divided|||into|||seven": {
+        "continents": 1
+      },
+      "divided|||into|||seven|||continents": {
+        "Earth": 1
+      },
+      "into|||seven|||continents|||Earth": {
+        "orbits": 1
+      },
+      "seven|||continents|||Earth|||orbits": {
+        "the": 1
+      },
+      "continents|||Earth|||orbits|||the": {
+        "Sun": 1
+      },
+      "Earth|||orbits|||the|||Sun": {
+        "once": 1
+      },
+      "orbits|||the|||Sun|||once": {
+        "every": 1
+      },
+      "the|||Sun|||once|||every": {
+        "36525": 1
+      },
+      "Sun|||once|||every|||36525": {
+        "days": 1
+      },
+      "once|||every|||36525|||days": {
+        "(one": 1
+      },
+      "every|||36525|||days|||(one": {
+        "year)": 1
+      },
+      "36525|||days|||(one|||year)": {
+        "and": 1
+      },
+      "days|||(one|||year)|||and": {
+        "rotates": 1
+      },
+      "(one|||year)|||and|||rotates": {
+        "on": 1
+      },
+      "year)|||and|||rotates|||on": {
+        "its": 1
+      },
+      "and|||rotates|||on|||its": {
+        "axis": 1
+      },
+      "rotates|||on|||its|||axis": {
+        "every": 1
+      },
+      "on|||its|||axis|||every": {
+        "24": 1
+      },
+      "its|||axis|||every|||24": {
+        "hours,": 1
+      },
+      "axis|||every|||24|||hours,": {
+        "giving": 1
+      },
+      "every|||24|||hours,|||giving": {
+        "us": 1
+      },
+      "24|||hours,|||giving|||us": {
+        "day": 1
+      },
+      "hours,|||giving|||us|||day": {
+        "and": 1
+      },
+      "giving|||us|||day|||and": {
+        "night": 1
+      },
+      "us|||day|||and|||night": {
+        "the": 1
+      },
+      "day|||and|||night|||the": {
+        "planet": 1
+      },
+      "and|||night|||the|||planet": {
+        "has": 1
+      },
+      "night|||the|||planet|||has": {
+        "one": 1
+      },
+      "the|||planet|||has|||one": {
+        "natural": 1
+      },
+      "planet|||has|||one|||natural": {
+        "satellite,": 1
+      },
+      "has|||one|||natural|||satellite,": {
+        "the": 1
+      },
+      "one|||natural|||satellite,|||the": {
+        "Moon,": 1
+      },
+      "natural|||satellite,|||the|||Moon,": {
+        "which": 1
+      },
+      "satellite,|||the|||Moon,|||which": {
+        "affects": 1
+      },
+      "the|||Moon,|||which|||affects": {
+        "ocean": 1
+      },
+      "Moon,|||which|||affects|||ocean": {
+        "tides": 1
+      },
+      "which|||affects|||ocean|||tides": {
+        "and": 1
+      },
+      "affects|||ocean|||tides|||and": {
+        "stabilizes": 1
+      },
+      "ocean|||tides|||and|||stabilizes": {
+        "Earth's": 1
+      },
+      "tides|||and|||stabilizes|||Earth's": {
+        "tilt": 1
+      },
+      "and|||stabilizes|||Earth's|||tilt": {
+        "Earth": 1
+      },
+      "stabilizes|||Earth's|||tilt|||Earth": {
+        "is": 1
+      },
+      "Earth's|||tilt|||Earth|||is": {
+        "the": 1
+      },
+      "tilt|||Earth|||is|||the": {
+        "only": 1
+      },
+      "Earth|||is|||the|||only": {
+        "known": 1
+      },
+      "is|||the|||only|||known": {
+        "place": 1
+      },
+      "the|||only|||known|||place": {
+        "in": 1
+      },
+      "only|||known|||place|||in": {
+        "the": 1
+      },
+      "known|||place|||in|||the": {
+        "universe": 1
+      },
+      "place|||in|||the|||universe": {
+        "that": 1
+      },
+      "in|||the|||universe|||that": {
+        "supports": 1
+      },
+      "the|||universe|||that|||supports": {
+        "life,": 1
+      },
+      "universe|||that|||supports|||life,": {
+        "thanks": 1
+      },
+      "that|||supports|||life,|||thanks": {
+        "to": 1
+      },
+      "supports|||life,|||thanks|||to": {
+        "liquid": 1
+      },
+      "life,|||thanks|||to|||liquid": {
+        "water,": 1
+      },
+      "thanks|||to|||liquid|||water,": {
+        "a": 1
+      },
+      "to|||liquid|||water,|||a": {
+        "protective": 1
+      },
+      "liquid|||water,|||a|||protective": {
+        "magnetic": 1
+      },
+      "water,|||a|||protective|||magnetic": {
+        "field,": 1
+      },
+      "a|||protective|||magnetic|||field,": {
+        "and": 1
+      },
+      "protective|||magnetic|||field,|||and": {
+        "a": 1
+      },
+      "magnetic|||field,|||and|||a": {
+        "suitable": 1
+      },
+      "field,|||and|||a|||suitable": {
+        "distance": 1
+      },
+      "and|||a|||suitable|||distance": {
+        "from": 1
+      },
+      "a|||suitable|||distance|||from": {
+        "the": 1
+      },
+      "suitable|||distance|||from|||the": {
+        "Sun": 1
+      },
+      "what|||is|||the|||world?": {
+        "the": 1
+      },
+      "is|||the|||world?|||the": {
+        "current": 1
+      },
+      "the|||world?|||the|||current": {
+        "world": 1
+      },
+      "world?|||the|||current|||world": {
+        "has": 1
+      },
+      "the|||current|||world|||has": {
+        "about": 4
+      },
+      "current|||world|||has|||about": {
+        "eight": 4
+      },
+      "world|||has|||about|||eight": {
+        "billion": 4
+      },
+      "has|||about|||eight|||billion": {
+        "people": 4
+      },
+      "about|||eight|||billion|||people": {
+        "living": 4
+      },
+      "eight|||billion|||people|||living": {
+        "in": 4
+      },
+      "billion|||people|||living|||in": {
+        "nearly": 4
+      },
+      "people|||living|||in|||nearly": {
+        "two": 4
+      },
+      "living|||in|||nearly|||two": {
+        "hundred": 4
+      },
+      "in|||nearly|||two|||hundred": {
+        "countries,": 4
+      },
+      "nearly|||two|||hundred|||countries,": {
+        "with": 4
+      },
+      "two|||hundred|||countries,|||with": {
+        "the": 4
+      },
+      "hundred|||countries,|||with|||the": {
+        "largest": 2,
+        "superpowers": 2
+      },
+      "countries,|||with|||the|||largest": {
+        "populations": 2
+      },
+      "with|||the|||largest|||populations": {
+        "in": 2
+      },
+      "the|||largest|||populations|||in": {
+        "China": 2
+      },
+      "largest|||populations|||in|||China": {
+        "and": 2
+      },
+      "populations|||in|||China|||and": {
+        "India": 2
+      },
+      "in|||China|||and|||India": {
+        "climate": 2
+      },
+      "China|||and|||India|||climate": {
+        "change": 2
+      },
+      "and|||India|||climate|||change": {
+        "is": 2
+      },
+      "India|||climate|||change|||is": {
+        "causing": 2
+      },
+      "climate|||change|||is|||causing": {
+        "rising": 2
+      },
+      "change|||is|||causing|||rising": {
+        "sea": 2
+      },
+      "is|||causing|||rising|||sea": {
+        "levels,": 2
+      },
+      "causing|||rising|||sea|||levels,": {
+        "stronger": 2
+      },
+      "rising|||sea|||levels,|||stronger": {
+        "storms,": 2
+      },
+      "sea|||levels,|||stronger|||storms,": {
+        "and": 2
+      },
+      "levels,|||stronger|||storms,|||and": {
+        "record": 2
+      },
+      "stronger|||storms,|||and|||record": {
+        "heatwaves": 2
+      },
+      "storms,|||and|||record|||heatwaves": {
+        "across": 2
+      },
+      "and|||record|||heatwaves|||across": {
+        "many": 2
+      },
+      "record|||heatwaves|||across|||many": {
+        "regions": 2
+      },
+      "heatwaves|||across|||many|||regions": {
+        "technology": 2
+      },
+      "across|||many|||regions|||technology": {
+        "connects": 2
+      },
+      "many|||regions|||technology|||connects": {
+        "the": 2
+      },
+      "regions|||technology|||connects|||the": {
+        "globe": 2
+      },
+      "technology|||connects|||the|||globe": {
+        "through": 2
+      },
+      "connects|||the|||globe|||through": {
+        "smartphones,": 2
+      },
+      "the|||globe|||through|||smartphones,": {
+        "satellites,": 2
+      },
+      "globe|||through|||smartphones,|||satellites,": {
+        "and": 2
+      },
+      "through|||smartphones,|||satellites,|||and": {
+        "the": 2
+      },
+      "smartphones,|||satellites,|||and|||the": {
+        "internet,": 2
+      },
+      "satellites,|||and|||the|||internet,": {
+        "but": 2
+      },
+      "and|||the|||internet,|||but": {
+        "digital": 2
+      },
+      "the|||internet,|||but|||digital": {
+        "divides": 2
+      },
+      "internet,|||but|||digital|||divides": {
+        "still": 2
+      },
+      "but|||digital|||divides|||still": {
+        "exist": 2
+      },
+      "digital|||divides|||still|||exist": {
+        "major": 2
+      },
+      "divides|||still|||exist|||major": {
+        "challenges": 2
+      },
+      "still|||exist|||major|||challenges": {
+        "include": 2
+      },
+      "exist|||major|||challenges|||include": {
+        "poverty,": 2
+      },
+      "major|||challenges|||include|||poverty,": {
+        "war": 2
+      },
+      "challenges|||include|||poverty,|||war": {
+        "in": 2
+      },
+      "include|||poverty,|||war|||in": {
+        "places": 2
+      },
+      "poverty,|||war|||in|||places": {
+        "like": 2
+      },
+      "war|||in|||places|||like": {
+        "Ukraine": 2
+      },
+      "in|||places|||like|||Ukraine": {
+        "and": 2
+      },
+      "places|||like|||Ukraine|||and": {
+        "Gaza,": 2
+      },
+      "like|||Ukraine|||and|||Gaza,": {
+        "and": 2
+      },
+      "Ukraine|||and|||Gaza,|||and": {
+        "the": 2
+      },
+      "and|||Gaza,|||and|||the": {
+        "lingering": 2
+      },
+      "Gaza,|||and|||the|||lingering": {
+        "effects": 2
+      },
+      "and|||the|||lingering|||effects": {
+        "of": 2
+      },
+      "the|||lingering|||effects|||of": {
+        "the": 2
+      },
+      "lingering|||effects|||of|||the": {
+        "COVID": 2
+      },
+      "effects|||of|||the|||COVID": {
+        "pandemic": 2
+      },
+      "of|||the|||COVID|||pandemic": {
+        "the": 2
+      },
+      "the|||COVID|||pandemic|||the": {
+        "global": 2
+      },
+      "COVID|||pandemic|||the|||global": {
+        "economy": 2
+      },
+      "pandemic|||the|||global|||economy": {
+        "runs": 2
+      },
+      "the|||global|||economy|||runs": {
+        "on": 2
+      },
+      "global|||economy|||runs|||on": {
+        "fossil": 2
+      },
+      "economy|||runs|||on|||fossil": {
+        "fuels,": 2
+      },
+      "runs|||on|||fossil|||fuels,": {
+        "renewable": 2
+      },
+      "on|||fossil|||fuels,|||renewable": {
+        "energy": 2
+      },
+      "fossil|||fuels,|||renewable|||energy": {
+        "like": 2
+      },
+      "fuels,|||renewable|||energy|||like": {
+        "solar": 2
+      },
+      "renewable|||energy|||like|||solar": {
+        "and": 2
+      },
+      "energy|||like|||solar|||and": {
+        "wind": 2
+      },
+      "like|||solar|||and|||wind": {
+        "is": 2
+      },
+      "solar|||and|||wind|||is": {
+        "growing": 2
+      },
+      "and|||wind|||is|||growing": {
+        "fast": 2
+      },
+      "wind|||is|||growing|||fast": {
+        "but": 2
+      },
+      "is|||growing|||fast|||but": {
+        "still": 2
+      },
+      "growing|||fast|||but|||still": {
+        "too": 2
+      },
+      "fast|||but|||still|||too": {
+        "slow": 2
+      },
+      "but|||still|||too|||slow": {
+        "oceans": 2
+      },
+      "still|||too|||slow|||oceans": {
+        "are": 2
+      },
+      "too|||slow|||oceans|||are": {
+        "filling": 2
+      },
+      "slow|||oceans|||are|||filling": {
+        "with": 2
+      },
+      "oceans|||are|||filling|||with": {
+        "plastic,": 2
+      },
+      "are|||filling|||with|||plastic,": {
+        "forests": 2
+      },
+      "filling|||with|||plastic,|||forests": {
+        "are": 2
+      },
+      "with|||plastic,|||forests|||are": {
+        "shrinking,": 2
+      },
+      "plastic,|||forests|||are|||shrinking,": {
+        "and": 2
+      },
+      "forests|||are|||shrinking,|||and": {
+        "species": 2
+      },
+      "are|||shrinking,|||and|||species": {
+        "are": 2
+      },
+      "shrinking,|||and|||species|||are": {
+        "disappearing": 2
+      },
+      "and|||species|||are|||disappearing": {
+        "at": 2
+      },
+      "species|||are|||disappearing|||at": {
+        "an": 2
+      },
+      "are|||disappearing|||at|||an": {
+        "alarming": 2
+      },
+      "disappearing|||at|||an|||alarming": {
+        "rate": 2
+      },
+      "at|||an|||alarming|||rate": {
+        "on": 2
+      },
+      "an|||alarming|||rate|||on": {
+        "the": 2
+      },
+      "alarming|||rate|||on|||the": {
+        "positive": 2
+      },
+      "rate|||on|||the|||positive": {
+        "side,": 2
+      },
+      "on|||the|||positive|||side,": {
+        "vaccines": 2
+      },
+      "the|||positive|||side,|||vaccines": {
+        "save": 2
+      },
+      "positive|||side,|||vaccines|||save": {
+        "millions": 2
+      },
+      "side,|||vaccines|||save|||millions": {
+        "of": 2
+      },
+      "vaccines|||save|||millions|||of": {
+        "lives,": 2
+      },
+      "save|||millions|||of|||lives,": {
+        "extreme": 2
+      },
+      "millions|||of|||lives,|||extreme": {
+        "poverty": 2
+      },
+      "of|||lives,|||extreme|||poverty": {
+        "has": 2
+      },
+      "lives,|||extreme|||poverty|||has": {
+        "dropped": 2
+      },
+      "extreme|||poverty|||has|||dropped": {
+        "sharply,": 2
+      },
+      "poverty|||has|||dropped|||sharply,": {
+        "and": 2
+      },
+      "has|||dropped|||sharply,|||and": {
+        "international": 2
+      },
+      "dropped|||sharply,|||and|||international": {
+        "cooperation": 2
+      },
+      "sharply,|||and|||international|||cooperation": {
+        "continues": 2
+      },
+      "and|||international|||cooperation|||continues": {
+        "through": 2
+      },
+      "international|||cooperation|||continues|||through": {
+        "the": 2
+      },
+      "cooperation|||continues|||through|||the": {
+        "United": 2
+      },
+      "continues|||through|||the|||United": {
+        "Nations": 2
+      },
+      "through|||the|||United|||Nations": {
+        "the": 2
+      },
+      "the|||United|||Nations|||the": {
+        "world": 2
+      },
+      "United|||Nations|||the|||world": {
+        "today": 2
+      },
+      "Nations|||the|||world|||today": {
+        "is": 2
+      },
+      "the|||world|||today|||is": {
+        "more": 2
+      },
+      "world|||today|||is|||more": {
+        "connected": 2
+      },
+      "today|||is|||more|||connected": {
+        "and": 2
+      },
+      "is|||more|||connected|||and": {
+        "more": 2
+      },
+      "more|||connected|||and|||more": {
+        "fragile": 2
+      },
+      "connected|||and|||more|||fragile": {
+        "than": 2
+      },
+      "and|||more|||fragile|||than": {
+        "ever": 2
+      },
+      "more|||fragile|||than|||ever": {
+        "before": 2
+      },
+      "what|||is|||the|||world": {
+        "?": 3
+      },
+      "is|||the|||world|||?": {
+        "the": 3
+      },
+      "the|||world|||?|||the": {
+        "current": 3
+      },
+      "world|||?|||the|||current": {
+        "world": 3
+      },
+      "?|||the|||current|||world": {
+        "has": 3
+      },
+      "countries,|||with|||the|||superpowers": {
+        "US": 2
+      },
+      "with|||the|||superpowers|||US": {
+        ",": 2
+      },
+      "the|||superpowers|||US|||,": {
+        "a": 2
+      },
+      "superpowers|||US|||,|||a": {
+        "republic": 2
+      },
+      "US|||,|||a|||republic": {
+        "(democracy)": 2
+      },
+      ",|||a|||republic|||(democracy)": {
+        "and": 2
+      },
+      "a|||republic|||(democracy)|||and": {
+        "China": 2
+      },
+      "republic|||(democracy)|||and|||China": {
+        ",": 2
+      },
+      "(democracy)|||and|||China|||,": {
+        "a": 2
+      },
+      "and|||China|||,|||a": {
+        "dictatorship": 2
+      },
+      "China|||,|||a|||dictatorship": {
+        "(communism": 2
+      },
+      ",|||a|||dictatorship|||(communism": {
+        "with": 2
+      },
+      "a|||dictatorship|||(communism|||with": {
+        "chinese": 2
+      },
+      "dictatorship|||(communism|||with|||chinese": {
+        "values": 2
+      },
+      "(communism|||with|||chinese|||values": {
+        "(semi": 2
+      },
+      "with|||chinese|||values|||(semi": {
+        "free": 2
+      },
+      "chinese|||values|||(semi|||free": {
+        "market)).": 2
+      },
+      "values|||(semi|||free|||market)).": {
+        "World": 2
+      },
+      "(semi|||free|||market)).|||World": {
+        "bodies": 2
+      },
+      "free|||market)).|||World|||bodies": {
+        "include": 2
+      },
+      "market)).|||World|||bodies|||include": {
+        "UN": 2
+      },
+      "World|||bodies|||include|||UN": {
+        ",": 2
+      },
+      "bodies|||include|||UN|||,": {
+        "a": 2
+      },
+      "include|||UN|||,|||a": {
+        "table": 2
+      },
+      "UN|||,|||a|||table": {
+        "for": 2
+      },
+      ",|||a|||table|||for": {
+        "talkes,": 2
+      },
+      "a|||table|||for|||talkes,": {
+        "NATO": 2
+      },
+      "table|||for|||talkes,|||NATO": {
+        ",": 2
+      },
+      "for|||talkes,|||NATO|||,": {
+        "a": 2
+      },
+      "talkes,|||NATO|||,|||a": {
+        "organization": 2
+      },
+      "NATO|||,|||a|||organization": {
+        "for": 2
+      },
+      ",|||a|||organization|||for": {
+        "giving": 2
+      },
+      "a|||organization|||for|||giving": {
+        "aid": 2
+      },
+      "organization|||for|||giving|||aid": {
+        "to": 2
+      },
+      "for|||giving|||aid|||to": {
+        "other": 2
+      },
+      "giving|||aid|||to|||other": {
+        "countries": 2
+      },
+      "aid|||to|||other|||countries": {
+        ",": 2
+      },
+      "to|||other|||countries|||,": {
+        "the": 2
+      },
+      "other|||countries|||,|||the": {
+        "RedCross": 2
+      },
+      "countries|||,|||the|||RedCross": {
+        ",": 2
+      },
+      ",|||the|||RedCross|||,": {
+        "for": 2
+      },
+      "the|||RedCross|||,|||for": {
+        "helping": 2
+      },
+      "RedCross|||,|||for|||helping": {
+        "people": 2
+      },
+      ",|||for|||helping|||people": {
+        "in": 2
+      },
+      "for|||helping|||people|||in": {
+        "need": 2
+      },
+      "helping|||people|||in|||need": {
+        ",": 2
+      },
+      "people|||in|||need|||,": {
+        "Free": 2
+      },
+      "in|||need|||,|||Free": {
+        "Liniux": 2
+      },
+      "need|||,|||Free|||Liniux": {
+        "Foundation": 2
+      },
+      ",|||Free|||Liniux|||Foundation": {
+        ",": 2
+      },
+      "Free|||Liniux|||Foundation|||,": {
+        "a": 2
+      },
+      "Liniux|||Foundation|||,|||a": {
+        "great": 2
+      },
+      "Foundation|||,|||a|||great": {
+        "thing.": 2
+      },
+      "what|||is|||hi|||it": {
+        "is": 1
+      },
+      "is|||hi|||it|||is": {
+        "a": 1
+      },
+      "hi|||it|||is|||a": {
+        "salutation.": 1
+      },
+      "ERROR:|||Failed|||to|||fetch": {
+        "Tip:": 1
+      },
+      "Failed|||to|||fetch|||Tip:": {
+        "If": 1
+      },
+      "to|||fetch|||Tip:|||If": {
+        "this": 1
+      },
+      "fetch|||Tip:|||If|||this": {
+        "is": 1
+      },
+      "Tip:|||If|||this|||is": {
+        "a": 1
+      },
+      "If|||this|||is|||a": {
+        "CORS": 1
+      },
+      "this|||is|||a|||CORS": {
+        "error,": 1
+      },
+      "is|||a|||CORS|||error,": {
+        "try": 1
+      },
+      "a|||CORS|||error,|||try": {
+        "using": 1
+      },
+      "CORS|||error,|||try|||using": {
+        "a": 1
+      },
+      "error,|||try|||using|||a": {
+        "CORS": 1
+      },
+      "try|||using|||a|||CORS": {
+        "proxy": 1
+      },
+      "using|||a|||CORS|||proxy": {
+        "(enter": 1
+      },
+      "a|||CORS|||proxy|||(enter": {
+        "a": 1
+      },
+      "CORS|||proxy|||(enter|||a": {
+        "proxy": 1
+      },
+      "proxy|||(enter|||a|||proxy": {
+        "URL": 1
+      },
+      "(enter|||a|||proxy|||URL": {
+        "above)": 1
+      },
+      "a|||proxy|||URL|||above)": {
+        "or": 1
+      },
+      "proxy|||URL|||above)|||or": {
+        "copy-paste": 1
+      },
+      "URL|||above)|||or|||copy-paste": {
+        "the": 1
+      },
+      "above)|||or|||copy-paste|||the": {
+        "text": 1
+      },
+      "or|||copy-paste|||the|||text": {
+        "manually": 1
+      },
+      "copy-paste|||the|||text|||manually": {
+        "into": 1
+      },
+      "the|||text|||manually|||into": {
+        "the": 1
+      },
+      "text|||manually|||into|||the": {
+        "Training": 1
+      },
+      "manually|||into|||the|||Training": {
+        "section.": 1
+      },
+      "\"Euphoria\"|||are|||technically|||part": {
+        "of": 1
+      },
+      "are|||technically|||part|||of": {
+        "the": 1
+      },
+      "technically|||part|||of|||the": {
+        "same": 2
+      },
+      "part|||of|||the|||same": {
+        "real-time": 2
+      },
+      "of|||the|||same|||real-time": {
+        "community": 2
+      },
+      "the|||same|||real-time|||community": {
+        "platform.": 2
+      },
+      "same|||real-time|||community|||platform.": {
+        "Their": 2
+      },
+      "real-time|||community|||platform.|||Their": {
+        "only": 2
+      },
+      "community|||platform.|||Their|||only": {
+        "connection": 2
+      },
+      "platform.|||Their|||only|||connection": {
+        "to": 2
+      },
+      "Their|||only|||connection|||to": {
+        "xkcd": 2
+      },
+      "only|||connection|||to|||xkcd": {
+        "is": 2
+      },
+      "connection|||to|||xkcd|||is": {
+        "as": 2
+      },
+      "to|||xkcd|||is|||as": {
+        "the": 2
+      },
+      "xkcd|||is|||as|||the": {
+        "host": 2
+      },
+      "is|||as|||the|||host": {
+        "for": 2
+      },
+      "as|||the|||host|||for": {
+        "an": 2
+      },
+      "the|||host|||for|||an": {
+        "official": 2
+      },
+      "host|||for|||an|||official": {
+        "chatroom": 2
+      },
+      "for|||an|||official|||chatroom": {
+        "referenced": 2
+      },
+      "an|||official|||chatroom|||referenced": {
+        "in": 2
+      },
+      "official|||chatroom|||referenced|||in": {
+        "Randall": 2
+      },
+      "chatroom|||referenced|||in|||Randall": {
+        "Munroe's": 2
+      },
+      "referenced|||in|||Randall|||Munroe's": {
+        "webcomics.": 2
+      },
+      "in|||Randall|||Munroe's|||webcomics.": {
+        "Heim": 2
+      },
+      "Randall|||Munroe's|||webcomics.|||Heim": {
+        "Server": 2
+      },
+      "Munroe's|||webcomics.|||Heim|||Server": {
+        "API:": 2
+      },
+      "webcomics.|||Heim|||Server|||API:": {
+        "The": 2
+      },
+      "Heim|||Server|||API:|||The": {
+        "backend": 2
+      },
+      "Server|||API:|||The|||backend": {
+        "of": 2
+      },
+      "API:|||The|||backend|||of": {
+        "the": 2
+      },
+      "The|||backend|||of|||the": {
+        "euphoria.io": 2
+      },
+      "backend|||of|||the|||euphoria.io": {
+        "platform.": 2
+      },
+      "of|||the|||euphoria.io|||platform.": {
+        "It": 2
+      },
+      "the|||euphoria.io|||platform.|||It": {
+        "includes:": 2
+      },
+      "euphoria.io|||platform.|||It|||includes:": {
+        "·": 2
+      },
+      "platform.|||It|||includes:|||·": {
+        "Back-end": 2
+      },
+      "It|||includes:|||·|||Back-end": {
+        "logic:": 2
+      },
+      "includes:|||·|||Back-end|||logic:": {
+        "A": 2
+      },
+      "·|||Back-end|||logic:|||A": {
+        "Go": 2
+      },
+      "Back-end|||logic:|||A|||Go": {
+        "server": 2
+      },
+      "logic:|||A|||Go|||server": {
+        "that": 2
+      },
+      "A|||Go|||server|||that": {
+        "handles": 2
+      },
+      "Go|||server|||that|||handles": {
+        "chat": 2
+      },
+      "server|||that|||handles|||chat": {
+        "rooms,": 2
+      },
+      "that|||handles|||chat|||rooms,": {
+        "user": 2
+      },
+      "handles|||chat|||rooms,|||user": {
+        "permissions,": 2
+      },
+      "chat|||rooms,|||user|||permissions,": {
+        "and": 2
+      },
+      "rooms,|||user|||permissions,|||and": {
+        "real-time": 2
+      },
+      "user|||permissions,|||and|||real-time": {
+        "messaging.": 2
+      },
+      "permissions,|||and|||real-time|||messaging.": {
+        "·": 2
+      },
+      "and|||real-time|||messaging.|||·": {
+        "Communication": 2
+      },
+      "real-time|||messaging.|||·|||Communication": {
+        "protocol:": 2
+      },
+      "messaging.|||·|||Communication|||protocol:": {
+        "Uses": 2
+      },
+      "·|||Communication|||protocol:|||Uses": {
+        "WebSockets": 2
+      },
+      "Communication|||protocol:|||Uses|||WebSockets": {
+        "to": 2
+      },
+      "protocol:|||Uses|||WebSockets|||to": {
+        "transmit": 2
+      },
+      "Uses|||WebSockets|||to|||transmit": {
+        "JSON": 2
+      },
+      "WebSockets|||to|||transmit|||JSON": {
+        "data": 2
+      },
+      "to|||transmit|||JSON|||data": {
+        "between": 2
+      },
+      "transmit|||JSON|||data|||between": {
+        "the": 2
+      },
+      "JSON|||data|||between|||the": {
+        "server": 2
+      },
+      "data|||between|||the|||server": {
+        "and": 2
+      },
+      "between|||the|||server|||and": {
+        "all": 2
+      },
+      "the|||server|||and|||all": {
+        "connected": 2
+      },
+      "server|||and|||all|||connected": {
+        "clients.": 2
+      },
+      "and|||all|||connected|||clients.": {
+        "·": 2
+      },
+      "all|||connected|||clients.|||·": {
+        "Database:": 2
+      },
+      "connected|||clients.|||·|||Database:": {
+        "Uses": 2
+      },
+      "clients.|||·|||Database:|||Uses": {
+        "PostgreSQL": 2
+      },
+      "·|||Database:|||Uses|||PostgreSQL": {
+        "for": 2
+      },
+      "Database:|||Uses|||PostgreSQL|||for": {
+        "data": 2
+      },
+      "Uses|||PostgreSQL|||for|||data": {
+        "persistence.": 2
+      },
+      "PostgreSQL|||for|||data|||persistence.": {
+        "·": 2
+      },
+      "for|||data|||persistence.|||·": {
+        "Front-end": 2
+      },
+      "data|||persistence.|||·|||Front-end": {
+        "client:": 2
+      },
+      "persistence.|||·|||Front-end|||client:": {
+        "Built": 2
+      },
+      "·|||Front-end|||client:|||Built": {
+        "with": 2
+      },
+      "Front-end|||client:|||Built|||with": {
+        "React/Reflux": 2
+      },
+      "client:|||Built|||with|||React/Reflux": {
+        "to": 2
+      },
+      "Built|||with|||React/Reflux|||to": {
+        "provide": 2
+      },
+      "with|||React/Reflux|||to|||provide": {
+        "the": 2
+      },
+      "React/Reflux|||to|||provide|||the": {
+        "user": 2
+      },
+      "to|||provide|||the|||user": {
+        "interface.": 2
+      },
+      "provide|||the|||user|||interface.": {
+        "·": 2
+      },
+      "the|||user|||interface.|||·": {
+        "State:": 2
+      },
+      "user|||interface.|||·|||State:": {
+        "It's": 2
+      },
+      "interface.|||·|||State:|||It's": {
+        "marked": 2
+      },
+      "·|||State:|||It's|||marked": {
+        "as": 2
+      },
+      "State:|||It's|||marked|||as": {
+        "a": 2
+      },
+      "It's|||marked|||as|||a": {
+        "pre-alpha": 2
+      },
+      "marked|||as|||a|||pre-alpha": {
+        "release": 2
+      },
+      "as|||a|||pre-alpha|||release": {
+        "and": 2
+      },
+      "a|||pre-alpha|||release|||and": {
+        "is": 2
+      },
+      "pre-alpha|||release|||and|||is": {
+        "currently": 2
+      },
+      "release|||and|||is|||currently": {
+        "not": 2
+      },
+      "and|||is|||currently|||not": {
+        "under": 2
+      },
+      "is|||currently|||not|||under": {
+        "active": 2
+      },
+      "currently|||not|||under|||active": {
+        "development.": 2
+      },
+      "not|||under|||active|||development.": {
+        "Connection": 2
+      },
+      "under|||active|||development.|||Connection": {
+        "to": 2
+      },
+      "active|||development.|||Connection|||to": {
+        "xkcd:": 2
+      },
+      "development.|||Connection|||to|||xkcd:": {
+        "There's": 2
+      },
+      "Connection|||to|||xkcd:|||There's": {
+        "a": 2
+      },
+      "to|||xkcd:|||There's|||a": {
+        "clear": 2
+      },
+      "xkcd:|||There's|||a|||clear": {
+        "but": 2
+      },
+      "There's|||a|||clear|||but": {
+        "separate": 2
+      },
+      "a|||clear|||but|||separate": {
+        "connection.": 2
+      },
+      "clear|||but|||separate|||connection.": {
+        "·": 2
+      },
+      "but|||separate|||connection.|||·": {
+        "Official": 2
+      },
+      "separate|||connection.|||·|||Official": {
+        "Chatroom:": 2
+      },
+      "connection.|||·|||Official|||Chatroom:": {
+        "The": 2
+      },
+      "·|||Official|||Chatroom:|||The": {
+        "webcomic": 2
+      },
+      "Official|||Chatroom:|||The|||webcomic": {
+        "xkcd": 2
+      },
+      "Chatroom:|||The|||webcomic|||xkcd": {
+        "has": 2
+      },
+      "The|||webcomic|||xkcd|||has": {
+        "a": 2
+      },
+      "webcomic|||xkcd|||has|||a": {
+        "dedicated": 2
+      },
+      "xkcd|||has|||a|||dedicated": {
+        "chatroom": 2
+      },
+      "has|||a|||dedicated|||chatroom": {
+        "hosted": 2
+      },
+      "a|||dedicated|||chatroom|||hosted": {
+        "on": 2
+      },
+      "dedicated|||chatroom|||hosted|||on": {
+        "the": 2
+      },
+      "chatroom|||hosted|||on|||the": {
+        "Euphoria": 2
+      },
+      "hosted|||on|||the|||Euphoria": {
+        "platform": 2
+      },
+      "on|||the|||Euphoria|||platform": {
+        "for": 2
+      },
+      "the|||Euphoria|||platform|||for": {
+        "readers": 2
+      },
+      "Euphoria|||platform|||for|||readers": {
+        "to": 2
+      },
+      "platform|||for|||readers|||to": {
+        "discuss": 2
+      },
+      "for|||readers|||to|||discuss": {
+        "the": 2
+      },
+      "readers|||to|||discuss|||the": {
+        "comics.": 2
+      },
+      "to|||discuss|||the|||comics.": {
+        "·": 2
+      },
+      "discuss|||the|||comics.|||·": {
+        "Referenced": 2
+      },
+      "the|||comics.|||·|||Referenced": {
+        "in": 2
+      },
+      "comics.|||·|||Referenced|||in": {
+        "Comics:": 2
+      },
+      "·|||Referenced|||in|||Comics:": {
+        "This": 2
+      },
+      "Referenced|||in|||Comics:|||This": {
+        "chatroom": 2
+      },
+      "in|||Comics:|||This|||chatroom": {
+        "is": 2
+      },
+      "Comics:|||This|||chatroom|||is": {
+        "directly": 2
+      },
+      "This|||chatroom|||is|||directly": {
+        "referenced": 2
+      },
+      "chatroom|||is|||directly|||referenced": {
+        "in": 2
+      },
+      "is|||directly|||referenced|||in": {
+        "xkcd's": 2
+      },
+      "directly|||referenced|||in|||xkcd's": {
+        "Comic": 2
+      },
+      "referenced|||in|||xkcd's|||Comic": {
+        "#1506": 2
+      },
+      "in|||xkcd's|||Comic|||#1506": {
+        "(\"xkcloud\").": 2
+      },
+      "xkcd's|||Comic|||#1506|||(\"xkcloud\").": {
+        "·": 2
+      },
+      "Comic|||#1506|||(\"xkcloud\").|||·": {
+        "Platform": 2
+      },
+      "#1506|||(\"xkcloud\").|||·|||Platform": {
+        "Evolution:": 2
+      },
+      "(\"xkcloud\").|||·|||Platform|||Evolution:": {
+        "This": 2
+      },
+      "·|||Platform|||Evolution:|||This": {
+        "chat": 2
+      },
+      "Platform|||Evolution:|||This|||chat": {
+        "started": 2
+      },
+      "Evolution:|||This|||chat|||started": {
+        "at": 2
+      },
+      "This|||chat|||started|||at": {
+        "euphoria.io/room/xkcd": 2
+      },
+      "chat|||started|||at|||euphoria.io/room/xkcd": {
+        "and": 2
+      },
+      "started|||at|||euphoria.io/room/xkcd|||and": {
+        "later": 2
+      },
+      "at|||euphoria.io/room/xkcd|||and|||later": {
+        "moved": 2
+      },
+      "euphoria.io/room/xkcd|||and|||later|||moved": {
+        "to": 2
+      },
+      "and|||later|||moved|||to": {
+        "euphoria.leet.nu.": 2
+      },
+      "later|||moved|||to|||euphoria.leet.nu.": {
+        "·": 2
+      },
+      "moved|||to|||euphoria.leet.nu.|||·": {
+        "Community": 2
+      },
+      "to|||euphoria.leet.nu.|||·|||Community": {
+        "Bridge:": 2
+      },
+      "euphoria.leet.nu.|||·|||Community|||Bridge:": {
+        "This": 2
+      },
+      "·|||Community|||Bridge:|||This": {
+        "setup": 2
+      },
+      "Community|||Bridge:|||This|||setup": {
+        "serves": 2
+      },
+      "Bridge:|||This|||setup|||serves": {
+        "as": 2
+      },
+      "This|||setup|||serves|||as": {
+        "a": 2
+      },
+      "setup|||serves|||as|||a": {
+        "bridge,": 2
+      },
+      "serves|||as|||a|||bridge,": {
+        "using": 2
+      },
+      "as|||a|||bridge,|||using": {
+        "the": 2
+      },
+      "a|||bridge,|||using|||the": {
+        "Heim": 2
+      },
+      "bridge,|||using|||the|||Heim": {
+        "back-end": 2
+      },
+      "using|||the|||Heim|||back-end": {
+        "to": 2
+      },
+      "the|||Heim|||back-end|||to": {
+        "connect": 2
+      },
+      "Heim|||back-end|||to|||connect": {
+        "the": 2
+      },
+      "back-end|||to|||connect|||the": {
+        "Euphoria": 2
+      },
+      "to|||connect|||the|||Euphoria": {
+        "community": 2
+      },
+      "connect|||the|||Euphoria|||community": {
+        "with": 2
+      },
+      "the|||Euphoria|||community|||with": {
+        "fans": 2
+      },
+      "Euphoria|||community|||with|||fans": {
+        "of": 2
+      },
+      "community|||with|||fans|||of": {
+        "the": 2
+      },
+      "with|||fans|||of|||the": {
+        "xkcd": 2
+      },
+      "fans|||of|||the|||xkcd": {
+        "webcomic.": 2
+      },
+      "euphoria.leet.nu:|||A|||platform|||being": {
+        "built": 1
+      },
+      "A|||platform|||being|||built": {
+        "for": 2
+      },
+      "platform|||being|||built|||for": {
+        "online": 2
+      },
+      "being|||built|||for|||online": {
+        "communities.": 2
+      },
+      "built|||for|||online|||communities.": {
+        "It's": 2
+      },
+      "for|||online|||communities.|||It's": {
+        "described": 2
+      },
+      "online|||communities.|||It's|||described": {
+        "as": 2
+      },
+      "communities.|||It's|||described|||as": {
+        "a": 2
+      },
+      "It's|||described|||as|||a": {
+        "\"cozy": 2
+      },
+      "described|||as|||a|||\"cozy": {
+        "realtime": 2
+      },
+      "as|||a|||\"cozy|||realtime": {
+        "discussion": 2
+      },
+      "a|||\"cozy|||realtime|||discussion": {
+        "space\"": 2
+      },
+      "\"cozy|||realtime|||discussion|||space\"": {
+        "that": 2
+      },
+      "realtime|||discussion|||space\"|||that": {
+        "blends": 2
+      },
+      "discussion|||space\"|||that|||blends": {
+        "the": 2
+      },
+      "space\"|||that|||blends|||the": {
+        "features": 2
+      },
+      "that|||blends|||the|||features": {
+        "of": 2
+      },
+      "blends|||the|||features|||of": {
+        "chat": 2
+      },
+      "the|||features|||of|||chat": {
+        "rooms,": 2
+      },
+      "features|||of|||chat|||rooms,": {
+        "forums,": 2
+      },
+      "of|||chat|||rooms,|||forums,": {
+        "and": 2
+      },
+      "chat|||rooms,|||forums,|||and": {
+        "mailing": 2
+      },
+      "rooms,|||forums,|||and|||mailing": {
+        "lists,": 2
+      },
+      "forums,|||and|||mailing|||lists,": {
+        "designed": 2
+      },
+      "and|||mailing|||lists,|||designed": {
+        "to": 2
+      },
+      "mailing|||lists,|||designed|||to": {
+        "help": 2
+      },
+      "lists,|||designed|||to|||help": {
+        "people": 2
+      },
+      "designed|||to|||help|||people": {
+        "connect": 2
+      },
+      "to|||help|||people|||connect": {
+        "with": 2
+      },
+      "help|||people|||connect|||with": {
+        "friends,": 2
+      },
+      "people|||connect|||with|||friends,": {
+        "groups,": 2
+      },
+      "connect|||with|||friends,|||groups,": {
+        "and": 2
+      },
+      "with|||friends,|||groups,|||and": {
+        "others": 2
+      },
+      "friends,|||groups,|||and|||others": {
+        "from": 2
+      },
+      "groups,|||and|||others|||from": {
+        "around": 2
+      },
+      "and|||others|||from|||around": {
+        "the": 2
+      },
+      "others|||from|||around|||the": {
+        "world.": 2
+      },
+      "from|||around|||the|||world.": {
+        "·": 2
+      },
+      "around|||the|||world.|||·": {
+        "leet.nu:": 2
+      },
+      "the|||world.|||·|||leet.nu:": {
+        "This": 2
+      },
+      "world.|||·|||leet.nu:|||This": {
+        "website": 2
+      },
+      "·|||leet.nu:|||This|||website": {
+        "couldn't": 2
+      },
+      "leet.nu:|||This|||website|||couldn't": {
+        "be": 2
+      },
+      "This|||website|||couldn't|||be": {
+        "loaded": 2
+      },
+      "website|||couldn't|||be|||loaded": {
+        "or": 2
+      },
+      "couldn't|||be|||loaded|||or": {
+        "didn't": 2
+      },
+      "be|||loaded|||or|||didn't": {
+        "respond": 2
+      },
+      "loaded|||or|||didn't|||respond": {
+        "to": 2
+      },
+      "or|||didn't|||respond|||to": {
+        "connection": 2
+      },
+      "didn't|||respond|||to|||connection": {
+        "attempts.": 2
+      },
+      "respond|||to|||connection|||attempts.": {
+        "·": 2
+      },
+      "to|||connection|||attempts.|||·": {
+        "instant.leet.nu/about.html:": 1,
+        "instant.leet.nu": 1
+      },
+      "connection|||attempts.|||·|||instant.leet.nu/about.html:": {
+        "A": 1
+      },
+      "attempts.|||·|||instant.leet.nu/about.html:|||A": {
+        "minimalist,": 1
+      },
+      "·|||instant.leet.nu/about.html:|||A|||minimalist,": {
+        "ephemeral": 1
+      },
+      "instant.leet.nu/about.html:|||A|||minimalist,|||ephemeral": {
+        "chat": 1
+      },
+      "A|||minimalist,|||ephemeral|||chat": {
+        "site": 2
+      },
+      "minimalist,|||ephemeral|||chat|||site": {
+        "that": 2
+      },
+      "ephemeral|||chat|||site|||that": {
+        "focuses": 2
+      },
+      "chat|||site|||that|||focuses": {
+        "on": 2
+      },
+      "site|||that|||focuses|||on": {
+        "the": 2
+      },
+      "that|||focuses|||on|||the": {
+        "present": 2
+      },
+      "focuses|||on|||the|||present": {
+        "moment": 2
+      },
+      "on|||the|||present|||moment": {
+        "and": 2
+      },
+      "the|||present|||moment|||and": {
+        "does": 2
+      },
+      "present|||moment|||and|||does": {
+        "not": 2
+      },
+      "moment|||and|||does|||not": {
+        "store": 2
+      },
+      "and|||does|||not|||store": {
+        "any": 2
+      },
+      "does|||not|||store|||any": {
+        "messages": 2
+      },
+      "not|||store|||any|||messages": {
+        "once": 2
+      },
+      "store|||any|||messages|||once": {
+        "everyone": 2
+      },
+      "any|||messages|||once|||everyone": {
+        "has": 2
+      },
+      "messages|||once|||everyone|||has": {
+        "left.": 2
+      },
+      "euphoria.leet.nu|||or|||euphoria|||:": {
+        "A": 1
+      },
+      "or|||euphoria|||:|||A": {
+        "platform": 1
+      },
+      "euphoria|||:|||A|||platform": {
+        "being": 1
+      },
+      ":|||A|||platform|||being": {
+        "built": 1
+      },
+      "connection|||attempts.|||·|||instant.leet.nu": {
+        "or": 1
+      },
+      "attempts.|||·|||instant.leet.nu|||or": {
+        "instant": 1
+      },
+      "·|||instant.leet.nu|||or|||instant": {
+        ":": 1
+      },
+      "instant.leet.nu|||or|||instant|||:": {
+        "A": 1
+      },
+      "or|||instant|||:|||A": {
+        "minimalist,": 1
+      },
+      "instant|||:|||A|||minimalist,": {
+        "ephemeral": 1
+      },
+      ":|||A|||minimalist,|||ephemeral": {
+        "chat": 1
+      },
+      "Euphoria|||is|||technically|||part": {
+        "of": 1
+      },
+      "is|||technically|||part|||of": {
+        "the": 1
+      },
+      "leet.nu:|||This|||website|||is": {
+        "the": 1
+      },
+      "This|||website|||is|||the": {
+        "homepage": 1
+      },
+      "website|||is|||the|||homepage": {
+        "for": 1
+      },
+      "is|||the|||homepage|||for": {
+        "euphoria.leet.nu_instant.leet.nu": 1
+      },
+      "the|||homepage|||for|||euphoria.leet.nu_instant.leet.nu": {
+        "leet.nu": 1
+      },
+      "homepage|||for|||euphoria.leet.nu_instant.leet.nu|||leet.nu": {
+        "also": 1
+      },
+      "for|||euphoria.leet.nu_instant.leet.nu|||leet.nu|||also": {
+        "hosts": 1
+      },
+      "euphoria.leet.nu_instant.leet.nu|||leet.nu|||also|||hosts": {
+        "a": 1
+      },
+      "leet.nu|||also|||hosts|||a": {
+        "private": 1
+      },
+      "also|||hosts|||a|||private": {
+        "whitelist": 1
+      },
+      "hosts|||a|||private|||whitelist": {
+        "Minecraft": 1
+      },
+      "a|||private|||whitelist|||Minecraft": {
+        "server": 1
+      },
+      "private|||whitelist|||Minecraft|||server": {
+        "see": 1
+      },
+      "whitelist|||Minecraft|||server|||see": {
+        "euphoria.leet.nj/room/minecraft!": 1
+      },
+      "DOOOM|||trump|||away:|||Next": {
+        "US": 1
+      },
+      "trump|||away:|||Next|||US": {
+        "president": 1
+      },
+      "away:|||Next|||US|||president": {
+        "assumes": 1
+      },
+      "Next|||US|||president|||assumes": {
+        "office": 1
+      },
+      "US|||president|||assumes|||office": {
+        "suneatsearth:": 1
+      },
+      "president|||assumes|||office|||suneatsearth:": {
+        "The": 1
+      },
+      "assumes|||office|||suneatsearth:|||The": {
+        "Sun": 1
+      },
+      "office|||suneatsearth:|||The|||Sun": {
+        "engulfs": 1
+      },
+      "suneatsearth:|||The|||Sun|||engulfs": {
+        "the": 1
+      },
+      "The|||Sun|||engulfs|||the": {
+        "Earth": 1
+      },
+      "Sun|||engulfs|||the|||Earth": {
+        "nextyear:": 1
+      },
+      "engulfs|||the|||Earth|||nextyear:": {
+        "2026": 1
+      },
+      "the|||Earth|||nextyear:|||2026": {
+        "ends": 1
+      },
+      "Earth|||nextyear:|||2026|||ends": {
+        "2028:": 1
+      },
+      "nextyear:|||2026|||ends|||2028:": {
+        "2028": 1
+      },
+      "2026|||ends|||2028:|||2028": {
+        "starts": 1
+      },
+      "ends|||2028:|||2028|||starts": {
+        "in:": 1
+      },
+      "2028:|||2028|||starts|||in:": {
+        "DOOMClock:": 1
+      },
+      "2028|||starts|||in:|||DOOMClock:": {
+        "the": 1
+      },
+      "starts|||in:|||DOOMClock:|||the": {
+        "time": 1
+      },
+      "in:|||DOOMClock:|||the|||time": {
+        "DOOM": 1
+      },
+      "DOOMClock:|||the|||time|||DOOM": {
+        "happens": 1
+      }
+    }
+  },
+  "vocabulary": {
+    "24": 1,
+    "510": 1,
+    "2026": 1,
+    "2028": 1,
+    "12742": 1,
+    "36525": 1,
+    "hi": 2,
+    "i": 1,
+    "am": 1,
+    "a": 35,
+    "dumb": 1,
+    "guy": 1,
+    "called": 1,
+    "sam.": 1,
+    "What": 1,
+    "is": 27,
+    "the": 72,
+    "earth": 1,
+    "?": 4,
+    "Earth": 4,
+    "ball,": 1,
+    "it": 3,
+    "third": 1,
+    "planet": 2,
+    "from": 4,
+    "Sun": 4,
+    "and": 43,
+    "has": 12,
+    "diameter": 1,
+    "of": 16,
+    "about": 6,
+    "kilometers": 2,
+    "with": 16,
+    "surface": 2,
+    "area": 1,
+    "million": 1,
+    "square": 1,
+    "Earth's": 3,
+    "structure": 1,
+    "includes": 1,
+    "solid": 1,
+    "iron": 1,
+    "inner": 1,
+    "core,": 2,
+    "liquid": 2,
+    "outer": 1,
+    "thick": 1,
+    "mantle": 1,
+    "hot": 1,
+    "rock,": 1,
+    "thin": 1,
+    "crust": 1,
+    "where": 1,
+    "we": 1,
+    "live": 1,
+    "atmosphere": 1,
+    "mostly": 1,
+    "nitrogen": 1,
+    "(78%)": 1,
+    "oxygen": 1,
+    "(21%)": 1,
+    "trace": 1,
+    "gases": 1,
+    "like": 5,
+    "argon": 1,
+    "carbon": 1,
+    "dioxide": 1,
+    "71%": 1,
+    "covered": 1,
+    "by": 1,
+    "water,": 2,
+    "mainly": 1,
+    "oceans,": 1,
+    "remaining": 1,
+    "29%": 1,
+    "land": 1,
+    "divided": 1,
+    "into": 2,
+    "seven": 1,
+    "continents": 1,
+    "orbits": 1,
+    "once": 3,
+    "every": 2,
+    "days": 1,
+    "(one": 1,
+    "year)": 1,
+    "rotates": 1,
+    "on": 9,
+    "its": 1,
+    "axis": 1,
+    "hours,": 1,
+    "giving": 3,
+    "us": 1,
+    "day": 1,
+    "night": 1,
+    "one": 1,
+    "natural": 1,
+    "satellite,": 1,
+    "Moon,": 1,
+    "which": 1,
+    "affects": 1,
+    "ocean": 1,
+    "tides": 1,
+    "stabilizes": 1,
+    "tilt": 1,
+    "only": 3,
+    "known": 1,
+    "place": 1,
+    "in": 17,
+    "universe": 1,
+    "that": 7,
+    "supports": 1,
+    "life,": 1,
+    "thanks": 1,
+    "to": 22,
+    "protective": 1,
+    "magnetic": 1,
+    "field,": 1,
+    "suitable": 1,
+    "distance": 1,
+    "what": 5,
+    "world?": 1,
+    "current": 4,
+    "world": 9,
+    "eight": 4,
+    "billion": 4,
+    "people": 8,
+    "living": 4,
+    "nearly": 4,
+    "two": 4,
+    "hundred": 4,
+    "countries,": 4,
+    "largest": 2,
+    "populations": 2,
+    "China": 4,
+    "India": 2,
+    "climate": 2,
+    "change": 2,
+    "causing": 2,
+    "rising": 2,
+    "sea": 2,
+    "levels,": 2,
+    "stronger": 2,
+    "storms,": 2,
+    "record": 2,
+    "heatwaves": 2,
+    "across": 2,
+    "many": 2,
+    "regions": 2,
+    "technology": 2,
+    "connects": 2,
+    "globe": 2,
+    "through": 4,
+    "smartphones,": 2,
+    "satellites,": 2,
+    "internet,": 2,
+    "but": 6,
+    "digital": 2,
+    "divides": 2,
+    "still": 4,
+    "exist": 2,
+    "major": 2,
+    "challenges": 2,
+    "include": 4,
+    "poverty,": 2,
+    "war": 2,
+    "places": 2,
+    "Ukraine": 2,
+    "Gaza,": 2,
+    "lingering": 2,
+    "effects": 2,
+    "COVID": 2,
+    "pandemic": 2,
+    "global": 2,
+    "economy": 2,
+    "runs": 2,
+    "fossil": 2,
+    "fuels,": 2,
+    "renewable": 2,
+    "energy": 2,
+    "solar": 2,
+    "wind": 2,
+    "growing": 2,
+    "fast": 2,
+    "too": 2,
+    "slow": 2,
+    "oceans": 2,
+    "are": 7,
+    "filling": 2,
+    "plastic,": 2,
+    "forests": 2,
+    "shrinking,": 2,
+    "species": 2,
+    "disappearing": 2,
+    "at": 4,
+    "an": 4,
+    "alarming": 2,
+    "rate": 2,
+    "positive": 2,
+    "side,": 2,
+    "vaccines": 2,
+    "save": 2,
+    "millions": 2,
+    "lives,": 2,
+    "extreme": 2,
+    "poverty": 2,
+    "dropped": 2,
+    "sharply,": 2,
+    "international": 2,
+    "cooperation": 2,
+    "continues": 2,
+    "United": 2,
+    "Nations": 2,
+    "today": 2,
+    "more": 4,
+    "connected": 4,
+    "fragile": 2,
+    "than": 2,
+    "ever": 2,
+    "before": 2,
+    "superpowers": 2,
+    "US": 3,
+    ",": 16,
+    "republic": 2,
+    "(democracy)": 2,
+    "dictatorship": 2,
+    "(communism": 2,
+    "chinese": 2,
+    "values": 2,
+    "(semi": 2,
+    "free": 2,
+    "market)).": 2,
+    "World": 2,
+    "bodies": 2,
+    "UN": 2,
+    "table": 2,
+    "for": 15,
+    "talkes,": 2,
+    "NATO": 2,
+    "organization": 2,
+    "aid": 2,
+    "other": 2,
+    "countries": 2,
+    "RedCross": 2,
+    "helping": 2,
+    "need": 2,
+    "Free": 2,
+    "Liniux": 2,
+    "Foundation": 2,
+    "great": 2,
+    "thing.": 2,
+    "salutation.": 1,
+    "ERROR:": 1,
+    "Failed": 1,
+    "fetch": 1,
+    "Tip:": 1,
+    "If": 1,
+    "this": 1,
+    "CORS": 2,
+    "error,": 1,
+    "try": 1,
+    "using": 3,
+    "proxy": 2,
+    "(enter": 1,
+    "URL": 1,
+    "above)": 1,
+    "or": 5,
+    "copy-paste": 1,
+    "text": 1,
+    "manually": 1,
+    "Training": 1,
+    "section.": 1,
+    "\"Euphoria\"": 1,
+    "technically": 2,
+    "part": 2,
+    "same": 2,
+    "real-time": 4,
+    "community": 4,
+    "platform.": 4,
+    "Their": 2,
+    "connection": 4,
+    "xkcd": 6,
+    "as": 8,
+    "host": 2,
+    "official": 2,
+    "chatroom": 6,
+    "referenced": 4,
+    "Randall": 2,
+    "Munroe's": 2,
+    "webcomics.": 2,
+    "Heim": 4,
+    "Server": 2,
+    "API:": 2,
+    "The": 5,
+    "backend": 2,
+    "euphoria.io": 2,
+    "It": 2,
+    "includes:": 2,
+    "·": 22,
+    "Back-end": 2,
+    "logic:": 2,
+    "A": 6,
+    "Go": 2,
+    "server": 5,
+    "handles": 2,
+    "chat": 8,
+    "rooms,": 4,
+    "user": 4,
+    "permissions,": 2,
+    "messaging.": 2,
+    "Communication": 2,
+    "protocol:": 2,
+    "Uses": 4,
+    "WebSockets": 2,
+    "transmit": 2,
+    "JSON": 2,
+    "data": 4,
+    "between": 2,
+    "all": 2,
+    "clients.": 2,
+    "Database:": 2,
+    "PostgreSQL": 2,
+    "persistence.": 2,
+    "Front-end": 2,
+    "client:": 2,
+    "Built": 2,
+    "React/Reflux": 2,
+    "provide": 2,
+    "interface.": 2,
+    "State:": 2,
+    "It's": 4,
+    "marked": 2,
+    "pre-alpha": 2,
+    "release": 2,
+    "currently": 2,
+    "not": 4,
+    "under": 2,
+    "active": 2,
+    "development.": 2,
+    "Connection": 2,
+    "xkcd:": 2,
+    "There's": 2,
+    "clear": 2,
+    "separate": 2,
+    "connection.": 2,
+    "Official": 2,
+    "Chatroom:": 2,
+    "webcomic": 2,
+    "dedicated": 2,
+    "hosted": 2,
+    "Euphoria": 5,
+    "platform": 4,
+    "readers": 2,
+    "discuss": 2,
+    "comics.": 2,
+    "Referenced": 2,
+    "Comics:": 2,
+    "This": 9,
+    "directly": 2,
+    "xkcd's": 2,
+    "Comic": 2,
+    "#1506": 2,
+    "(\"xkcloud\").": 2,
+    "Platform": 2,
+    "Evolution:": 2,
+    "started": 2,
+    "euphoria.io/room/xkcd": 2,
+    "later": 2,
+    "moved": 2,
+    "euphoria.leet.nu.": 2,
+    "Community": 2,
+    "Bridge:": 2,
+    "setup": 2,
+    "serves": 2,
+    "bridge,": 2,
+    "back-end": 2,
+    "connect": 4,
+    "fans": 2,
+    "webcomic.": 2,
+    "euphoria.leet.nu:": 1,
+    "being": 2,
+    "built": 2,
+    "online": 2,
+    "communities.": 2,
+    "described": 2,
+    "\"cozy": 2,
+    "realtime": 2,
+    "discussion": 2,
+    "space\"": 2,
+    "blends": 2,
+    "features": 2,
+    "forums,": 2,
+    "mailing": 2,
+    "lists,": 2,
+    "designed": 2,
+    "help": 2,
+    "friends,": 2,
+    "groups,": 2,
+    "others": 2,
+    "around": 2,
+    "world.": 2,
+    "leet.nu:": 3,
+    "website": 3,
+    "couldn't": 2,
+    "be": 2,
+    "loaded": 2,
+    "didn't": 2,
+    "respond": 2,
+    "attempts.": 2,
+    "instant.leet.nu/about.html:": 1,
+    "minimalist,": 2,
+    "ephemeral": 2,
+    "site": 2,
+    "focuses": 2,
+    "present": 2,
+    "moment": 2,
+    "does": 2,
+    "store": 2,
+    "any": 2,
+    "messages": 2,
+    "everyone": 2,
+    "left.": 2,
+    "euphoria.leet.nu": 1,
+    "euphoria": 1,
+    ":": 2,
+    "instant.leet.nu": 1,
+    "instant": 1,
+    "homepage": 1,
+    "euphoria.leet.nu_instant.leet.nu": 1,
+    "leet.nu": 1,
+    "also": 1,
+    "hosts": 1,
+    "private": 1,
+    "whitelist": 1,
+    "Minecraft": 1,
+    "see": 1,
+    "euphoria.leet.nj/room/minecraft!": 1,
+    "DOOOM": 1,
+    "trump": 1,
+    "away:": 1,
+    "Next": 1,
+    "president": 1,
+    "assumes": 1,
+    "office": 1,
+    "suneatsearth:": 1,
+    "engulfs": 1,
+    "nextyear:": 1,
+    "ends": 1,
+    "2028:": 1,
+    "starts": 1,
+    "in:": 1,
+    "DOOMClock:": 1,
+    "time": 1,
+    "DOOM": 1,
+    "happens": 1
+  },
+  "snapshots": []
+}
