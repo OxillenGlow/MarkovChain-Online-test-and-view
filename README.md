@@ -50,4 +50,4 @@ I don't want to train all of these brains so **if you have one** make an issue a
 #### You can help! ↑
 ## License
 Fee to use, modify, and share. Under MIT license.
-Again, I, the creator and contributers, will not be and can not be responsible for any damages caused or linked to the code in this repository. I WILL NOT BE RESPONSIBLE FOR INFORMATION OR MALICIOUS CODE IN BRAINS OR DATASETS. SEE MIT LICENSE [LICENSE](LICENSE.TXT)
+Again, I, the creator and contributers, will not be and can not be responsible for any damages caused or linked to the code in this repository. I WILL NOT BE RESPONSIBLE FOR INFORMATION OR MALICIOUS CODE IN BRAINS OR DATASETS. SEE MIT LICENSE [LICENSE](LICENSE)
