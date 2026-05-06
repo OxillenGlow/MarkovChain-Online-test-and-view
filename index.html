@@ -209,9 +209,117 @@
             cursor: pointer;
             margin: 6px 0;
         }
+
+        /* ===== MODAL STYLES ===== */
+        #pretrain-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #pretrain-modal.show {
+            display: flex;
+        }
+
+        #pretrain-modal-content {
+            background: #fff;
+            border: 3px solid #333;
+            padding: 40px 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #pretrain-modal-content h1 {
+            margin: 0 0 16px 0;
+            font-size: 32px;
+            color: #333;
+        }
+
+        #pretrain-modal-content p {
+            margin: 12px 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        #pretrain-modal-buttons {
+            margin-top: 24px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #btn-load-default-brain {
+            background: #3a3;
+            color: #fff;
+            border: 2px solid #2a2;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #btn-load-default-brain:hover {
+            background: #4b4;
+            transform: scale(1.05);
+        }
+
+        #btn-skip-pretrain {
+            background: #999;
+            color: #fff;
+            border: 2px solid #777;
+            padding: 16px 32px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #btn-skip-pretrain:hover {
+            background: #aaa;
+        }
+
+        #pretrain-loading {
+            display: none;
+            margin-top: 16px;
+            color: #666;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
+    <!-- PRETRAIN MODAL POPUP -->
+    <div id="pretrain-modal">
+        <div id="pretrain-modal-content">
+            <h1>🧠 Welcome!</h1>
+            <p>Would you like to load the default pretrained brain?</p>
+            <p style="font-size:12px;color:#888;">This will load a pre-trained Markov model so you can start generating text right away.</p>
+            <div id="pretrain-modal-buttons">
+                <button id="btn-load-default-brain">✨ Yes, Load Default Brain</button>
+                <button id="btn-skip-pretrain">⏭️ Skip for Now</button>
+            </div>
+            <div id="pretrain-loading" style="margin-top:16px;">
+                <span style="display:inline-block;">Loading brain...</span>
+            </div>
+        </div>
+    </div>
+
     <!-- TOP BAR -->
     <div id="topbar">
         <strong style="color:#fff;margin-right:10px;">🧠 MARKOV BOT</strong>
@@ -231,7 +339,7 @@
     <!-- TRAINING SECTION -->
     <div class="section" id="sec-train">
         <h2>📚 Training Data</h2>
-        <p style="margin:2px 0;font-size:11px;">Paste text and click <b>Train</b>. The brain is saved in your browser automatically. <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains" target="_blank" style="color:#0066cc;">Download a pretrained brain</a></p>
+        <p style="margin:2px 0;font-size:11px;">Paste text and click <b>Train</b>. The brain is saved in your browser automatically. <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help" target="_blank" style="color:#0066cc;">Learn more</a></p>
         
         <!-- Toggle for external brain URL -->
         <label class="checkbox-label">
@@ -267,7 +375,7 @@
         <div class="row-flex">
             <label>Prompt / Seed:</label>
             <input type="text" id="prompt-input" placeholder="Enter seed text (min 1 word)..." style="flex:1;min-width:200px;">
-            <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help" target="_blank" title="View help documentation" style="color:#0066cc;text-decoration:none;white-space:nowrap;">❓ Help</a>
+            <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help" target="_blank" title="View help documentation" style="color:#0066cc;text-decoration:none;">❓</a>
         </div>
         <div class="row-flex">
             <label>Max words:</label>
@@ -352,7 +460,7 @@
             <button id="btn-load-brain2">⬆️ Load Brain from .json</button>
             <button id="btn-clear-brain2" class="danger">🗑️ Clear Brain</button>
         </div>
-        <p style="margin:6px 0;font-size:11px;"><a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains" target="_blank" style="color:#0066cc;">Download a pretrained brain</a> to use instead of training from scratch.</p>
+        <p style="margin:6px 0;font-size:11px;"><a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains" target="_blank" style="color:#0066cc;">Download pre-trained brains</a></p>
         <div id="brain-info" style="font-size:11px;color:#555;margin-top:6px;">
             Brain status: empty / not trained.
         </div>
@@ -363,6 +471,8 @@
         (function() {
             // ==================== STORAGE KEY ====================
             const STORAGE_KEY = 'markov_bot_brain_v2';
+            const PRETRAIN_SHOWN_KEY = 'markov_bot_pretrain_shown';
+            const DEFAULT_BRAIN_URL = 'https://raw.githubusercontent.com/OxillenGlow/MarkovChain-Online-test-and-view/main/brains/oxg/markov-brain-2026-05-06.json';
 
             // ==================== BRAIN DATA STRUCTURE ====================
             let brain = null;
@@ -503,6 +613,58 @@
                     console.error('Load from URL error:', err);
                     showStatus('external-brain-status', '❌ Error: ' + errorMsg, 'err');
                     alert('❌ Error loading brain from URL: ' + errorMsg + '\n\nNote: The URL must be directly accessible and may require CORS support.');
+                }
+            }
+
+            // ==================== PRETRAIN MODAL FUNCTIONS ====================
+            function showPretrainModal() {
+                const modal = document.getElementById('pretrain-modal');
+                modal.classList.add('show');
+            }
+
+            function hidePretrainModal() {
+                const modal = document.getElementById('pretrain-modal');
+                modal.classList.remove('show');
+            }
+
+            async function loadDefaultBrain() {
+                const modal = document.getElementById('pretrain-modal');
+                const buttonsDiv = document.getElementById('pretrain-modal-buttons');
+                const loadingDiv = document.getElementById('pretrain-loading');
+
+                // Hide buttons, show loading
+                buttonsDiv.style.display = 'none';
+                loadingDiv.style.display = 'block';
+
+                try {
+                    const response = await fetch(DEFAULT_BRAIN_URL);
+                    if (!response.ok) {
+                        throw new Error('HTTP ' + response.status + ': ' + response.statusText);
+                    }
+                    const parsed = await response.json();
+                    if (parsed && parsed.ngrams && parsed.vocabulary) {
+                        parsed.version = 2;
+                        if (!parsed.snapshots) parsed.snapshots = [];
+                        if (!parsed.ngrams['4']) parsed.ngrams['4'] = {};
+                        if (!parsed.ngrams['3']) parsed.ngrams['3'] = {};
+                        if (!parsed.ngrams['2']) parsed.ngrams['2'] = {};
+                        if (!parsed.ngrams['1']) parsed.ngrams['1'] = {};
+                        brain = parsed;
+                        saveBrain();
+                        updateAllUI();
+                        localStorage.setItem(PRETRAIN_SHOWN_KEY, 'true');
+                        hidePretrainModal();
+                        showStatus('train-status', '✅ Default brain loaded! (' + brain.totalTokens + ' tokens)', 'good');
+                    } else {
+                        throw new Error('Invalid brain file format from URL.');
+                    }
+                } catch (err) {
+                    const errorMsg = (err && (err.message || err.toString())) || 'Unknown error';
+                    console.error('Load default brain error:', err);
+                    // Restore buttons
+                    buttonsDiv.style.display = 'flex';
+                    loadingDiv.style.display = 'none';
+                    alert('❌ Error loading default brain: ' + errorMsg);
                 }
             }
 
@@ -960,6 +1122,16 @@
                 loadBrainFromURL(brainUrl);
             });
 
+            // Pretrain modal buttons
+            document.getElementById('btn-load-default-brain').addEventListener('click', function() {
+                loadDefaultBrain();
+            });
+
+            document.getElementById('btn-skip-pretrain').addEventListener('click', function() {
+                localStorage.setItem(PRETRAIN_SHOWN_KEY, 'true');
+                hidePretrainModal();
+            });
+
             document.getElementById('btn-train').addEventListener('click', function() {
                 const text = document.getElementById('training-input').value;
                 if (!text.trim()) {
@@ -998,78 +1170,12 @@
                 const maxWords = parseInt(document.getElementById('max-words').value) || 60;
                 const attentionFactor = parseFloat(document.getElementById('attention-factor').value) || 1.8;
                 if (!brain || brain.totalTokens < 2) {
-                    document.getElementById('generated-output').value = '[Brain is empty. Please train first.]';
-                    document.getElementById('gen-debug').textContent = '';
+                    showStatus('gen-debug', 'Brain is empty. Please train first or load a pre-trained brain.', 'err');
                     return;
                 }
                 const result = generateText(seed, maxWords, attentionFactor);
-                document.getElementById('generated-output').value = result.text || '[Generation failed]';
-                document.getElementById('gen-debug').textContent = result.debug || '';
-            });
-
-            document.getElementById('btn-fetch-url').addEventListener('click', async function() {
-                const url = document.getElementById('scraper-url').value.trim();
-                const proxy = document.getElementById('scraper-proxy').value.trim();
-                if (!url) {
-                    alert('Please enter a URL.');
-                    return;
-                }
-                const panel = document.getElementById('scraper-panel');
-                const extractedArea = document.getElementById('scraper-extracted');
-                const statusSpan = document.getElementById('scraper-status');
-                panel.style.display = 'block';
-                extractedArea.value = 'Fetching...';
-                statusSpan.textContent = 'Loading...';
-                try {
-                    const text = await fetchAndExtractText(url, proxy);
-                    extractedArea.value = text.slice(0, 200000);
-                    statusSpan.textContent = 'Fetched ' + text.length + ' chars.';
-                    statusSpan.style.color = '#3a3';
-                } catch (err) {
-                    // Provide a clear error message even if err.message is undefined
-                    const errorMsg = (err && (err.message || err.toString())) || 'Unknown error';
-                    console.error('Fetch error:', err);
-                    extractedArea.value = 'ERROR: ' + errorMsg +
-                        '\n\nTip: If this is a CORS error, try using a CORS proxy (enter a proxy URL above) or copy-paste the text manually into the Training section.';
-                    statusSpan.textContent = 'Fetch failed: ' + errorMsg;
-                    statusSpan.style.color = '#c33';
-                }
-            });
-
-            document.getElementById('btn-take-snapshot').addEventListener('click', function() {
-                const url = document.getElementById('scraper-url').value.trim();
-                const text = document.getElementById('scraper-extracted').value;
-                if (!text || text.startsWith('ERROR:') || text === 'Fetching...') {
-                    alert('No valid text to snapshot. Fetch a URL first.');
-                    return;
-                }
-                if (takeSnapshot(url, text)) {
-                    document.getElementById('scraper-status').textContent = 'Snapshot taken! Total: ' + (brain.snapshots ? brain.snapshots.length : 0);
-                    document.getElementById('scraper-status').style.color = '#3a3';
-                }
-                updateAllUI();
-            });
-
-            document.getElementById('btn-add-scraped-to-training').addEventListener('click', function() {
-                const text = document.getElementById('scraper-extracted').value;
-                if (!text || text.startsWith('ERROR:') || text === 'Fetching...') {
-                    alert('No valid text to add. Fetch a URL first.');
-                    return;
-                }
-                const textarea = document.getElementById('training-input');
-                textarea.value = textarea.value + (textarea.value ? '\n\n' : '') + text;
-                textarea.scrollTop = textarea.scrollHeight;
-                showStatus('train-status', 'Scraped text added to training field.', 'good');
-                document.getElementById('sec-train').scrollIntoView({ behavior: 'smooth' });
-            });
-
-            document.getElementById('btn-clear-snapshots').addEventListener('click', function() {
-                if (confirm('Clear all snapshots?')) {
-                    brain.snapshots = [];
-                    saveBrain();
-                    renderSnapshots();
-                    updateBrainStats();
-                }
+                document.getElementById('generated-output').value = result.text;
+                document.getElementById('gen-debug').textContent = result.debug;
             });
 
             document.getElementById('btn-download-brain').addEventListener('click', downloadBrainJSON);
@@ -1092,6 +1198,54 @@
             document.getElementById('btn-clear-brain').addEventListener('click', clearBrain);
             document.getElementById('btn-clear-brain2').addEventListener('click', clearBrain);
 
+            document.getElementById('btn-fetch-url').addEventListener('click', async function() {
+                const url = document.getElementById('scraper-url').value;
+                const proxy = document.getElementById('scraper-proxy').value;
+                if (!url.trim()) {
+                    alert('Please enter a URL.');
+                    return;
+                }
+                try {
+                    const text = await fetchAndExtractText(url, proxy);
+                    document.getElementById('scraper-extracted').value = text;
+                    document.getElementById('scraper-panel').style.display = 'block';
+                    showStatus('scraper-status', 'Text extracted. (' + text.length + ' characters)', 'good');
+                } catch (err) {
+                    const errorMsg = (err && (err.message || err.toString())) || 'Unknown error';
+                    alert('❌ Error fetching URL: ' + errorMsg);
+                }
+            });
+
+            document.getElementById('btn-take-snapshot').addEventListener('click', function() {
+                const url = document.getElementById('scraper-url').value;
+                const text = document.getElementById('scraper-extracted').value;
+                if (takeSnapshot(url, text)) {
+                    showStatus('scraper-status', 'Snapshot taken and saved!', 'good');
+                }
+            });
+
+            document.getElementById('btn-add-scraped-to-training').addEventListener('click', function() {
+                const text = document.getElementById('scraper-extracted').value;
+                if (!text.trim()) {
+                    alert('No text to add. Fetch a URL first.');
+                    return;
+                }
+                const textarea = document.getElementById('training-input');
+                const current = textarea.value;
+                textarea.value = current + (current ? '\n\n' : '') + text;
+                textarea.scrollTop = textarea.scrollHeight;
+                showStatus('scraper-status', 'Scraped text added to training field.', 'good');
+                document.getElementById('sec-train').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.getElementById('btn-clear-snapshots').addEventListener('click', function() {
+                if (confirm('Clear all snapshots?')) {
+                    brain.snapshots = [];
+                    saveBrain();
+                    renderSnapshots();
+                }
+            });
+
             document.getElementById('knowledge-n-level').addEventListener('change', function() {
                 const nLevel = parseInt(this.value) || 4;
                 const filter = document.getElementById('knowledge-filter').value;
@@ -1100,12 +1254,20 @@
 
             document.getElementById('knowledge-filter').addEventListener('input', function() {
                 const nLevel = parseInt(document.getElementById('knowledge-n-level').value) || 4;
-                renderKnowledgeTable(nLevel, this.value);
+                const filter = this.value;
+                renderKnowledgeTable(nLevel, filter);
             });
 
             // ==================== INITIALIZATION ====================
             loadBrain();
             updateAllUI();
+
+            // Show pretrain modal only if not already shown and no brain is loaded
+            if (!localStorage.getItem(PRETRAIN_SHOWN_KEY) && (!brain || brain.totalTokens < 2)) {
+                setTimeout(() => {
+                    showPretrainModal();
+                }, 300);
+            }
         })();
     </script>
 </body>
