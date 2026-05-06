@@ -1,6 +1,9 @@
 # Markov Chain — Online Test & View
 
-Generate text with a Markov chain directly in your browser. Train your own 4-gram model, scrape websites for data, and explore the knowledge web — all free and client-side. Your brain stays in your browser's local storage. Have a 4-gram 3-gram → 2-gram → 1-gram model all in one.
+Generate text with a Markov chain directly in your browser. Train your own 4-gram model, scrape websites for data, and explore the knowledge web with an intuitive chart — all free and client-side. Your brain stays in your browser's local storage. Have a 4-gram 3-gram → 2-gram → 1-gram model all in one.
+## Try it now online
+
+👉 **[Go to the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html)**
 
 ## Features
 
@@ -11,10 +14,6 @@ Generate text with a Markov chain directly in your browser. Train your own 4-gra
 - **Knowledge web** — browse your model's n-gram table, filter by context or next word, and inspect probabilities
 - **Prompt normalization** — lowercase "un" is automatically linked to uppercase "UN" for better matching
 - **Import / Export** — download your brain as a `.json` file or load one back in
-
-## Try it now
-
-👉 **[Launch the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html)**
 
 ## Does it save my data?
 **Yes. If you want it to** Your trained model (the "brain") is automatically saved to your browser's local storage after every training session.
