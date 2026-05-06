@@ -193,26 +193,26 @@
 <body>
     <!-- TOP BAR -->
     <div id="topbar">
-        <strong style="color:#fff;margin-right:10px;">¡ö MARKOV BOT</strong>
+        <strong style="color:#fff;margin-right:10px;">🧠 MARKOV BOT</strong>
         <a href="#sec-train">Train</a>
         <a href="#sec-generate">Generate</a>
         <a href="#sec-scraper">Scraper</a>
         <a href="#sec-knowledge">Knowledge Web</a>
         <a href="#sec-brain">Brain Mgmt</a>
         <span class="sep">|</span>
-        <button id="btn-download-brain" title="Download brain as JSON">¡ý Download Brain</button>
-        <button id="btn-load-brain" title="Load brain from JSON file">¡ü Load Brain</button>
-        <button id="btn-clear-brain" class="danger" title="Clear all stored brain data">? Clear Brain</button>
+        <button id="btn-download-brain" title="Download brain as JSON">⬇️ Download Brain</button>
+        <button id="btn-load-brain" title="Load brain from JSON file">⬆️ Load Brain</button>
+        <button id="btn-clear-brain" class="danger" title="Clear all stored brain data">🗑️ Clear Brain</button>
         <span style="margin-left:auto;font-size:10px;color:#aaa;" id="brain-stats-top">Brain: empty</span>
     </div>
 
     <!-- TRAINING SECTION -->
     <div class="section" id="sec-train">
-        <h2>? Training Data</h2>
+        <h2>📚 Training Data</h2>
         <p style="margin:2px 0;font-size:11px;">Paste text and click <b>Train</b>. The brain is saved in your browser automatically.</p>
         <textarea id="training-input" rows="10" placeholder="Paste training text here...&#10;The more text, the better the 4-gram model will work."></textarea>
         <div class="row-flex">
-            <button id="btn-train" class="primary">? Train Brain</button>
+            <button id="btn-train" class="primary">🚀 Train Brain</button>
             <button id="btn-append-snapshots" style="background:#ddd;">+ Append All Snapshots</button>
             <span id="train-status" class="status-msg" style="display:none;"></span>
         </div>
@@ -221,7 +221,7 @@
 
     <!-- GENERATE SECTION -->
     <div class="section" id="sec-generate">
-        <h2>? Generate Text</h2>
+        <h2>✨ Generate Text</h2>
         <div class="row-flex">
             <label>Prompt / Seed:</label>
             <input type="text" id="prompt-input" placeholder="Enter seed text (min 1 word)..." style="flex:1;min-width:200px;">
@@ -231,7 +231,7 @@
             <input type="number" id="max-words" value="60" min="5" max="500" style="width:70px;">
             <label>Attention factor:</label>
             <input type="number" id="attention-factor" value="1.8" min="1.0" max="5.0" step="0.1" style="width:70px;" title="Boost for important seed words (1.0=off)">
-            <button id="btn-generate" class="primary">? Generate</button>
+            <button id="btn-generate" class="primary">✨ Generate</button>
         </div>
         <div style="margin-top:8px;">
             <label>Output:</label>
@@ -242,20 +242,20 @@
 
     <!-- SCRAPER SECTION -->
     <div class="section" id="sec-scraper">
-        <h2>? Website Scraper</h2>
-        <p style="margin:2px 0;font-size:10px;color:#666;">Fetch text from a URL. If you get a CORS error, use the proxy field (e.g. <i>https://api.allorigins.win/raw?url=</i>) or copy-paste manually.</p>
+        <h2>🌐 Website Scraper</h2>
+        <p style="margin:2px 0;font-size:10px;color:#666;">Fetch text from a URL. If you get a CORS error, use the proxy field (e.g. <i>https://api.allorigins.win/raw?url=</i>) or copy-paste manually.[...]
         <div class="row-flex">
             <label>URL:</label>
             <input type="text" id="scraper-url" placeholder="https://example.com/article" style="flex:1;min-width:250px;">
             <label title="Optional CORS proxy prefix">Proxy:</label>
             <input type="text" id="scraper-proxy" placeholder="(optional)" style="width:180px;" title="e.g. https://api.allorigins.win/raw?url=">
-            <button id="btn-fetch-url">? Fetch & Extract</button>
+            <button id="btn-fetch-url">🌐 Fetch & Extract</button>
         </div>
         <div id="scraper-panel">
             <strong style="font-size:12px;">Extracted Text:</strong>
             <textarea id="scraper-extracted" rows="8" readonly placeholder="Fetched content will appear here..."></textarea>
             <div class="row-flex">
-                <button id="btn-take-snapshot" class="primary">? Take Snapshot</button>
+                <button id="btn-take-snapshot" class="primary">📸 Take Snapshot</button>
                 <button id="btn-add-scraped-to-training">+ Add to Training Data</button>
                 <span id="scraper-status" style="font-size:10px;color:#555;"></span>
             </div>
@@ -270,7 +270,7 @@
 
     <!-- KNOWLEDGE WEB SECTION -->
     <div class="section" id="sec-knowledge">
-        <h2>? Knowledge Web (N-gram Table)</h2>
+        <h2>🕸️ Knowledge Web (N-gram Table)</h2>
         <div class="row-flex">
             <label>N-gram level:</label>
             <select id="knowledge-n-level">
@@ -303,11 +303,11 @@
 
     <!-- BRAIN MANAGEMENT SECTION -->
     <div class="section" id="sec-brain">
-        <h2>? Brain Management</h2>
+        <h2>🧠 Brain Management</h2>
         <div class="row-flex">
-            <button id="btn-download-brain2" class="primary">¡ý Download Brain as .json</button>
-            <button id="btn-load-brain2">¡ü Load Brain from .json</button>
-            <button id="btn-clear-brain2" class="danger">? Clear Brain</button>
+            <button id="btn-download-brain2" class="primary">⬇️ Download Brain as .json</button>
+            <button id="btn-load-brain2">⬆️ Load Brain from .json</button>
+            <button id="btn-clear-brain2" class="danger">🗑️ Clear Brain</button>
         </div>
         <div id="brain-info" style="font-size:11px;color:#555;margin-top:6px;">
             Brain status: empty / not trained.
@@ -366,7 +366,7 @@
                     return true;
                 } catch (e) {
                     console.error('Failed to save brain:', e);
-                    alert('? Error saving brain to browser storage. It may be too large (' +
+                    alert('⚠️ Error saving brain to browser storage. It may be too large (' +
                         (JSON.stringify(brain).length / 1024 / 1024).toFixed(1) + ' MB). Try reducing training data.');
                     return false;
                 }
@@ -411,12 +411,12 @@
                             updateAllUI();
                             showStatus('train-status', 'Brain loaded from file! (' +
                                 brain.totalTokens + ' tokens)', 'good');
-                            alert('? Brain loaded successfully!');
+                            alert('✅ Brain loaded successfully!');
                         } else {
-                            alert('? Invalid brain file format.');
+                            alert('❌ Invalid brain file format.');
                         }
                     } catch (err) {
-                        alert('? Error parsing JSON file: ' + err.message);
+                        alert('❌ Error parsing JSON file: ' + err.message);
                     }
                 };
                 reader.readAsText(file);
@@ -428,7 +428,7 @@
                 return text.trim().split(/\s+/).filter(t => t.length > 0);
             }
 
-            // ==================== PROMPT NORMALIZATION (link "un" ¡ú "UN") ====================
+            // ==================== PROMPT NORMALIZATION (link "un" → "UN") ====================
             function normalizeSeedTokens(tokens) {
                 return tokens.map(token => {
                     if (token.toLowerCase() === 'un') {
@@ -729,7 +729,7 @@
                         ' | Date: ' + (snap.date || '?').slice(0, 10) +
                         ' | Chars: ' + snap.text.length +
                         ' <button onclick="window._addSnapshotToTraining(' + idx + ')" style="font-size:10px;padding:2px 6px;">+ Add to Training</button>' +
-                        ' <button onclick="window._removeSnapshot(' + idx + ')" style="font-size:10px;padding:2px 6px;color:#a44;">?</button>' +
+                        ' <button onclick="window._removeSnapshot(' + idx + ')" style="font-size:10px;padding:2px 6px;color:#a44;">🗑️</button>' +
                         '<pre>' + preview + (snap.text.length > 200 ? '...' : '') + '</pre>' +
                         '</div>';
                 });
@@ -998,39 +998,8 @@
             });
 
             // ==================== INITIALIZATION ====================
-            function init() {
-                const loaded = loadBrain();
-                if (!loaded) {
-                    brain = getEmptyBrain();
-                }
-                updateAllUI();
-                const nLevel = parseInt(document.getElementById('knowledge-n-level').value) || 4;
-                renderKnowledgeTable(nLevel, '');
-                if (brain.snapshots && brain.snapshots.length > 0) {
-                    document.getElementById('scraper-panel').style.display = 'block';
-                }
-                console.log('Markov Bot initialized. Brain loaded:', loaded,
-                    'Tokens:', brain.totalTokens,
-                    'Storage:', (JSON.stringify(brain).length / 1024).toFixed(1), 'KB');
-            }
-
-            init();
-
-            // ==================== KEYBOARD SHORTCUTS ====================
-            document.addEventListener('keydown', function(e) {
-                if (e.ctrlKey && e.key === 'Enter' && document.activeElement === document.getElementById('training-input')) {
-                    e.preventDefault();
-                    document.getElementById('btn-train').click();
-                }
-                if (e.ctrlKey && e.key === 'g' && document.activeElement !== document.getElementById('training-input')) {
-                    e.preventDefault();
-                    document.getElementById('btn-generate').click();
-                }
-            });
-
-            console.log('? Markov Bot ready. Features: 4-gram + backoff + attention + scraper + knowledge web + JSON export/import.');
-            console.log('   Training data:', document.getElementById('training-input').placeholder);
-            console.log('   Brain stored in localStorage key:', STORAGE_KEY);
+            loadBrain();
+            updateAllUI();
         })();
     </script>
 </body>
