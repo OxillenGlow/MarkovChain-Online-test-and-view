@@ -1,10 +1,10 @@
 # Markov Chain — Online Test & View
 
-Generate text with a Markov chain directly in your browser. Train your own 4-gram model, scrape websites for data, and explore the knowledge web with an intuitive chart — all free and client-side. Your brain stays in your browser's local storage. Have a 4-gram 3-gram → 2-gram → 1-gram model all in one.
+Generate text with a Markov chain directly in your browser. Train your own 4-gram model, scrape websites for data, and explore the knowledge web with an intuitive chart — all free and client-side. Your "brain", the JSON file, stays in your browser's local storage *or alternatively in downloaded*. Have a 4-gram 3-gram → 2-gram → 1-gram model all in one.
 ## Try it now online
 
 👉 **[Go to the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html)**
-*if you like it please become a stargazer*
+*if you like it, please become a stargazer, ie. click the star button on top*
 ## Features
 
 - **4-gram Markov model** with smart **(dumb)** backoff (3-gram → 2-gram → 1-gram → random)
@@ -24,11 +24,12 @@ Generate text with a Markov chain directly in your browser. Train your own 4-gra
 ## Quick start
 
 1. Open the [webpage](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html).
-2. Paste some text into the **Training Data** box and click **Train Brain**.
-3. Type a seed phrase in the **Prompt** field and click **Generate**.
-4. Adjust the **attention factor** to control how strongly important words influence the output.
-5. (Optional) Use the **Scraper** to pull text from a URL and feed it into your model.
-
+2. *Press **Clear Brain** (top bar) first if you want to make your own brain.* Paste some text into the **Training Data** box and click **Train Brain**.  **Important**, Don't expect too much if you trained on just a few KBs of data, you usually need MBs for reasonable conversations.
+3. Alternatively, do **NOT** press the Clear Brain button and use my pretrained moddel already.
+4. Type a seed phrase in the **Prompt** field and click **Generate**.
+5. Adjust the **attention factor** to control how strongly important words influence the output 1 for no influence. It is suggested that it is between 1.8 - 5.0 for best results.
+6. (Optional) Use the **Website Scraper** to pull text from a URL and feed it into your model. (please make sure you have permission, some websites might block this)
+7. *if you like it please become a stargazer, ie. click the star button on top*
 ## Keyboard shortcuts
 
 | Shortcut | Action |
@@ -38,4 +39,4 @@ Generate text with a Markov chain directly in your browser. Train your own 4-gra
 
 ## License
 
-Free to use, modify, and share.
+Free to use, modify, and share. Under MIT license.
