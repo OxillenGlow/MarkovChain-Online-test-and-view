@@ -38,12 +38,13 @@ Generate text and explore language patterns with this interactive, browser-based
 ## Trained Brains 
 ### From OxillenGlow 
 Chose the latest one, top:
-| Date | Download |
-|------|----------|
-| none yet | soon... |
+| Date | Download | URL weblink |
+|------|----------|-------------|
+| none yet | soon... | soooon...|
 
 
-### Others
+### Others Brains, You can help
+I don't want to train all of these brains so **if you have one** make an issue and post the link.
 ## License
 
 Free to use, modify, and share. Under MIT license.
