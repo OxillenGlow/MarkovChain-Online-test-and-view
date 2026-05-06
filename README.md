@@ -7,7 +7,7 @@ Generate text with a Markov chain directly in your browser. Train your own 4-gra
 
 ## Features
 
-- **4-gram Markov model** with smart backoff (3-gram → 2-gram → 1-gram → random)
+- **4-gram Markov model** with smart **(dumb)** backoff (3-gram → 2-gram → 1-gram → random)
 - **Attention mechanism** — important seed words get a probability boost for more coherent output
 - **Sentence-aware stopping** — generation continues past the max word count until it hits a period, question mark, or exclamation point
 - **Website scraper** — fetch text from any URL, take snapshots, and convert them into training data
