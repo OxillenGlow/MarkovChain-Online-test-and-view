@@ -1,8 +1,8 @@
 # Online Markov Chain Text Generator: Train, Run & Visualize 
 Generate text and explore language patterns with this interactive, browser-based Markov Chain Studio that saves memory _privately_. Build multi-gram (1,2,3,4) gram models, scrape data from websites, and visualize the "knowledge web" through an intuitive chart—all. This markov chain bot is open source, client-side and fast.
 # Quick Start
-🚀 **Go to [the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html) to try out, write a seed (message) and click generate!** 
-###### How to [use](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#quick-start) for more info
+🚀 **Go to [the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html) to try out, copy past some training data, write a seed(message) and click generate!** 
+###### How to [use and upload brain](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info
 ###### If you like it, please become a stargazer, ie. click the star button on top 
 ## Features
 - **Pretrained brain** Includes a built-in English dataset that you can [download](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains) and upload to brain so you can start chatting immediately.
