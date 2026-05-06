@@ -4,7 +4,7 @@ Generate text with a Markov chain directly in your browser. Train your own 4-gra
 ## Try it now online
 
 👉 **[Go to the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html)**
-*if you like it, please become a stargazer, ie. click the star button on top*
+*if you like it, please become a stargazer, ie. click the star button on top* [more info](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#quick-start)
 ## Features
 
 - **4-gram Markov model** with smart **(dumb)** backoff (3-gram → 2-gram → 1-gram → random)
