@@ -71,12 +71,18 @@
         }
         input[type="text"],
         input[type="number"],
-        input[type="file"] {
+        input[type="file"],
+        input[type="checkbox"] {
             font-family: 'Courier New', Courier, monospace;
             font-size: 12px;
             border: 1px solid #999;
             padding: 4px 6px;
             background: #fff;
+        }
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
         }
         button {
             font-family: 'Courier New', Courier, monospace;
@@ -179,6 +185,13 @@
             background: #fdfdfd;
             display: none;
         }
+        #external-brain-panel {
+            border: 2px dashed #888;
+            padding: 10px;
+            margin-top: 8px;
+            background: #fdfdfd;
+            display: none;
+        }
         hr {
             border: none;
             border-top: 1px solid #ccc;
@@ -187,6 +200,14 @@
         label {
             font-weight: bold;
             font-size: 12px;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 6px 0;
         }
     </style>
 </head>
@@ -203,20 +224,41 @@
         <button id="btn-download-brain" title="Download brain as JSON">⬇️ Download Brain</button>
         <button id="btn-load-brain" title="Load brain from JSON file">⬆️ Load Brain</button>
         <button id="btn-clear-brain" class="danger" title="Clear all stored brain data">🗑️ Clear Brain</button>
+        <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help" target="_blank" title="View help documentation">❓ Help</a>
         <span style="margin-left:auto;font-size:10px;color:#aaa;" id="brain-stats-top">Brain: empty</span>
     </div>
 
     <!-- TRAINING SECTION -->
     <div class="section" id="sec-train">
         <h2>📚 Training Data</h2>
-        <p style="margin:2px 0;font-size:11px;">Paste text and click <b>Train</b>. The brain is saved in your browser automatically.</p>
-        <textarea id="training-input" rows="10" placeholder="Paste training text here...&#10;The more text, the better the 4-gram model will work."></textarea>
-        <div class="row-flex">
-            <button id="btn-train" class="primary">🚀 Train Brain</button>
-            <button id="btn-append-snapshots" style="background:#ddd;">+ Append All Snapshots</button>
-            <span id="train-status" class="status-msg" style="display:none;"></span>
+        <p style="margin:2px 0;font-size:11px;">Paste text and click <b>Train</b>. The brain is saved in your browser automatically. <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains" target="_blank" style="color:#0066cc;">Download a pretrained brain</a></p>
+        
+        <!-- Toggle for external brain URL -->
+        <label class="checkbox-label">
+            <input type="checkbox" id="use-external-brain-toggle">
+            Use External Brain URL
+        </label>
+
+        <!-- Training textarea (shown by default) -->
+        <div id="training-mode">
+            <textarea id="training-input" rows="10" placeholder="Paste training text here...&#10;The more text, the better the 4-gram model will work."></textarea>
+            <div class="row-flex">
+                <button id="btn-train" class="primary">🚀 Train Brain</button>
+                <button id="btn-append-snapshots" style="background:#ddd;">+ Append All Snapshots</button>
+                <span id="train-status" class="status-msg" style="display:none;"></span>
+            </div>
+            <div id="train-stats" style="font-size:10px;color:#555;margin-top:4px;"></div>
         </div>
-        <div id="train-stats" style="font-size:10px;color:#555;margin-top:4px;"></div>
+
+        <!-- External brain URL panel (hidden by default) -->
+        <div id="external-brain-panel">
+            <label>Brain JSON File URL:</label>
+            <input type="text" id="external-brain-url" placeholder="https://example.com/brain.json" style="width:100%;margin-bottom:8px;">
+            <div class="row-flex">
+                <button id="btn-load-external-brain" class="primary">⬆️ Load from URL</button>
+                <span id="external-brain-status" class="status-msg" style="display:none;"></span>
+            </div>
+        </div>
     </div>
 
     <!-- GENERATE SECTION -->
@@ -225,6 +267,7 @@
         <div class="row-flex">
             <label>Prompt / Seed:</label>
             <input type="text" id="prompt-input" placeholder="Enter seed text (min 1 word)..." style="flex:1;min-width:200px;">
+            <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help" target="_blank" title="View help documentation" style="color:#0066cc;text-decoration:none;white-space:nowrap;">❓ Help</a>
         </div>
         <div class="row-flex">
             <label>Max words:</label>
@@ -243,7 +286,7 @@
     <!-- SCRAPER SECTION -->
     <div class="section" id="sec-scraper">
         <h2>🌐 Website Scraper</h2>
-        <p style="margin:2px 0;font-size:10px;color:#666;">Fetch text from a URL. If you get a CORS error, use the proxy field (e.g. <i>https://api.allorigins.win/raw?url=</i>) or copy-paste manually.[...]
+        <p style="margin:2px 0;font-size:10px;color:#666;">Fetch text from a URL. If you get a CORS error, use the proxy field (e.g. <i>https://api.allorigins.win/raw?url=</i>) or copy-paste manually.</p>
         <div class="row-flex">
             <label>URL:</label>
             <input type="text" id="scraper-url" placeholder="https://example.com/article" style="flex:1;min-width:250px;">
@@ -309,6 +352,7 @@
             <button id="btn-load-brain2">⬆️ Load Brain from .json</button>
             <button id="btn-clear-brain2" class="danger">🗑️ Clear Brain</button>
         </div>
+        <p style="margin:6px 0;font-size:11px;"><a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains" target="_blank" style="color:#0066cc;">Download a pretrained brain</a> to use instead of training from scratch.</p>
         <div id="brain-info" style="font-size:11px;color:#555;margin-top:6px;">
             Brain status: empty / not trained.
         </div>
@@ -420,6 +464,46 @@
                     }
                 };
                 reader.readAsText(file);
+            }
+
+            async function loadBrainFromURL(brainUrl) {
+                const statusEl = document.getElementById('external-brain-status');
+                if (!brainUrl || !brainUrl.trim()) {
+                    showStatus('external-brain-status', 'Please enter a brain JSON URL.', 'warn');
+                    return;
+                }
+                try {
+                    statusEl.textContent = 'Loading brain from URL...';
+                    statusEl.style.display = 'block';
+                    statusEl.className = 'status-msg';
+                    
+                    const response = await fetch(brainUrl.trim());
+                    if (!response.ok) {
+                        throw new Error('HTTP ' + response.status + ': ' + response.statusText);
+                    }
+                    const parsed = await response.json();
+                    if (parsed && parsed.ngrams && parsed.vocabulary) {
+                        parsed.version = 2;
+                        if (!parsed.snapshots) parsed.snapshots = [];
+                        if (!parsed.ngrams['4']) parsed.ngrams['4'] = {};
+                        if (!parsed.ngrams['3']) parsed.ngrams['3'] = {};
+                        if (!parsed.ngrams['2']) parsed.ngrams['2'] = {};
+                        if (!parsed.ngrams['1']) parsed.ngrams['1'] = {};
+                        brain = parsed;
+                        saveBrain();
+                        updateAllUI();
+                        showStatus('external-brain-status', '✅ Brain loaded from URL! (' + brain.totalTokens + ' tokens)', 'good');
+                        alert('✅ Brain loaded successfully from URL!');
+                    } else {
+                        showStatus('external-brain-status', '❌ Invalid brain file format from URL.', 'err');
+                        alert('❌ Invalid brain file format from URL.');
+                    }
+                } catch (err) {
+                    const errorMsg = (err && (err.message || err.toString())) || 'Unknown error';
+                    console.error('Load from URL error:', err);
+                    showStatus('external-brain-status', '❌ Error: ' + errorMsg, 'err');
+                    alert('❌ Error loading brain from URL: ' + errorMsg + '\n\nNote: The URL must be directly accessible and may require CORS support.');
+                }
             }
 
             // ==================== TOKENIZATION ====================
@@ -853,7 +937,29 @@
                 renderKnowledgeTable(nLevel, filter);
             }
 
+            // ==================== EXTERNAL BRAIN TOGGLE ====================
+            function toggleExternalBrainMode() {
+                const toggle = document.getElementById('use-external-brain-toggle');
+                const trainingMode = document.getElementById('training-mode');
+                const externalPanel = document.getElementById('external-brain-panel');
+                
+                if (toggle.checked) {
+                    trainingMode.style.display = 'none';
+                    externalPanel.style.display = 'block';
+                } else {
+                    trainingMode.style.display = 'block';
+                    externalPanel.style.display = 'none';
+                }
+            }
+
             // ==================== EVENT HANDLERS ====================
+            document.getElementById('use-external-brain-toggle').addEventListener('change', toggleExternalBrainMode);
+
+            document.getElementById('btn-load-external-brain').addEventListener('click', function() {
+                const brainUrl = document.getElementById('external-brain-url').value;
+                loadBrainFromURL(brainUrl);
+            });
+
             document.getElementById('btn-train').addEventListener('click', function() {
                 const text = document.getElementById('training-input').value;
                 if (!text.trim()) {
