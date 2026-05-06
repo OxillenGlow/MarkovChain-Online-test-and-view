@@ -24,11 +24,11 @@ Generate text and explore language patterns with this interactive, browser-based
 
 1. Open the [webpage](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html).
 2. Paste some text into the **Training Data** box and click **Train Brain**.  **Important**, Don't expect too much if you trained on just a few KBs of data, you usually need MBs for reasonable conversations.
-3. Alternatively, download trained [Markov chain brain](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains)  and upload to website to use my pretrained moddel in the Markov chain studio.
-4. Type a seed phrase in the **Prompt** field and click **Generate**.
-5. Adjust the **attention factor** to control how strongly important words influence the output 1 for no influence. It is suggested that it is between 1.8 - 5.0 for best results.
-6. (Optional) Use the **Website Scraper** to pull text from a URL and feed it into your model. (please make sure you have permission, some websites might block this)
-7. *if you like it please become a stargazer, ie. click the star button on top*
+3. Alternatively, **choose** a trained [Markov chain brain](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains)  , **click** the toggle on the train brain section (top), and **past** the file URL (given [here](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains) ).
+5. Type a seed phrase in the **Prompt** field and click **Generate**.
+6. Adjust the **attention factor** to control how strongly important words influence the output 1 for no influence. It is suggested that it is between 1.8 - 5.0 for best results.
+7. (Optional) Use the **Website Scraper** to pull text from a URL and feed it into your model. (please make sure you have permission, some websites might block this)
+8. *if you like it please become a stargazer, ie. click the star button on top*
 ## Keyboard shortcuts
 
 | Shortcut | Action |
@@ -38,9 +38,9 @@ Generate text and explore language patterns with this interactive, browser-based
 ## Trained Brains 
 ### From OxillenGlow 
 Chose the latest one, top:
-| Date | Download | URL weblink |
-|------|----------|-------------|
-| none yet | soon... | soooon...|
+| Date | URL weblink |
+|------|-------------|
+| markov-brain-2026-05-06 | https://raw.githubusercontent.com/OxillenGlow/MarkovChain-Online-test-and-view/main/brains/oxg/markov-brain-2026-05-06.json |
 
 
 ### Others Brains, You can help
