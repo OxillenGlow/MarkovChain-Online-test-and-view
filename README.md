@@ -45,7 +45,7 @@ Chose the latest one, top:
 | Date | URL weblink, _copypast this↓ see 3rd. entry in [help](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help)_ | Type |
 |------|-----------|-------|
 | 2026-5-7 | https://raw.githubusercontent.com/OxillenGlow/MarkovChain-Online-test-and-view/main/brains/oxg/markov-brain-2026-05-06.json | English-OxillenGlow-General 
-| 2026-05-06 | https://raw.githubusercontent.com/OxillenGlow/MarkovChain-Online-test-and-view/main/brains/oxg/markov-brain-2026-5-6-old.json | English-OxillenGlow-General |
+| 2026-05-06 | https://raw.githubusercontent.com/OxillenGlow/MarkovChain-Online-test-and-view/main/brains/oxg/markov-brain-2026-05-06-old.json | English-OxillenGlow-General |
 
 
 # 👋 Others Brains, You can help
