@@ -1,9 +1,11 @@
 # 🌐 Online Markov Chain Text Generator: Train, Run & Visualize 
 Generate text and explore language patterns with this interactive, browser-based Markov Chain Studio that saves memory _privately_. Build multi-gram (1,2,3,4) gram models, scrape data from websites, and visualize the "˙˙：.🕸️˙：.. knowledge web" through an intuitive chart—all. This markov chain bot is open source, client-side and fast.
 # 🚀 Quick Start
- **Go to [the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html) to try out, **CLICK** *on the big green button to use my pretrained brain*, write a seed(message) and click generate!** 
+ **Go to [the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html) to try out, **CLICK** *on the big green button to use my pretrained brain*, write a seed(message) and click generate!**
 ###### Go to [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info
 ###### If you like it, please become a stargazer, ie. click the star button on top! 
+# ⚡ Why use this
+I have checked many of the top websites on Google for markov chain text generator and I am sure this is the best out there. If you don't believe me, go search. This is the best online markov text generator with the most useful functions and a ready to use pretrained dataset! _There are certainly some usefull makov chain simulations that does **not** output words. If you just want to understand markov chaines visually, you might want to go [here](https://a-herzog.github.io/MarkovChains/index.html) but it is just a 1-gram_
 # 📊 Features
 - **Pretrained brain** Includes some built-in English datasets (brains) that you can [choose](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains) and past to brain so you can start chatting immediately see -> [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info.
 - **4-gram Markov model** with smart **(dumb)** backoff (3-gram → 2-gram → 1-gram → random)
