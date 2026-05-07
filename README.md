@@ -39,19 +39,19 @@ I have checked many of the top websites on Google for markov chain text generato
 | `Ctrl + G` | Generate text |
 # Trained Brains
 ## 🤯
-How to use? see [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info
-### From OxillenGlow 
+How to use? see [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info. 
 Chose the latest one, top:
-###### ____________________ ↓  copypast this ↓ _______
+##### ____________________ ↓  copypast this ↓ _______
 | Date | URL weblink, _copypast this↓ see 3rd. entry in [help](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help)_ | Type |
 |------|-----------|-------|
-| 2026-05-06 | https://raw.githubusercontent.com/OxillenGlow/MarkovChain-Online-test-and-view/main/brains/oxg/markov-brain-2026-05-06.json | English-OxillenGlow-General |
+| 2026-5-7 | https://raw.githubusercontent.com/OxillenGlow/MarkovChain-Online-test-and-view/main/brains/oxg/markov-brain-2026-05-06.json | English-OxillenGlow-General 
+| 2026-05-06 | https://raw.githubusercontent.com/OxillenGlow/MarkovChain-Online-test-and-view/main/brains/oxg/markov-brain-2026-5-6-old.json | English-OxillenGlow-General |
 
 
 # 👋 Others Brains, You can help
-I don't want to train all of these brains so **if you have one** make an issue and post the link. I **will** put the JSON file here.
+I don't want to train all of these brains so **if you have one** make an issue and post the link (just add input text to brain and download .json file). I **will** put the JSON file here if it is good.
 ##### You can help! ↑
-# 🎯 Other Projects (relos)
+# 🎯 Other Projects (repos)
 Since you scrolled down here, you might like some other projects of mine. See [my sandbox game](github.com/OxillenGlow/MtSharpGrain).
 ## License
 Fee to use, modify, and share. Under MIT license.
