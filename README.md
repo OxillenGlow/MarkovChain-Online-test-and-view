@@ -21,7 +21,7 @@ Generate text and explore language patterns with this interactive, browser-based
 - In **private / incognito mode**, local storage is cleared when you close the window. Use the **Download Brain** and **Load Brain** buttons (in the top bar or Brain Management section) to save and restore your brain manually.
 
 # Help
-##❓
+## ❓
 1. Open the [webpage](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html).
 2. Paste some text into the **Training Data** box and click **Train Brain**.  **Important**, Don't expect too much if you trained on just a few KBs of data, you usually need MBs for reasonable conversations.
 3.  Alternatively, **choose** a trained [Markov chain brain](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains)  , **click** the toggle on the train brain section (top), and **past** the file URL (given [here](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains) ).
