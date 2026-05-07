@@ -6,6 +6,7 @@ Generate text and explore language patterns with this interactive, browser-based
 ###### If you like it, please become a stargazer, ie. click the star button on top! 
 # ⚡ Why use this
 I have checked many of the top websites on Google for markov chain text generator and I am sure this is the best out there. If you don't believe me, go search. This is the best online markov text generator with the most useful functions and a ready to use pretrained dataset! _There are certainly some usefull makov chain simulations that does **not** output words. If you just want to understand markov chaines visually, you might want to go [here](https://a-herzog.github.io/MarkovChains/index.html) but it is just a 1-gram_
+# 🖥️Screen shot ![the generation of words from seed text _Do not confuse with prompt_](Screenshot_20260507-171808_Browser.png)
 # 📊 Features
 - **Pretrained brain** Includes some built-in English datasets (brains) that you can [choose](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains) and past to brain so you can start chatting immediately see -> [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info.
 - **4-gram Markov model** with smart **(dumb)** backoff (3-gram → 2-gram → 1-gram → random)
