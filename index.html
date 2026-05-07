@@ -13,201 +13,318 @@
         body {
             margin: 0;
             padding: 0;
-            background: #f0f0f0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: #111;
+            min-height: 100vh;
         }
         #topbar {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: #333;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: #eee;
-            padding: 8px 12px;
+            padding: 10px 12px;
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
             align-items: center;
-            border-bottom: 3px solid #555;
+            border-bottom: 3px solid #1abc9c;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
         #topbar a,
         #topbar button {
             color: #eee;
             background: #555;
             border: 1px solid #777;
-            padding: 5px 10px;
+            padding: 6px 12px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
             white-space: nowrap;
+            border-radius: 6px;
+            transition: all 0.2s ease;
         }
         #topbar a:hover,
         #topbar button:hover {
-            background: #777;
+            background: #1abc9c;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(26, 188, 156, 0.3);
         }
         #topbar span.sep {
             color: #888;
             margin: 0 2px;
         }
         .section {
-            background: #fafafa;
-            border: 1px solid #ccc;
-            margin: 10px;
-            padding: 12px;
+            background: #fff;
+            border: none;
+            border-radius: 12px;
+            margin: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        .section:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
         }
         .section h2 {
-            margin: 0 0 8px 0;
-            font-size: 15px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 4px;
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            border-bottom: 3px solid #1abc9c;
+            padding-bottom: 8px;
+            color: #2c3e50;
         }
         textarea {
             width: 100%;
             font-family: 'Courier New', Courier, monospace;
             font-size: 12px;
-            border: 1px solid #999;
-            padding: 6px;
-            background: #fff;
+            border: 2px solid #ecf0f1;
+            padding: 8px;
+            background: #f8f9fa;
             resize: vertical;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: #1abc9c;
+            background: #fff;
+            box-shadow: 0 0 8px rgba(26, 188, 156, 0.2);
         }
         input[type="text"],
         input[type="number"],
         input[type="file"],
-        input[type="checkbox"] {
+        input[type="checkbox"],
+        select {
             font-family: 'Courier New', Courier, monospace;
             font-size: 12px;
-            border: 1px solid #999;
-            padding: 4px 6px;
+            border: 2px solid #ecf0f1;
+            padding: 6px 8px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="file"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #1abc9c;
             background: #fff;
+            box-shadow: 0 0 8px rgba(26, 188, 156, 0.2);
         }
         input[type="checkbox"] {
             width: 16px;
             height: 16px;
             cursor: pointer;
+            accent-color: #1abc9c;
         }
         button {
             font-family: 'Courier New', Courier, monospace;
             font-size: 12px;
-            border: 1px solid #666;
-            padding: 5px 12px;
+            border: 2px solid #bdc3c7;
+            padding: 6px 14px;
             cursor: pointer;
-            background: #ddd;
-            color: #111;
+            background: #ecf0f1;
+            color: #2c3e50;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-weight: 500;
         }
         button:hover {
-            background: #ccc;
+            background: #bdc3c7;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
         button.primary {
-            background: #444;
-            color: #eee;
-            border-color: #222;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: #fff;
+            border-color: #2980b9;
             font-weight: bold;
         }
         button.primary:hover {
-            background: #555;
+            background: linear-gradient(135deg, #3cb0ff 0%, #2980b9 100%);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
         }
         button.danger {
-            background: #a44;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: #fff;
-            border-color: #622;
+            border-color: #c0392b;
         }
         button.danger:hover {
-            background: #b55;
+            background: linear-gradient(135deg, #ec7063 0%, #c0392b 100%);
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
         }
         table {
             border-collapse: collapse;
             width: 100%;
             font-size: 11px;
+            border-radius: 8px;
+            overflow: hidden;
         }
         table th,
         table td {
-            border: 1px solid #999;
-            padding: 3px 6px;
+            border: 1px solid #ecf0f1;
+            padding: 6px 8px;
             text-align: left;
             word-break: break-word;
         }
         table th {
-            background: #ddd;
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            color: #fff;
             position: sticky;
             top: 0;
+            font-weight: bold;
         }
         .scroll-table {
             max-height: 400px;
             overflow-y: auto;
-            border: 1px solid #999;
+            border: 2px solid #ecf0f1;
+            border-radius: 8px;
         }
         .status-msg {
-            padding: 4px 8px;
-            margin: 4px 0;
-            font-size: 11px;
-            border-left: 3px solid #888;
-            background: #eee;
+            padding: 8px 12px;
+            margin: 6px 0;
+            font-size: 12px;
+            border-left: 4px solid #888;
+            background: #ecf0f1;
+            border-radius: 6px;
+            transition: all 0.2s ease;
         }
         .status-msg.good {
-            border-left-color: #3a3;
-            background: #e8f5e8;
+            border-left-color: #27ae60;
+            background: #d5f4e6;
+            color: #1e5631;
         }
         .status-msg.warn {
-            border-left-color: #c93;
-            background: #fff8e8;
+            border-left-color: #f39c12;
+            background: #fef5e7;
+            color: #7d6608;
         }
         .status-msg.err {
-            border-left-color: #c33;
-            background: #ffe8e8;
+            border-left-color: #e74c3c;
+            background: #fadbd8;
+            color: #922b21;
         }
         .row-flex {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
             align-items: center;
-            margin: 4px 0;
+            margin: 8px 0;
         }
         .snapshot-item {
-            border: 1px solid #ccc;
-            padding: 6px;
-            margin: 4px 0;
-            background: #f8f8f8;
+            border: 2px solid #ecf0f1;
+            padding: 10px;
+            margin: 6px 0;
+            background: #f8f9fa;
             font-size: 11px;
-            max-height: 100px;
+            max-height: 120px;
             overflow-y: auto;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .snapshot-item:hover {
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         }
         .snapshot-item pre {
-            margin: 2px 0;
+            margin: 4px 0;
             white-space: pre-wrap;
             word-break: break-word;
             font-size: 10px;
-            max-height: 50px;
+            max-height: 60px;
             overflow-y: auto;
         }
         #scraper-panel {
-            border: 2px dashed #888;
-            padding: 10px;
-            margin-top: 8px;
-            background: #fdfdfd;
+            border: 2px dashed #1abc9c;
+            padding: 12px;
+            margin-top: 10px;
+            background: #f0fdfb;
             display: none;
+            border-radius: 8px;
         }
         #external-brain-panel {
-            border: 2px dashed #888;
-            padding: 10px;
-            margin-top: 8px;
-            background: #fdfdfd;
+            border: 2px dashed #3498db;
+            padding: 12px;
+            margin-top: 10px;
+            background: #f0f8ff;
             display: none;
+            border-radius: 8px;
+        }
+        #readme-panel {
+            border: none;
+            padding: 0;
+            margin-top: 10px;
+            background: transparent;
+            border-radius: 8px;
+        }
+        #readme-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            max-height: 600px;
+            overflow-y: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        #readme-content h1, #readme-content h2, #readme-content h3 {
+            color: #2c3e50;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+        #readme-content h1 {
+            border-bottom: 3px solid #1abc9c;
+            padding-bottom: 8px;
+        }
+        #readme-content a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        #readme-content a:hover {
+            text-decoration: underline;
+        }
+        #readme-content code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #e74c3c;
+            font-size: 12px;
+        }
+        #readme-content pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 11px;
+        }
+        #readme-content table {
+            width: 100%;
+            margin: 10px 0;
+        }
+        #readme-content table th {
+            background: #34495e;
+            color: #fff;
+        }
+        #readme-content table td {
+            border: 1px solid #ecf0f1;
         }
         hr {
             border: none;
-            border-top: 1px solid #ccc;
-            margin: 8px 0;
+            border-top: 2px solid #ecf0f1;
+            margin: 12px 0;
         }
         label {
             font-weight: bold;
             font-size: 12px;
+            color: #2c3e50;
         }
         .checkbox-label {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             font-weight: bold;
             cursor: pointer;
-            margin: 6px 0;
+            margin: 8px 0;
         }
 
         /* ===== MODAL STYLES ===== */
@@ -230,12 +347,12 @@
 
         #pretrain-modal-content {
             background: #fff;
-            border: 3px solid #333;
+            border: none;
             padding: 40px 30px;
-            border-radius: 8px;
+            border-radius: 16px;
             max-width: 600px;
             width: 90%;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
             text-align: center;
             font-size: 16px;
         }
@@ -243,7 +360,7 @@
         #pretrain-modal-content h1 {
             margin: 0 0 16px 0;
             font-size: 32px;
-            color: #333;
+            color: #2c3e50;
         }
 
         #pretrain-modal-content p {
@@ -262,37 +379,39 @@
         }
 
         #btn-load-default-brain {
-            background: #3a3;
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
             color: #fff;
-            border: 2px solid #2a2;
+            border: 2px solid #1e8449;
             padding: 16px 32px;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
-            border-radius: 6px;
-            transition: all 0.2s;
+            border-radius: 10px;
+            transition: all 0.3s ease;
             font-family: 'Courier New', Courier, monospace;
         }
 
         #btn-load-default-brain:hover {
-            background: #4b4;
+            background: linear-gradient(135deg, #2ecc71 0%, #229954 100%);
             transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(39, 174, 96, 0.3);
         }
 
         #btn-skip-pretrain {
-            background: #999;
+            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
             color: #fff;
-            border: 2px solid #777;
+            border: 2px solid #566573;
             padding: 16px 32px;
             font-size: 16px;
             cursor: pointer;
-            border-radius: 6px;
-            transition: all 0.2s;
+            border-radius: 10px;
+            transition: all 0.3s ease;
             font-family: 'Courier New', Courier, monospace;
         }
 
         #btn-skip-pretrain:hover {
-            background: #aaa;
+            background: linear-gradient(135deg, #bdc3c7 0%, #7f8c8d 100%);
+            transform: scale(1.02);
         }
 
         #pretrain-loading {
@@ -300,6 +419,22 @@
             margin-top: 16px;
             color: #666;
             font-size: 14px;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1abc9c;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #16a085;
         }
     </style>
 </head>
@@ -328,6 +463,7 @@
         <a href="#sec-scraper">Scraper</a>
         <a href="#sec-knowledge">Knowledge Web</a>
         <a href="#sec-brain">Brain Mgmt</a>
+        <a href="#sec-readme">📖 README</a>
         <span class="sep">|</span>
         <button id="btn-download-brain" title="Download brain as JSON">⬇️ Download Brain</button>
         <button id="btn-load-brain" title="Load brain from JSON file">⬆️ Load Brain</button>
@@ -339,7 +475,7 @@
     <!-- TRAINING SECTION -->
     <div class="section" id="sec-train">
         <h2>📚 Training Data</h2>
-        <p style="margin:2px 0;font-size:11px;">Paste text and click <b>Train</b>. The brain is saved in your browser automatically. <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help" target="_blank" style="color:#0066cc;">Learn more</a></p>
+        <p style="margin:2px 0;font-size:11px;">Paste text and click <b>Train</b>. The brain is saved in your browser automatically. <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help" target="_blank" style="color:#3498db;">Learn more</a></p>
         
         <!-- Toggle for external brain URL -->
         <label class="checkbox-label">
@@ -352,7 +488,7 @@
             <textarea id="training-input" rows="10" placeholder="Paste training text here...&#10;The more text, the better the 4-gram model will work."></textarea>
             <div class="row-flex">
                 <button id="btn-train" class="primary">🚀 Train Brain</button>
-                <button id="btn-append-snapshots" style="background:#ddd;">+ Append All Snapshots</button>
+                <button id="btn-append-snapshots" style="background:#ecf0f1;">+ Append All Snapshots</button>
                 <span id="train-status" class="status-msg" style="display:none;"></span>
             </div>
             <div id="train-stats" style="font-size:10px;color:#555;margin-top:4px;"></div>
@@ -375,7 +511,7 @@
         <div class="row-flex">
             <label>Prompt / Seed:</label>
             <input type="text" id="prompt-input" placeholder="Enter seed text (min 1 word)..." style="flex:1;min-width:200px;">
-            <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help" target="_blank" title="View help documentation" style="color:#0066cc;text-decoration:none;">❓</a>
+            <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help" target="_blank" title="View help documentation" style="color:#3498db;text-decoration:none;">💡</a>
         </div>
         <div class="row-flex">
             <label>Max words:</label>
@@ -460,11 +596,21 @@
             <button id="btn-load-brain2">⬆️ Load Brain from .json</button>
             <button id="btn-clear-brain2" class="danger">🗑️ Clear Brain</button>
         </div>
-        <p style="margin:6px 0;font-size:11px;"><a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains" target="_blank" style="color:#0066cc;">Download pre-trained brains</a></p>
+        <p style="margin:6px 0;font-size:11px;"><a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains" target="_blank" style="color:#3498db;">Load a pretrained brain from the repository</a></p>
         <div id="brain-info" style="font-size:11px;color:#555;margin-top:6px;">
             Brain status: empty / not trained.
         </div>
         <input type="file" id="brain-file-input" accept=".json" style="display:none;">
+    </div>
+
+    <!-- README SECTION -->
+    <div class="section" id="sec-readme">
+        <h2>📖 README Documentation</h2>
+        <div id="readme-panel">
+            <div id="readme-content" style="color: #333; line-height: 1.6;">
+                <p style="text-align: center; color: #999;">Loading README...</p>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -473,6 +619,7 @@
             const STORAGE_KEY = 'markov_bot_brain_v2';
             const PRETRAIN_SHOWN_KEY = 'markov_bot_pretrain_shown';
             const DEFAULT_BRAIN_URL = 'https://raw.githubusercontent.com/OxillenGlow/MarkovChain-Online-test-and-view/main/brains/oxg/markov-brain-2026-05-06.json';
+            const README_URL = 'https://raw.githubusercontent.com/OxillenGlow/MarkovChain-Online-test-and-view/main/README.md';
 
             // ==================== BRAIN DATA STRUCTURE ====================
             let brain = null;
@@ -488,6 +635,95 @@
                     snapshots: []
                 };
             }
+
+            // ==================== MARKDOWN TO HTML CONVERTER ====================
+            function markdownToHtml(markdown) {
+                if (!markdown) return '';
+                
+                let html = markdown;
+                
+                // Headers
+                html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
+                html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
+                html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
+                
+                // Bold
+                html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
+                
+                // Italic
+                html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+                html = html.replace(/_(.*?)_/g, '<em>$1</em>');
+                
+                // Code blocks
+                html = html.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+                
+                // Inline code
+                html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+                
+                // Links
+                html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
+                
+                // Horizontal rules
+                html = html.replace(/^(---|\*\*\*|___)/gm, '<hr>');
+                
+                // Line breaks
+                html = html.replace(/\n\n/g, '</p><p>');
+                html = '<p>' + html + '</p>';
+                
+                // Lists
+                html = html.replace(/^- (.*?)$/gm, '<li>$1</li>');
+                html = html.replace(/(<li>.*?<\/li>)/s, '<ul>$1</ul>');
+                html = html.replace(/<\/ul>\s*<ul>/g, '');
+                
+                // Tables (basic support)
+                const tableRegex = /\|(.+)\|[\n\r]+\|[-:|]+\|[\n\r]+((?:\|.+\|[\n\r]*)*)/g;
+                html = html.replace(tableRegex, function(match) {
+                    const rows = match.split('\n').filter(r => r.trim());
+                    let tableHtml = '<table><thead><tr>';
+                    const headerCells = rows[0].split('|').filter(c => c.trim());
+                    headerCells.forEach(cell => {
+                        tableHtml += '<th>' + cell.trim() + '</th>';
+                    });
+                    tableHtml += '</tr></thead><tbody>';
+                    for (let i = 2; i < rows.length; i++) {
+                        const cells = rows[i].split('|').filter(c => c.trim());
+                        if (cells.length > 0) {
+                            tableHtml += '<tr>';
+                            cells.forEach(cell => {
+                                tableHtml += '<td>' + cell.trim() + '</td>';
+                            });
+                            tableHtml += '</tr>';
+                        }
+                    }
+                    tableHtml += '</tbody></table>';
+                    return tableHtml;
+                });
+                
+                return html;
+            }
+
+            // ==================== LOAD README ====================
+            async function loadReadme() {
+                try {
+                    const response = await fetch(README_URL);
+                    if (response.ok) {
+                        const markdown = await response.text();
+                        const html = markdownToHtml(markdown);
+                        document.getElementById('readme-content').innerHTML = html;
+                    } else {
+                        document.getElementById('readme-content').innerHTML = 
+                            '<p style="color: #e74c3c;">Failed to load README. Please visit the <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view" target="_blank">GitHub repository</a> to view the documentation.</p>';
+                    }
+                } catch (err) {
+                    console.error('Error loading README:', err);
+                    document.getElementById('readme-content').innerHTML = 
+                        '<p style="color: #e74c3c;">Error loading README: ' + err.message + '</p>';
+                }
+            }
+
+            // Load README on page load
+            window.addEventListener('load', loadReadme);
 
             // ==================== LOAD / SAVE BRAIN ====================
             function loadBrain() {
@@ -975,7 +1211,7 @@
                         ' | Date: ' + (snap.date || '?').slice(0, 10) +
                         ' | Chars: ' + snap.text.length +
                         ' <button onclick="window._addSnapshotToTraining(' + idx + ')" style="font-size:10px;padding:2px 6px;">+ Add to Training</button>' +
-                        ' <button onclick="window._removeSnapshot(' + idx + ')" style="font-size:10px;padding:2px 6px;color:#a44;">🗑️</button>' +
+                        ' <button onclick="window._removeSnapshot(' + idx + ')" style="font-size:10px;padding:2px 6px;color:#e74c3c;">🗑️</button>' +
                         '<pre>' + preview + (snap.text.length > 200 ? '...' : '') + '</pre>' +
                         '</div>';
                 });
@@ -1001,195 +1237,180 @@
                 }
             };
 
-            // ==================== KNOWLEDGE WEB TABLE ====================
-            function renderKnowledgeTable(nLevel, filterText) {
-                const tbody = document.getElementById('knowledge-tbody');
-                const countSpan = document.getElementById('knowledge-count');
-                if (!brain || brain.totalTokens < 2) {
-                    tbody.innerHTML = '<tr><td colspan="5" style="color:#999;">Train the brain first to see knowledge web.</td></tr>';
-                    countSpan.textContent = '';
-                    return;
-                }
-                const model = brain.ngrams[String(nLevel)] || {};
-                let entries = [];
-                for (const [context, nextMap] of Object.entries(model)) {
-                    const totalForContext = Object.values(nextMap).reduce((s, c) => s + c, 0);
-                    for (const [nextWord, count] of Object.entries(nextMap)) {
-                        entries.push({
-                            context: context.replace(/\|\|\|/g, ' '),
-                            nextWord: nextWord,
-                            count: count,
-                            probability: totalForContext > 0 ? count / totalForContext : 1
-                        });
-                    }
-                }
-                const filt = (filterText || '').toLowerCase().trim();
-                if (filt) {
-                    entries = entries.filter(e =>
-                        e.context.toLowerCase().includes(filt) || e.nextWord.toLowerCase().includes(filt)
-                    );
-                }
-                entries.sort((a, b) => b.count - a.count);
-                const displayEntries = entries.slice(0, 3000);
-                countSpan.textContent = 'Showing ' + displayEntries.length + ' of ' + entries.length + ' entries.';
-
-                if (displayEntries.length === 0) {
-                    tbody.innerHTML = '<tr><td colspan="5" style="color:#999;">No matching entries found.</td></tr>';
-                } else {
-                    let html = '';
-                    displayEntries.forEach((e, i) => {
-                        html += '<tr>' +
-                            '<td>' + (i + 1) + '</td>' +
-                            '<td>' + e.context.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</td>' +
-                            '<td>' + e.nextWord.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</td>' +
-                            '<td>' + e.count + '</td>' +
-                            '<td>' + (e.probability * 100).toFixed(2) + '%</td>' +
-                            '</tr>';
-                    });
-                    if (entries.length > 3000) {
-                        html += '<tr><td colspan="5" style="color:#888;font-style:italic;">... and ' + (entries.length - 3000) + ' more entries (use filter to narrow down).</td></tr>';
-                    }
-                    tbody.innerHTML = html;
-                }
-            }
-
-            // ==================== UI HELPERS ====================
-            function showStatus(elementId, message, type) {
-                const el = document.getElementById(elementId);
-                if (!el) return;
-                el.textContent = message;
-                el.style.display = 'block';
-                el.className = 'status-msg ' + (type || '');
-                clearTimeout(el._timeout);
-                el._timeout = setTimeout(() => { el.style.display = 'none'; }, 8000);
-            }
-
+            // ==================== UI UPDATE ====================
             function updateBrainStats() {
-                const statsEl = document.getElementById('brain-stats-top');
-                const infoEl = document.getElementById('brain-info');
-                if (!brain || brain.totalTokens < 2) {
-                    statsEl.textContent = 'Brain: empty';
-                    infoEl.innerHTML = 'Brain status: <b>empty / not trained.</b>';
+                const tokenStr = brain.totalTokens ? brain.totalTokens.toLocaleString() : '0';
+                const wordStr = brain.uniqueTokens ? brain.uniqueTokens.toLocaleString() : '0';
+                document.getElementById('brain-stats-top').textContent = 'Brain: ' + tokenStr + ' tokens | ' + wordStr + ' unique words';
+                document.getElementById('brain-info').textContent = 'Brain status: ' + tokenStr + ' tokens, ' + wordStr + ' unique words.';
+            }
+
+            function renderKnowledgeWeb() {
+                const level = document.getElementById('knowledge-n-level').value;
+                const filter = document.getElementById('knowledge-filter').value.toLowerCase();
+                const model = brain.ngrams[level];
+                const tbody = document.getElementById('knowledge-tbody');
+
+                if (!model || Object.keys(model).length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5" style="color:#999;">No data for this n-gram level.</td></tr>';
+                    document.getElementById('knowledge-count').textContent = '0 entries';
                     return;
                 }
-                const sizeKB = (JSON.stringify(brain).length / 1024).toFixed(1);
-                const totalNgrams =
-                    Object.keys(brain.ngrams['4']).length +
-                    Object.keys(brain.ngrams['3']).length +
-                    Object.keys(brain.ngrams['2']).length +
-                    Object.keys(brain.ngrams['1']).length;
-                statsEl.textContent = 'Brain: ' + brain.totalTokens + ' tokens | ' + brain.uniqueTokens +
-                    ' unique | ' + totalNgrams + ' n-grams | ' + sizeKB + ' KB';
-                infoEl.innerHTML = 'Brain status: <b>active</b><br>' +
-                    'Tokens: ' + brain.totalTokens + ' | Unique words: ' + brain.uniqueTokens + '<br>' +
-                    '4-gram entries: ' + Object.keys(brain.ngrams['4']).length + '<br>' +
-                    '3-gram entries: ' + Object.keys(brain.ngrams['3']).length + '<br>' +
-                    '2-gram entries: ' + Object.keys(brain.ngrams['2']).length + '<br>' +
-                    '1-gram entries: ' + Object.keys(brain.ngrams['1']).length + '<br>' +
-                    'Snapshots: ' + (brain.snapshots ? brain.snapshots.length : 0) + '<br>' +
-                    'Storage size: ~' + sizeKB + ' KB<br>' +
-                    'Last trained: ' + (brain.trainedAt ? new Date(brain.trainedAt).toLocaleString() : 'unknown');
+
+                const entries = [];
+                for (const [context, nextWords] of Object.entries(model)) {
+                    const totalCount = Object.values(nextWords).reduce((a, b) => a + b, 0);
+                    for (const [word, count] of Object.entries(nextWords)) {
+                        if (!filter || context.toLowerCase().includes(filter) || word.toLowerCase().includes(filter)) {
+                            entries.push({
+                                context: context.replace(/\|\|\|/g, ' '),
+                                word: word,
+                                count: count,
+                                prob: (count / totalCount * 100).toFixed(1)
+                            });
+                        }
+                    }
+                }
+
+                entries.sort((a, b) => b.count - a.count);
+                const limit = 100;
+                let html = '';
+                entries.slice(0, limit).forEach((entry, idx) => {
+                    html += '<tr>' +
+                        '<td>' + (idx + 1) + '</td>' +
+                        '<td>' + entry.context.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</td>' +
+                        '<td><strong>' + entry.word.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</strong></td>' +
+                        '<td>' + entry.count + '</td>' +
+                        '<td>' + entry.prob + '%</td>' +
+                        '</tr>';
+                });
+
+                tbody.innerHTML = html || '<tr><td colspan="5" style="color:#999;">No matching entries.</td></tr>';
+                document.getElementById('knowledge-count').textContent = entries.length + ' entries' + (entries.length > limit ? ' (showing first ' + limit + ')' : '');
             }
 
             function updateAllUI() {
                 updateBrainStats();
-                renderSnapshots();
-                const nLevel = parseInt(document.getElementById('knowledge-n-level').value) || 4;
-                const filter = document.getElementById('knowledge-filter').value;
-                renderKnowledgeTable(nLevel, filter);
+                renderKnowledgeWeb();
             }
 
-            // ==================== EXTERNAL BRAIN TOGGLE ====================
-            function toggleExternalBrainMode() {
-                const toggle = document.getElementById('use-external-brain-toggle');
-                const trainingMode = document.getElementById('training-mode');
-                const externalPanel = document.getElementById('external-brain-panel');
-                
-                if (toggle.checked) {
-                    trainingMode.style.display = 'none';
-                    externalPanel.style.display = 'block';
-                } else {
-                    trainingMode.style.display = 'block';
-                    externalPanel.style.display = 'none';
-                }
+            function showStatus(elementId, message, type) {
+                const el = document.getElementById(elementId);
+                el.textContent = message;
+                el.className = 'status-msg ' + (type || '');
+                el.style.display = 'block';
             }
 
-            // ==================== EVENT HANDLERS ====================
-            document.getElementById('use-external-brain-toggle').addEventListener('change', toggleExternalBrainMode);
-
-            document.getElementById('btn-load-external-brain').addEventListener('click', function() {
-                const brainUrl = document.getElementById('external-brain-url').value;
-                loadBrainFromURL(brainUrl);
-            });
-
-            // Pretrain modal buttons
-            document.getElementById('btn-load-default-brain').addEventListener('click', function() {
-                loadDefaultBrain();
-            });
-
-            document.getElementById('btn-skip-pretrain').addEventListener('click', function() {
-                localStorage.setItem(PRETRAIN_SHOWN_KEY, 'true');
-                hidePretrainModal();
-            });
-
-            document.getElementById('btn-train').addEventListener('click', function() {
-                const text = document.getElementById('training-input').value;
-                if (!text.trim()) {
-                    showStatus('train-status', 'Please paste some training text first.', 'warn');
+            // ==================== EVENT LISTENERS ====================
+            document.getElementById('btn-train').addEventListener('click', () => {
+                const input = document.getElementById('training-input').value;
+                if (!input.trim()) {
+                    showStatus('train-status', 'Please paste some training data first.', 'warn');
                     return;
                 }
-                const result = trainOnText(text);
-                if (result.success) {
-                    showStatus('train-status', result.message, 'good');
-                } else {
-                    showStatus('train-status', result.message, 'err');
-                }
-                document.getElementById('train-stats').textContent =
-                    'Last training: ' + (result.tokens || 0) + ' tokens processed. ' +
-                    'Total n-gram entries: ' + (result.totalNgrams || 0) + '.';
+                const result = trainOnText(input);
+                showStatus('train-status', result.message, result.success ? 'good' : 'err');
                 updateAllUI();
-                const nLevel = parseInt(document.getElementById('knowledge-n-level').value) || 4;
-                renderKnowledgeTable(nLevel, document.getElementById('knowledge-filter').value);
             });
 
-            document.getElementById('btn-append-snapshots').addEventListener('click', function() {
+            document.getElementById('use-external-brain-toggle').addEventListener('change', (e) => {
+                document.getElementById('training-mode').style.display = e.target.checked ? 'none' : 'block';
+                document.getElementById('external-brain-panel').style.display = e.target.checked ? 'block' : 'none';
+            });
+
+            document.getElementById('btn-load-external-brain').addEventListener('click', () => {
+                const url = document.getElementById('external-brain-url').value;
+                loadBrainFromURL(url);
+            });
+
+            document.getElementById('btn-append-snapshots').addEventListener('click', () => {
                 if (!brain.snapshots || brain.snapshots.length === 0) {
-                    alert('No snapshots to append. Use the Scraper to take snapshots first.');
+                    showStatus('train-status', 'No snapshots to append.', 'warn');
                     return;
                 }
-                const textarea = document.getElementById('training-input');
                 const allText = brain.snapshots.map(s => s.text).join('\n\n');
+                const textarea = document.getElementById('training-input');
                 textarea.value = textarea.value + (textarea.value ? '\n\n' : '') + allText;
-                textarea.scrollTop = textarea.scrollHeight;
-                showStatus('train-status', 'All ' + brain.snapshots.length + ' snapshots appended to training field.', 'good');
-                document.getElementById('sec-train').scrollIntoView({ behavior: 'smooth' });
+                showStatus('train-status', 'All snapshots (' + brain.snapshots.length + ') appended to training data.', 'good');
             });
 
-            document.getElementById('btn-generate').addEventListener('click', function() {
+            document.getElementById('btn-generate').addEventListener('click', () => {
                 const seed = document.getElementById('prompt-input').value;
                 const maxWords = parseInt(document.getElementById('max-words').value) || 60;
-                const attentionFactor = parseFloat(document.getElementById('attention-factor').value) || 1.8;
-                if (!brain || brain.totalTokens < 2) {
-                    showStatus('gen-debug', 'Brain is empty. Please train first or load a pre-trained brain.', 'err');
+                const attention = parseFloat(document.getElementById('attention-factor').value) || 1.8;
+                const result = generateText(seed, maxWords, attention);
+                document.getElementById('generated-output').value = result.text;
+                document.getElementById('gen-debug').textContent = '📊 ' + result.debug;
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                    const activeEl = document.activeElement;
+                    if (activeEl.id === 'training-input') {
+                        document.getElementById('btn-train').click();
+                    }
+                }
+                if ((e.ctrlKey || e.metaKey) && e.key === 'g') {
+                    e.preventDefault();
+                    document.getElementById('btn-generate').click();
+                }
+            });
+
+            document.getElementById('btn-fetch-url').addEventListener('click', async () => {
+                const url = document.getElementById('scraper-url').value;
+                const proxy = document.getElementById('scraper-proxy').value;
+                if (!url) {
+                    alert('Please enter a URL.');
                     return;
                 }
-                const result = generateText(seed, maxWords, attentionFactor);
-                document.getElementById('generated-output').value = result.text;
-                document.getElementById('gen-debug').textContent = result.debug;
+                try {
+                    const extracted = await fetchAndExtractText(url, proxy);
+                    document.getElementById('scraper-extracted').value = extracted;
+                    document.getElementById('scraper-panel').style.display = 'block';
+                } catch (err) {
+                    alert('Error fetching URL: ' + err.message);
+                }
             });
+
+            document.getElementById('btn-take-snapshot').addEventListener('click', () => {
+                const url = document.getElementById('scraper-url').value;
+                const text = document.getElementById('scraper-extracted').value;
+                if (takeSnapshot(url, text)) {
+                    showStatus('scraper-status', '✅ Snapshot saved!', 'good');
+                }
+            });
+
+            document.getElementById('btn-add-scraped-to-training').addEventListener('click', () => {
+                const text = document.getElementById('scraper-extracted').value;
+                const textarea = document.getElementById('training-input');
+                textarea.value = textarea.value + (textarea.value ? '\n\n' : '') + text;
+                showStatus('scraper-status', 'Added to training data!', 'good');
+            });
+
+            document.getElementById('btn-clear-snapshots').addEventListener('click', () => {
+                if (confirm('Clear all snapshots?')) {
+                    brain.snapshots = [];
+                    saveBrain();
+                    renderSnapshots();
+                    showStatus('scraper-status', 'Snapshots cleared.', 'warn');
+                }
+            });
+
+            document.getElementById('knowledge-n-level').addEventListener('change', renderKnowledgeWeb);
+            document.getElementById('knowledge-filter').addEventListener('input', renderKnowledgeWeb);
 
             document.getElementById('btn-download-brain').addEventListener('click', downloadBrainJSON);
             document.getElementById('btn-download-brain2').addEventListener('click', downloadBrainJSON);
 
-            document.getElementById('btn-load-brain').addEventListener('click', function() {
+            document.getElementById('btn-load-brain').addEventListener('click', () => {
                 document.getElementById('brain-file-input').click();
             });
-            document.getElementById('btn-load-brain2').addEventListener('click', function() {
+            document.getElementById('btn-load-brain2').addEventListener('click', () => {
                 document.getElementById('brain-file-input').click();
             });
 
-            document.getElementById('brain-file-input').addEventListener('change', function(e) {
-                if (e.target.files && e.target.files[0]) {
+            document.getElementById('brain-file-input').addEventListener('change', (e) => {
+                if (e.target.files[0]) {
                     loadBrainFromFile(e.target.files[0]);
                     e.target.value = '';
                 }
@@ -1198,76 +1419,16 @@
             document.getElementById('btn-clear-brain').addEventListener('click', clearBrain);
             document.getElementById('btn-clear-brain2').addEventListener('click', clearBrain);
 
-            document.getElementById('btn-fetch-url').addEventListener('click', async function() {
-                const url = document.getElementById('scraper-url').value;
-                const proxy = document.getElementById('scraper-proxy').value;
-                if (!url.trim()) {
-                    alert('Please enter a URL.');
-                    return;
-                }
-                try {
-                    const text = await fetchAndExtractText(url, proxy);
-                    document.getElementById('scraper-extracted').value = text;
-                    document.getElementById('scraper-panel').style.display = 'block';
-                    showStatus('scraper-status', 'Text extracted. (' + text.length + ' characters)', 'good');
-                } catch (err) {
-                    const errorMsg = (err && (err.message || err.toString())) || 'Unknown error';
-                    alert('❌ Error fetching URL: ' + errorMsg);
-                }
-            });
-
-            document.getElementById('btn-take-snapshot').addEventListener('click', function() {
-                const url = document.getElementById('scraper-url').value;
-                const text = document.getElementById('scraper-extracted').value;
-                if (takeSnapshot(url, text)) {
-                    showStatus('scraper-status', 'Snapshot taken and saved!', 'good');
-                }
-            });
-
-            document.getElementById('btn-add-scraped-to-training').addEventListener('click', function() {
-                const text = document.getElementById('scraper-extracted').value;
-                if (!text.trim()) {
-                    alert('No text to add. Fetch a URL first.');
-                    return;
-                }
-                const textarea = document.getElementById('training-input');
-                const current = textarea.value;
-                textarea.value = current + (current ? '\n\n' : '') + text;
-                textarea.scrollTop = textarea.scrollHeight;
-                showStatus('scraper-status', 'Scraped text added to training field.', 'good');
-                document.getElementById('sec-train').scrollIntoView({ behavior: 'smooth' });
-            });
-
-            document.getElementById('btn-clear-snapshots').addEventListener('click', function() {
-                if (confirm('Clear all snapshots?')) {
-                    brain.snapshots = [];
-                    saveBrain();
-                    renderSnapshots();
-                }
-            });
-
-            document.getElementById('knowledge-n-level').addEventListener('change', function() {
-                const nLevel = parseInt(this.value) || 4;
-                const filter = document.getElementById('knowledge-filter').value;
-                renderKnowledgeTable(nLevel, filter);
-            });
-
-            document.getElementById('knowledge-filter').addEventListener('input', function() {
-                const nLevel = parseInt(document.getElementById('knowledge-n-level').value) || 4;
-                const filter = this.value;
-                renderKnowledgeTable(nLevel, filter);
-            });
-
             // ==================== INITIALIZATION ====================
             loadBrain();
             updateAllUI();
 
-            // Show pretrain modal only if not already shown and no brain is loaded
-            if (!localStorage.getItem(PRETRAIN_SHOWN_KEY) && (!brain || brain.totalTokens < 2)) {
-                setTimeout(() => {
-                    showPretrainModal();
-                }, 300);
+            if (!localStorage.getItem(PRETRAIN_SHOWN_KEY) && brain.totalTokens === 0) {
+                showPretrainModal();
             }
+
+            document.getElementById('btn-load-default-brain').addEventListener('click', loadDefaultBrain);
+            document.getElementById('btn-skip-pretrain').addEventListener('click', hidePretrainModal);
         })();
     </script>
 </body>
