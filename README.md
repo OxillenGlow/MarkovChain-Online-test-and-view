@@ -1,10 +1,10 @@
-# Online Markov Chain Text Generator: Train, Run & Visualize 
-Generate text and explore language patterns with this interactive, browser-based Markov Chain Studio that saves memory _privately_. Build multi-gram (1,2,3,4) gram models, scrape data from websites, and visualize the "knowledge web" through an intuitive chart—all. This markov chain bot is open source, client-side and fast.
-# Quick Start
-🚀 **Go to [the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html) to try out, **CLICK** *on the big green button to use my pretrained brain*, write a seed(message) and click generate!** 
+# 🌐 Online Markov Chain Text Generator: Train, Run & Visualize 
+Generate text and explore language patterns with this interactive, browser-based Markov Chain Studio that saves memory _privately_. Build multi-gram (1,2,3,4) gram models, scrape data from websites, and visualize the "˙˙：.🕸️˙：.. knowledge web" through an intuitive chart—all. This markov chain bot is open source, client-side and fast.
+# 🚀 Quick Start
+ **Go to [the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html) to try out, **CLICK** *on the big green button to use my pretrained brain*, write a seed(message) and click generate!** 
 ###### Go to [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info
-###### If you like it, please become a stargazer, ie. click the star button on top 
-## Features
+###### If you like it, please become a stargazer, ie. click the star button on top! 
+# 📊 Features
 - **Pretrained brain** Includes some built-in English datasets (brains) that you can [choose](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains) and past to brain so you can start chatting immediately see -> [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info.
 - **4-gram Markov model** with smart **(dumb)** backoff (3-gram → 2-gram → 1-gram → random)
 - **Attention mechanism** — important seed words get a probability boost for more coherent output
@@ -21,7 +21,7 @@ Generate text and explore language patterns with this interactive, browser-based
 - In **private / incognito mode**, local storage is cleared when you close the window. Use the **Download Brain** and **Load Brain** buttons (in the top bar or Brain Management section) to save and restore your brain manually.
 
 # Help
-
+##❔
 1. Open the [webpage](https://oxillenglow.github.io/MarkovChain-Online-test-and-view/index.html).
 2. Paste some text into the **Training Data** box and click **Train Brain**.  **Important**, Don't expect too much if you trained on just a few KBs of data, you usually need MBs for reasonable conversations.
 3.  Alternatively, **choose** a trained [Markov chain brain](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains)  , **click** the toggle on the train brain section (top), and **past** the file URL (given [here](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains) ).
@@ -35,7 +35,8 @@ Generate text and explore language patterns with this interactive, browser-based
 |----------|--------|
 | `Ctrl + Enter` (in training field) | Train brain |
 | `Ctrl + G` | Generate text |
-## Trained Brains 
+# Trained Brains
+## 🤯
 How to use? see [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info
 ### From OxillenGlow 
 Chose the latest one, top:
