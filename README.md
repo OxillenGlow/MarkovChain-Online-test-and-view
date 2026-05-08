@@ -2,7 +2,7 @@
 Generate text and explore language patterns with this interactive, browser-based Markov Chain Studio that saves memory _privately_. Build multi-gram (1,2,3,4) gram models, scrape data from websites, and visualize the "˙˙：.🕸️˙：.. knowledge web" through an intuitive chart—all. This markov chain bot is open source, client-side and fast.
 # 🚀 Quick Start
  **Go to [the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view) to try out, **CLICK** *on the big green button to use my pretrained brain*, write a seed(message) and click generate!**
-###### Go to [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info
+###### Go to [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info. If you like this, see my other [repository](https://github.com/OxillenGlow/MtSharpGrain).
 ###### If you like it, please become a stargazer, ie. click the star button on top! 
 # ⚡ Why use this
 I have checked many of the top websites on Google for markov chain text generator and I am sure this is the best out there. If you don't believe me, go search. This is the best online markov text generator with the most useful functions and a ready to use pretrained dataset! _There are certainly some usefull makov chain simulations that does **not** output words. If you just want to understand markov chaines visually, you might want to go [here](https://a-herzog.github.io/MarkovChains/index.html) but it is just a 1-gram_
@@ -53,7 +53,7 @@ Chose the latest one, top:
 I don't want to train all of these brains so **if you have one** make an issue and post the link (just add input text to brain and download .json file). I **will** put the JSON file here if it is good.
 ##### You can help! ↑
 # 🎯 Other Projects (repos)
-Since you scrolled down here, you might like some other projects of mine. See [my sandbox game](github.com/OxillenGlow/MtSharpGrain).
+Since you scrolled down here, you might like some other projects of mine. See [my sandbox game](https://github.com/OxillenGlow/MtSharpGrain).
 ## License
 Fee to use, modify, and share. Under MIT license.
 Again, I, the creator and contributers, will not be and can not be responsible for any damages caused or linked to the code in this repository. I WILL NOT BE RESPONSIBLE FOR INFORMATION OR MALICIOUS CODE IN BRAINS OR DATASETS. SEE MIT LICENSE [LICENSE](LICENSE)
