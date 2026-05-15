@@ -9,14 +9,22 @@ Generate text and explore language patterns with this interactive, browser-based
 I have checked many of the top websites on Google for markov chain text generator with a pretrained brain and I am sure this is the best out there. If you don't believe me, go search. This is the best online markov text generator with the most useful functions and a ready to use pretrained dataset! _There are certainly some usefull makov chain simulations that does **not** output words. If you just want to understand markov chaines visually, you might want to go [here](https://a-herzog.github.io/MarkovChains/index.html) but it is just a 1-gram_ OR _[here](https://a-herzog.github.io/MarkovChains/index.html) but it does not have a pretrained brain_
 # 🖥️Screen shot ![the generation of words from seed text _Do not confuse with prompt_](Screenshot_20260507-171808_Browser.png)
 # 📊 Features
-- **Pretrained brain** Includes some built-in English datasets (brains) that you can [choose](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains) and past to brain so you can start chatting immediately see -> [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info.
-- **4-gram Markov model** with smart **(dumb)** backoff (3-gram → 2-gram → 1-gram → random)
-- **Attention mechanism** — important seed words get a probability boost for more coherent output
-- **Sentence-aware stopping** — generation continues past the max word count until it hits a period, question mark, or exclamation point
-- **Website scraper** — fetch text from any URL, take snapshots, and convert them into training data
-- **Knowledge web** — browse your model's n-gram table, filter by context or next word, and inspect probabilities
-- **Prompt normalization** — lowercase "un" is automatically linked to uppercase "UN" for better matching
-- **Import / Export** — download your brain as a `.json` file or load one back in
+## Pretrained brain
+Includes some built-in English datasets (brains) that you can [choose](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains) and past to brain so you can start chatting immediately see -> [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info.
+## multi-gram Markov model 
+with smart **(dumb)** backoff (3-gram → 2-gram → 1-gram → random)
+## Attention mechanism 
+**important seed words** get a probability boost for more coherent output
+## Sentence-aware stopping
+generation continues past the max word count until it hits a period, question mark, or exclamation point
+## Website scraper 
+fetch text from any URL, take snapshots, and convert them into training data
+## Knowledge web 
+browse your model's n-gram table, filter by context or next word, and inspect probabilities
+## Prompt normalization
+lowercase "un" is automatically linked to uppercase "UN" for better matching
+## Import / Export
+download your brain as a `.json` file or load one back in
 
 ## Does it save my data?
 **Yes. If you want it to** Your trained model (the "brain") is automatically saved to your browser's local storage after every training session.
