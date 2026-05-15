@@ -1,12 +1,14 @@
 # 🌐 Online Markov Chain Text Generator: Train, Run & Visualize 
 Generate text and explore language patterns with this interactive, browser-based Markov Chain Studio that saves memory _privately_. Build multi-gram (1,2,3,4) gram models, scrape data from websites, and visualize the "˙˙：.🕸️˙：.. knowledge web" through an intuitive chart—all. This markov chain bot is open source, client-side and fast.
-# 🚀 Quick Start
-[![pages-build-deployment](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/actions/workflows/pages/pages-build-deployment)
+# 🚀▶️ [Quick Start](https://oxillenglow.github.io/MarkovChain-Online-test-and-view)
  **Go to [the website](https://oxillenglow.github.io/MarkovChain-Online-test-and-view) to try out, **CLICK** *on the big green button to use my pretrained brain*, write a seed(message) and click generate!**
+ [![pages-build-deployment](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/actions/workflows/pages/pages-build-deployment)
 ###### Go to [help section](https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help) for more info. If you like this, see my other [repository](https://github.com/OxillenGlow/MtSharpGrain).
-###### If you like it, please become a stargazer, ie. click the star button on top! 
+### If you like it, please click the star ⭐ button on top! 
 # ⚡ Why use this
-I have checked many of the top websites on Google for markov chain text generator with a pretrained brain and I am sure this is the best out there. If you don't believe me, go search. This is the best online markov text generator with the most useful functions and a ready to use pretrained dataset! _There are certainly some usefull makov chain simulations that does **not** output words. If you just want to understand markov chaines visually, you might want to go [here](https://a-herzog.github.io/MarkovChains/index.html) but it is just a 1-gram_ OR _[here](https://a-herzog.github.io/MarkovChains/index.html) but it does not have a pretrained brain_
+I have checked many of the top websites on Google for markov chain text generator with a pretrained brain and I am sure this is the best out there. If you don't believe me, go search. This is the best online markov text generator with the most useful functions and a ready to use pretrained dataset! 
+
+_There are certainly some usefull makov chain simulations that does **not** output words. If you just want to understand markov chaines visually, you might want to go [herzog's](https://a-herzog.github.io/MarkovChains/index.html) but it is just a 1-gram_ OR _[roshni232003's](https://roshni232003.github.io/MARKOV-CHAIN-TEXT-GENERATOR/) but it does not have a pretrained brain_
 # 🖥️Screen shot ![the generation of words from seed text _Do not confuse with prompt_](Screenshot_20260507-171808_Browser.png)
 # 📊 Features
 ## Pretrained brain
