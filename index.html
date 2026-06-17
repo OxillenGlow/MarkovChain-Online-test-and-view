@@ -886,274 +886,250 @@
 
     document.getElementById('btn-clear-brain').addEventListener('click',  clearBrain);
     document.getElementById('btn-clear-brain2').addEventListener('click', clearBrain);
-
     // ==================== EUPHORIA BOT ====================
-    const euph = {
-        ws:           null,
-        connected:    false,
-        nick:         'Markov',
-        room:         'xkcd',
-        packetId:     1,
-        replyQueue:   [],
-        queueRunning: false,
-        trainCount:   0,    // messages trained on this session
+const euph = {
+    ws:           null,
+    connected:    false,
+    nick:         'Markov',
+    room:         'xkcd',
+    packetId:     1,
+    replyQueue:   [],
+    queueRunning: false,
+    trainCount:   0,
+    lastPingTime: null,
+};
+
+// Send a normal command packet
+function euphSendPacket(type, data) {
+    if (!euph.ws || euph.ws.readyState !== WebSocket.OPEN) return false;
+
+    const pkt = { id: String(euph.packetId++), type };
+    if (data !== undefined) pkt.data = data;
+
+    euph.ws.send(JSON.stringify(pkt));
+    return true;
+}
+
+// Send a reply/event packet that must NOT carry a client-generated id
+function euphSendBarePacket(type, data) {
+    if (!euph.ws || euph.ws.readyState !== WebSocket.OPEN) return false;
+    euph.ws.send(JSON.stringify({ type, data }));
+    return true;
+}
+
+// Reply queue — serialises outgoing messages with a delay
+function euphEnqueue(content, parentId) {
+    euph.replyQueue.push({ content, parentId: parentId || null });
+    if (!euph.queueRunning) euphRunQueue();
+}
+
+function euphRunQueue() {
+    if (!euph.replyQueue.length) {
+        euph.queueRunning = false;
+        return;
+    }
+
+    euph.queueRunning = true;
+    const { content, parentId } = euph.replyQueue.shift();
+    const delay = parseInt(document.getElementById('euph-reply-delay').value) || 1500;
+
+    setTimeout(() => {
+        if (euph.ws && euph.ws.readyState === WebSocket.OPEN) {
+            const data = { content };
+            if (parentId) data.parent = parentId; // omit when top-level
+            euphSendPacket('send', data);
+        }
+        euphRunQueue();
+    }, delay);
+}
+
+// Handle incoming packet
+function euphHandlePacket(pkt) {
+    const type = pkt.type;
+    const data = pkt.data || {};
+
+    switch (type) {
+        case 'ping-event': {
+            // MUST echo the server's timestamp exactly
+            const serverTime = data.time;
+            euph.lastPingTime = serverTime;
+            euphSendBarePacket('ping-reply', { time: serverTime });
+            break;
+        }
+
+        case 'snapshot-event':
+            euph.connected = true;
+            euphSetStatus('connected', '🟢 Connected to &' + esc(euph.room));
+
+            // Set our nick after joining
+            euphSendPacket('nick', { name: euph.nick });
+
+            if (data.log) {
+                data.log.forEach(msg => {
+                    if (!msg || !msg.sender) return;
+                    const sn = esc(msg.sender.name || '?');
+                    const ct = esc(msg.content || '');
+                    euphAppendLine(
+                        '<span class="euph-sender">' + sn + '</span>: ' + ct,
+                        'history'
+                    );
+
+                    if (document.getElementById('euph-train-history').checked &&
+                        msg.content && msg.content.trim().length > 3) {
+                        trainOnText(msg.content);
+                        euph.trainCount++;
+                    }
+                });
+            }
+
+            if (document.getElementById('euph-train-history').checked) {
+                updateAllUI();
+                euphCounter.style.display = 'inline-block';
+                euphCounter.textContent = 'Trained: ' + euph.trainCount + ' msgs';
+            }
+
+            euphAppendLine('[Connected as <strong>' + esc(euph.nick) + '</strong>]', 'system');
+            break;
+
+        case 'nick-reply':
+            euphAppendLine('[Nick set → <strong>' + esc(data.name || euph.nick) + '</strong>]', 'system');
+            break;
+
+        case 'send-event': {
+            if (!data.sender) break;
+
+            const senderName = data.sender.name || '';
+            const content = data.content || '';
+            const msgId = data.id || '';
+
+            euphAppendLine(
+                '<span class="euph-sender">' + esc(senderName) + '</span>: ' + esc(content),
+                'live'
+            );
+
+            if (senderName.toLowerCase() === euph.nick.toLowerCase()) break;
+
+            if (content.trim().length > 2) {
+                trainOnText(content);
+                euph.trainCount++;
+                if (euph.trainCount % 5 === 0) updateAllUI();
+                euphCounter.style.display = 'inline-block';
+                euphCounter.textContent = 'Trained: ' + euph.trainCount + ' msgs';
+            }
+
+            const markovMatch = content.match(/^!markov(?:\s+([\s\S]+))?$/i);
+            if (markovMatch) {
+                const rawSeed = (markovMatch[1] || '').trim();
+                const seedText = rawSeed
+                    ? rawSeed.split(/\s+/).slice(0, 4).join(' ')
+                    : (randomVocabWord() || '');
+
+                if (!seedText) {
+                    euphEnqueue("(I haven't learned anything yet — keep chatting!)", msgId);
+                } else if (brain.totalTokens < 10) {
+                    euphEnqueue("(Brain still too empty — give me a few more messages to learn from!)", msgId);
+                } else {
+                    const result = generateText(seedText, 40, 1.8);
+                    euphEnqueue(result.text || '(no output — try a different seed)', msgId);
+                }
+                break;
+            }
+
+            const isMentioned = content.toLowerCase().includes('@' + euph.nick.toLowerCase());
+            const isHelp = /^!help\b/i.test(content.trim());
+            if (isHelp || isMentioned) {
+                const helpText =
+                    '@' + senderName + " Hi! I'm @" + euph.nick + ', a Markov chain bot. ' +
+                    'I learn from every message in this room. ' +
+                    'Commands: !markov [seed], !help, or @' + euph.nick + '.';
+                euphEnqueue(helpText, msgId);
+                break;
+            }
+
+            break;
+        }
+
+        case 'send-reply':
+            if (data.content !== undefined) {
+                euphAppendLine(
+                    '<span class="euph-sender">' + esc(euph.nick) + '</span>: ' + esc(data.content),
+                    'bot-sent'
+                );
+            }
+            break;
+
+        case 'disconnect-event':
+            euphAppendLine('[Disconnected: ' + esc(data.reason || 'server request') + ']', 'system');
+            euphDisconnect();
+            break;
+
+        case 'join-event':
+            if (data.name) euphAppendLine('[→ ' + esc(data.name) + ' joined]', 'system');
+            break;
+
+        case 'part-event':
+            if (data.name) euphAppendLine('[← ' + esc(data.name) + ' left]', 'system');
+            break;
+
+        case 'nick-event':
+            if (data) euphAppendLine('[' + esc(data.from || '?') + ' is now ' + esc(data.to || '?') + ']', 'system');
+            break;
+
+        case 'bounce-event':
+            euphAppendLine('[Bounced: ' + esc(data.reason || '?') + ']', 'system');
+            break;
+    }
+}
+
+function euphConnect() {
+    if (euph.ws) { euphDisconnect(); return; }
+
+    const room = document.getElementById('euph-room').value.trim() || 'xkcd';
+    const nick = document.getElementById('euph-nick').value.trim() || 'Markov';
+    euph.room = room;
+    euph.nick = nick;
+    euph.packetId = 1;
+    euph.replyQueue = [];
+    euph.queueRunning = false;
+    euph.trainCount = 0;
+    euph.lastPingTime = null;
+
+    euphSetStatus('connecting', '🟡 Connecting…');
+    euphAppendLine('[Connecting to &' + esc(room) + ' as @' + esc(nick) + '…]', 'system');
+
+    const wsUrl = 'wss://euphoria.leet.nu/room/' + encodeURIComponent(room) + '/ws';
+    try {
+        euph.ws = new WebSocket(wsUrl);
+    } catch (e) {
+        euphSetStatus('error', '🔴 Error');
+        euphAppendLine('[WebSocket creation failed: ' + esc(e.message) + ']', 'error');
+        euph.ws = null;
+        return;
+    }
+
+    euph.ws.onopen = () => {
+        euphAppendLine('[WebSocket open — waiting for server snapshot…]', 'system');
     };
 
-    // --- DOM refs (accessed often) ---
-    const euphLog      = document.getElementById('euph-chat-log');
-    const euphCounter  = document.getElementById('euph-train-counter');
-    const euphConnBtn  = document.getElementById('euph-connect-btn');
-    const euphBadge    = document.getElementById('euph-status-badge');
-    const euphSendSt   = document.getElementById('euph-send-status');
-
-    function euphSetStatus(state, label) {
-        euphBadge.textContent = label;
-        euphBadge.className   = state;    // 'connected' | 'connecting' | 'disconnected' | 'error'
-        const isConn = state === 'connected';
-        euphConnBtn.textContent = isConn ? '🔌 Disconnect' : '🔌 Connect';
-        euphConnBtn.className   = isConn ? 'danger' : 'success';
-    }
-
-    function euphAppendLine(html, cssClass) {
-        const line  = document.createElement('div');
-        line.className = 'euph-line ' + cssClass;
-        line.innerHTML  = html;
-        euphLog.appendChild(line);
-        // Trim to last 300 lines
-        while (euphLog.children.length > 300) euphLog.removeChild(euphLog.firstChild);
-        euphLog.scrollTop = euphLog.scrollHeight;
-    }
-
-    function esc(s) {
-        return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    }
-
-    function euphSendPacket(type, data) {
-        if (!euph.ws || euph.ws.readyState !== WebSocket.OPEN) return false;
-        const pkt = { id: String(euph.packetId++), type };
-        if (data !== undefined) pkt.data = data;
-        euph.ws.send(JSON.stringify(pkt));
-        return true;
-    }
-
-    // Reply queue — serialises outgoing messages with a delay to avoid flooding
-    function euphEnqueue(content, parentId) {
-        euph.replyQueue.push({ content, parentId: parentId || '' });
-        if (!euph.queueRunning) euphRunQueue();
-    }
-
-    function euphRunQueue() {
-        if (!euph.replyQueue.length) { euph.queueRunning = false; return; }
-        euph.queueRunning = true;
-        const { content, parentId } = euph.replyQueue.shift();
-        const delay = parseInt(document.getElementById('euph-reply-delay').value) || 1500;
-        setTimeout(() => {
-            if (euph.ws && euph.ws.readyState === WebSocket.OPEN) {
-                euphSendPacket('send', { content, parent: parentId });
-            }
-            euphRunQueue();
-        }, delay);
-    }
-
-    // Pick a random seed word from the vocabulary
-    function randomVocabWord() {
-        const keys = Object.keys(brain.vocabulary || {});
-        if (!keys.length) return null;
-        // Bias toward more common words
-        const entries = Object.entries(brain.vocabulary);
-        const total   = entries.reduce((s,[,v]) => s + v, 0);
-        let r = Math.random() * total;
-        for (const [w, c] of entries) { r -= c; if (r <= 0) return w; }
-        return keys[Math.floor(Math.random() * keys.length)];
-    }
-
-    // Handle incoming packet
-    function euphHandlePacket(pkt) {
-        const type = pkt.type;
-        const data = pkt.data;
-
-        switch (type) {
-
-            // ---- Server keepalive — MUST reply or we get kicked ----
-            case 'ping-event':
-                euphSendPacket('ping-reply', { time: Math.floor(Date.now() / 1000) });
-                break;
-
-            // ---- Initial room state ----
-            case 'snapshot-event':
-                euph.connected = true;
-                euphSetStatus('connected', '🟢 Connected to &' + esc(euph.room));
-
-                // Set our nick immediately
-                euphSendPacket('nick', { name: euph.nick });
-
-                // Display backlog
-                if (data && data.log) {
-                    data.log.forEach(msg => {
-                        if (!msg || !msg.sender) return;
-                        const sn = esc(msg.sender.name || '?');
-                        const ct = esc(msg.content   || '');
-                        euphAppendLine(
-                            '<span class="euph-sender">' + sn + '</span>: ' + ct,
-                            'history'
-                        );
-                        // Optionally train on history
-                        if (document.getElementById('euph-train-history').checked && msg.content && msg.content.trim().length > 3) {
-                            trainOnText(msg.content);
-                            euph.trainCount++;
-                        }
-                    });
-                }
-                if (document.getElementById('euph-train-history').checked) {
-                    updateAllUI();
-                    euphCounter.style.display = 'inline-block';
-                    euphCounter.textContent   = 'Trained: ' + euph.trainCount + ' msgs';
-                }
-                euphAppendLine('[Connected as <strong>' + esc(euph.nick) + '</strong>]', 'system');
-                break;
-
-            // ---- Nick confirmed ----
-            case 'nick-reply':
-                euphAppendLine('[Nick set → <strong>' + esc((data && data.name) || euph.nick) + '</strong>]', 'system');
-                break;
-
-            // ---- Someone sent a message ----
-            case 'send-event': {
-                if (!data || !data.sender) break;
-                const senderName = data.sender.name || '';
-                const content    = data.content   || '';
-                const msgId      = data.id         || '';
-
-                // Display in log
-                euphAppendLine(
-                    '<span class="euph-sender">' + esc(senderName) + '</span>: ' + esc(content),
-                    'live'
-                );
-
-                // Skip our own messages (avoid loops)
-                if (senderName.toLowerCase() === euph.nick.toLowerCase()) break;
-
-                // ── Auto-train on every message ──────────────────────────────
-                if (content.trim().length > 2) {
-                    trainOnText(content);
-                    euph.trainCount++;
-                    // Update counter display (throttle DOM writes to every 5 msgs)
-                    if (euph.trainCount % 5 === 0) updateAllUI();
-                    euphCounter.style.display = 'inline-block';
-                    euphCounter.textContent   = 'Trained: ' + euph.trainCount + ' msgs';
-                }
-
-                // ── Command: !markov [seed] ──────────────────────────────────
-                //    Accepts 0–4 word seed
-                const markovMatch = content.match(/^!markov(?:\s+([\s\S]+))?$/i);
-                if (markovMatch) {
-                    const rawSeed  = (markovMatch[1] || '').trim();
-                    // Limit seed to 4 words
-                    const seedText = rawSeed
-                        ? rawSeed.split(/\s+/).slice(0, 4).join(' ')
-                        : (randomVocabWord() || '');
-
-                    if (!seedText) {
-                        euphEnqueue("(I haven't learned anything yet — keep chatting!)", msgId);
-                    } else if (brain.totalTokens < 10) {
-                        euphEnqueue("(Brain still too empty — give me a few more messages to learn from!)", msgId);
-                    } else {
-                        const result = generateText(seedText, 40, 1.8);
-                        euphEnqueue(result.text || '(no output — try a different seed)', msgId);
-                    }
-                    break;
-                }
-
-                // ── Command: !help  OR  @Markov mention ─────────────────────
-                const isMentioned = content.toLowerCase().includes('@' + euph.nick.toLowerCase());
-                const isHelp      = /^!help\b/i.test(content.trim());
-                if (isHelp || isMentioned) {
-                    const helpText =
-                        '@' + senderName + ' Hi! I\'m @' + euph.nick + ', a Markov chain bot. ' +
-                        'I learn from every message in this room. ' +
-                        'Commands: ' +
-                        '!markov [seed] — generate text from a 1–4 word seed (seed optional, I\'ll pick one if you skip it). ' +
-                        '!help or @' + euph.nick + ' — show this message.';
-                    euphEnqueue(helpText, msgId);
-                    break;
-                }
-                break;
-            }
-
-            // ---- Our sent message confirmed ----
-            case 'send-reply':
-                if (data && data.content !== undefined) {
-                    euphAppendLine(
-                        '<span class="euph-sender">' + esc(euph.nick) + '</span>: ' + esc(data.content),
-                        'bot-sent'
-                    );
-                }
-                break;
-
-            // ---- User joins / leaves ----
-            case 'join-event':
-                if (data && data.name) euphAppendLine('[→ ' + esc(data.name) + ' joined]', 'system');
-                break;
-            case 'part-event':
-                if (data && data.name) euphAppendLine('[← ' + esc(data.name) + ' left]', 'system');
-                break;
-
-            case 'nick-event':
-                if (data) euphAppendLine('[' + esc(data.from||'?') + ' is now ' + esc(data.to||'?') + ']', 'system');
-                break;
-
-            case 'bounce-event':
-                euphAppendLine('[Bounced: ' + esc((data && data.reason) || '?') + ']', 'system');
-                break;
-        }
-    }
-
-    function euphConnect() {
-        if (euph.ws) { euphDisconnect(); return; }   // toggle off if already open
-
-        const room = document.getElementById('euph-room').value.trim() || 'xkcd';
-        const nick = document.getElementById('euph-nick').value.trim() || 'Markov';
-        euph.room  = room;
-        euph.nick  = nick;
-        euph.packetId   = 1;
-        euph.replyQueue = [];
-        euph.queueRunning = false;
-        euph.trainCount   = 0;
-
-        euphSetStatus('connecting', '🟡 Connecting…');
-        euphAppendLine('[Connecting to &' + esc(room) + ' as @' + esc(nick) + '…]', 'system');
-
-        const wsUrl = 'wss://euphoria.leet.nu/room/' + encodeURIComponent(room) + '/ws';
+    euph.ws.onmessage = evt => {
         try {
-            euph.ws = new WebSocket(wsUrl);
+            euphHandlePacket(JSON.parse(evt.data));
         } catch (e) {
-            euphSetStatus('error', '🔴 Error');
-            euphAppendLine('[WebSocket creation failed: ' + esc(e.message) + ']', 'error');
-            euph.ws = null;
-            return;
+            euphAppendLine('[Parse error: ' + esc(e.message) + ']', 'error');
         }
+    };
 
-        euph.ws.onopen = () => {
-            euphAppendLine('[WebSocket open — waiting for server snapshot…]', 'system');
-        };
+    euph.ws.onerror = () => {
+        euphSetStatus('error', '🔴 Error');
+        euphAppendLine('[WebSocket error — check console]', 'error');
+    };
 
-        euph.ws.onmessage = evt => {
-            try { euphHandlePacket(JSON.parse(evt.data)); }
-            catch (e) { euphAppendLine('[Parse error: ' + esc(e.message) + ']', 'error'); }
-        };
-
-        euph.ws.onerror = () => {
-            euphSetStatus('error', '🔴 Error');
-            euphAppendLine('[WebSocket error — check console]', 'error');
-        };
-
-        euph.ws.onclose = evt => {
-            euph.ws = null;
-            euph.connected = false;
-            euphSetStatus('disconnected', '⚫ Disconnected');
-            euphAppendLine('[Connection closed. Code: ' + evt.code + (evt.reason ? ' / ' + esc(evt.reason) : '') + ']', 'system');
-        };
-    }
+    euph.ws.onclose = evt => {
+        euph.ws = null;
+        euph.connected = false;
+        euphSetStatus('disconnected', '⚫ Disconnected');
+        euphAppendLine('[Connection closed. Code: ' + evt.code + (evt.reason ? ' / ' + esc(evt.reason) : '') + ']', 'system');
+    };
 
     function euphDisconnect() {
         if (euph.ws) { euph.ws.close(1000, 'User disconnected'); euph.ws = null; }
