@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markov Bot - 4-gram with Backoff & Attention</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #111;
+            min-height: 100vh;
+        }
+        #topbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #eee;
+            padding: 10px 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+            border-bottom: 3px solid #1abc9c;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        #topbar a,
+        #topbar button {
+            color: #eee;
+            background: #555;
+            border: 1px solid #777;
+            padding: 6px 12px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        #topbar a:hover,
+        #topbar button:hover {
+            background: #1abc9c;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(26, 188, 156, 0.3);
+        }
+        #topbar span.sep {
+            color: #888;
+            margin: 0 2px;
+        }
+        .section {
+            background: #fff;
+            border: none;
+            border-radius: 12px;
+            margin: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        .section:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+        .section h2 {
+            margin: 0 0 12px 0;
+            font-size: 16px;
+            border-bottom: 3px solid #1abc9c;
+            padding-bottom: 8px;
+            color: #2c3e50;
+        }
+        textarea {
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            border: 2px solid #ecf0f1;
+            padding: 8px;
+            background: #f8f9fa;
+            resize: vertical;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: #1abc9c;
+            background: #fff;
+            box-shadow: 0 0 8px rgba(26, 188, 156, 0.2);
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="file"],
+        input[type="checkbox"],
+        select {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            border: 2px solid #ecf0f1;
+            padding: 6px 8px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="file"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #1abc9c;
+            background: #fff;
+            box-shadow: 0 0 8px rgba(26, 188, 156, 0.2);
+        }
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            accent-color: #1abc9c;
+        }
+        button {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            border: 2px solid #bdc3c7;
+            padding: 6px 14px;
+            cursor: pointer;
+            background: #ecf0f1;
+            color: #2c3e50;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        button:hover {
+            background: #bdc3c7;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        button.primary {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: #fff;
+            border-color: #2980b9;
+            font-weight: bold;
+        }
+        button.primary:hover {
+            background: linear-gradient(135deg, #3cb0ff 0%, #2980b9 100%);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+        button.danger {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: #fff;
+            border-color: #c0392b;
+        }
+        button.danger:hover {
+            background: linear-gradient(135deg, #ec7063 0%, #c0392b 100%);
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 11px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        table th,
+        table td {
+            border: 1px solid #ecf0f1;
+            padding: 6px 8px;
+            text-align: left;
+            word-break: break-word;
+        }
+        table th {
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            color: #fff;
+            position: sticky;
+            top: 0;
+            font-weight: bold;
+        }
+        .scroll-table {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 2px solid #ecf0f1;
+            border-radius: 8px;
+        }
+        .status-msg {
+            padding: 8px 12px;
+            margin: 6px 0;
+            font-size: 12px;
+            border-left: 4px solid #888;
+            background: #ecf0f1;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        .status-msg.good {
+            border-left-color: #27ae60;
+            background: #d5f4e6;
+            color: #1e5631;
+        }
+        .status-msg.warn {
+            border-left-color: #f39c12;
+            background: #fef5e7;
+            color: #7d6608;
+        }
+        .status-msg.err {
+            border-left-color: #e74c3c;
+            background: #fadbd8;
+            color: #922b21;
+        }
+        .row-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin: 8px 0;
+        }
+        .snapshot-item {
+            border: 2px solid #ecf0f1;
+            padding: 10px;
+            margin: 6px 0;
+            background: #f8f9fa;
+            font-size: 11px;
+            max-height: 120px;
+            overflow-y: auto;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .snapshot-item:hover {
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+        .snapshot-item pre {
+            margin: 4px 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-size: 10px;
+            max-height: 60px;
+            overflow-y: auto;
+        }
+        #scraper-panel {
+            border: 2px dashed #1abc9c;
+            padding: 12px;
+            margin-top: 10px;
+            background: #f0fdfb;
+            display: none;
+            border-radius: 8px;
+        }
+        #external-brain-panel {
+            border: 2px dashed #3498db;
+            padding: 12px;
+            margin-top: 10px;
+            background: #f0f8ff;
+            display: none;
+            border-radius: 8px;
+        }
+        #readme-panel {
+            border: none;
+            padding: 0;
+            margin-top: 10px;
+            background: transparent;
+            border-radius: 8px;
+        }
+        #readme-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            max-height: 600px;
+            overflow-y: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        #readme-content h1, #readme-content h2, #readme-content h3 {
+            color: #2c3e50;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+        #readme-content h1 {
+            border-bottom: 3px solid #1abc9c;
+            padding-bottom: 8px;
+        }
+        #readme-content a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        #readme-content a:hover {
+            text-decoration: underline;
+        }
+        #readme-content code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #e74c3c;
+            font-size: 12px;
+        }
+        #readme-content pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 11px;
+        }
+        #readme-content table {
+            width: 100%;
+            margin: 10px 0;
+        }
+        #readme-content table th {
+            background: #34495e;
+            color: #fff;
+        }
+        #readme-content table td {
+            border: 1px solid #ecf0f1;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #ecf0f1;
+            margin: 12px 0;
+        }
+        label {
+            font-weight: bold;
+            font-size: 12px;
+            color: #2c3e50;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 8px 0;
+        }
+
+        /* ===== MODAL STYLES ===== */
+        #pretrain-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #pretrain-modal.show {
+            display: flex;
+        }
+
+        #pretrain-modal-content {
+            background: #fff;
+            border: none;
+            padding: 40px 30px;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            font-size: 16px;
+        }
+
+        #pretrain-modal-content h1 {
+            margin: 0 0 16px 0;
+            font-size: 32px;
+            color: #2c3e50;
+        }
+
+        #pretrain-modal-content p {
+            margin: 12px 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        #pretrain-modal-buttons {
+            margin-top: 24px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #btn-load-default-brain {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: #fff;
+            border: 2px solid #1e8449;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #btn-load-default-brain:hover {
+            background: linear-gradient(135deg, #2ecc71 0%, #229954 100%);
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(39, 174, 96, 0.3);
+        }
+
+        #btn-skip-pretrain {
+            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+            color: #fff;
+            border: 2px solid #566573;
+            padding: 16px 32px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #btn-skip-pretrain:hover {
+            background: linear-gradient(135deg, #bdc3c7 0%, #7f8c8d 100%);
+            transform: scale(1.02);
+        }
+
+        #pretrain-loading {
+            display: none;
+            margin-top: 16px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1abc9c;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #16a085;
+        }
+    </style>
+</head>
+<body>
+    <!-- PRETRAIN MODAL POPUP -->
+    <div id="pretrain-modal">
+        <div id="pretrain-modal-content">
+            <h1>🧠 Welcome!</h1>
+            <p>Would you like to load the default pretrained brain?</p>
+            <p style="font-size:12px;color:#888;">This will load a pre-trained Markov model so you can start generating text right away.</p>
+            <div id="pretrain-modal-buttons">
+                <button id="btn-load-default-brain">✨ Yes, Load Default Brain</button>
+                <button id="btn-skip-pretrain">⏭️ Skip for Now</button>
+            </div>
+            <div id="pretrain-loading" style="margin-top:16px;">
+                <span style="display:inline-block;">Loading brain...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOP BAR -->
+    <div id="topbar">
+        <strong style="color:#fff;margin-right:10px;">🧠 MARKOV BOT</strong>
+        <a href="#sec-train">Train</a>
+        <a href="#sec-generate">Generate</a>
+        <a href="#sec-euphoria">💬 Euphoria</a>
+        <a href="#sec-scraper">Scraper</a>
+        <a href="#sec-knowledge">Knowledge Web</a>
+        <a href="#sec-brain">Brain Mgmt</a>
+        <a href="#sec-readme">📖 README</a>
+        <span class="sep">|</span>
+        <button id="btn-download-brain" title="Download brain as JSON">⬇️ Download Brain</button>
+        <button id="btn-load-brain" title="Load brain from JSON file">⬆️ Load Brain</button>
+        <button id="btn-clear-brain" class="danger" title="Clear all stored brain data">🗑️ Clear Brain</button>
+        <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help" target="_blank" title="View help documentation">❓ Help</a>
+        <span style="margin-left:auto;font-size:10px;color:#aaa;" id="brain-stats-top">Brain: empty</span>
+    </div>
+
+    <!-- TRAINING SECTION -->
+    <div class="section" id="sec-train">
+        <h2>📚 Training Data</h2>
+        <p style="margin:2px 0;font-size:11px;">Paste text and click <b>Train</b>. The brain is saved in your browser automatically. <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help" target="_blank" style="color:#3498db;">Learn more</a></p>
+        
+        <!-- Toggle for external brain URL -->
+        <label class="checkbox-label">
+            <input type="checkbox" id="use-external-brain-toggle">
+            Use External Brain URL
+        </label>
+
+        <!-- Training textarea (shown by default) -->
+        <div id="training-mode">
+            <textarea id="training-input" rows="10" placeholder="Paste training text here...&#10;The more text, the better the 4-gram model will work."></textarea>
+            <div class="row-flex">
+                <button id="btn-train" class="primary">🚀 Train Brain</button>
+                <button id="btn-append-snapshots" style="background:#ecf0f1;">+ Append All Snapshots</button>
+                <span id="train-status" class="status-msg" style="display:none;"></span>
+            </div>
+            <div id="train-stats" style="font-size:10px;color:#555;margin-top:4px;"></div>
+        </div>
+
+        <!-- External brain URL panel (hidden by default) -->
+        <div id="external-brain-panel">
+            <label>Brain JSON File URL:</label>
+            <input type="text" id="external-brain-url" placeholder="https://example.com/brain.json" style="width:100%;margin-bottom:8px;">
+            <div class="row-flex">
+                <button id="btn-load-external-brain" class="primary">⬆️ Load from URL</button>
+                <span id="external-brain-status" class="status-msg" style="display:none;"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- GENERATE SECTION -->
+    <div class="section" id="sec-generate">
+        <h2>✨ Generate Text</h2>
+        <div class="row-flex">
+            <label>Prompt / Seed:</label>
+            <input type="text" id="prompt-input" placeholder="Enter seed text (min 1 word)..." style="flex:1;min-width:200px;">
+            <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#help" target="_blank" title="View help documentation" style="color:#3498db;text-decoration:none;">💡</a>
+        </div>
+        <div class="row-flex">
+            <label>Max words:</label>
+            <input type="number" id="max-words" value="60" min="5" max="500" style="width:70px;">
+            <label>Attention factor:</label>
+            <input type="number" id="attention-factor" value="1.8" min="1.0" max="5.0" step="0.1" style="width:70px;" title="Boost for important seed words (1.0=off)">
+            <button id="btn-generate" class="primary">✨ Generate</button>
+        </div>
+        <div style="margin-top:8px;">
+            <label>Output:</label>
+            <textarea id="generated-output" rows="6" readonly placeholder="Generated text will appear here..."></textarea>
+        </div>
+        <div id="gen-debug" style="font-size:10px;color:#777;margin-top:2px;"></div>
+    </div>
+
+    <!-- EUPHORIA CONNECTION SECTION -->
+    <div class="section" id="sec-euphoria">
+        <h2>💬 Euphoria Room Connection (@Mkv)</h2>
+        <p style="margin:2px 0;font-size:11px;">Connect the bot to a room on <b>euphoria.leet.nu</b>. Once connected, it listens for
+            <code>!realmarkov &lt;seed words&gt;</code>, <code>!help @Mkv</code>, and <code>!ping</code>.
+            Uses the <b>Max words</b> / <b>Attention factor</b> settings from the Generate section above.
+        </p>
+        <div class="row-flex">
+            <label>Room:</label>
+            <input type="text" id="euphoria-room" list="euphoria-room-suggestions" placeholder="xkcd" value="xkcd" style="width:150px;">
+            <datalist id="euphoria-room-suggestions">
+                <option value="xkcd">
+                <option value="test">
+                <option value="townhall">
+            </datalist>
+            <label>Nick:</label>
+            <input type="text" id="euphoria-nick" value="Mkv" style="width:110px;">
+            <button id="btn-euphoria-connect" class="primary">🔌 Connect</button>
+            <button id="btn-euphoria-disconnect" class="danger" style="display:none;">⏹️ Disconnect</button>
+        </div>
+        <span id="euphoria-status" class="status-msg" style="display:none;"></span>
+        <div style="margin-top:8px;">
+            <label>Room Log:</label>
+            <div id="euphoria-log" style="max-height:240px;overflow-y:auto;border:2px solid #ecf0f1;border-radius:8px;padding:8px;background:#f8f9fa;font-size:11px;">
+                <span style="color:#999;">Not connected.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRAPER SECTION -->
+    <div class="section" id="sec-scraper">
+        <h2>🌐 Website Scraper</h2>
+        <p style="margin:2px 0;font-size:10px;color:#666;">Fetch text from a URL. If you get a CORS error, use the proxy field (e.g. <i>https://api.allorigins.win/raw?url=</i>) or copy-paste manually.</p>
+        <div class="row-flex">
+            <label>URL:</label>
+            <input type="text" id="scraper-url" placeholder="https://example.com/article" style="flex:1;min-width:250px;">
+            <label title="Optional CORS proxy prefix">Proxy:</label>
+            <input type="text" id="scraper-proxy" placeholder="(optional)" style="width:180px;" title="e.g. https://api.allorigins.win/raw?url=">
+            <button id="btn-fetch-url">🌐 Fetch & Extract</button>
+        </div>
+        <div id="scraper-panel">
+            <strong style="font-size:12px;">Extracted Text:</strong>
+            <textarea id="scraper-extracted" rows="8" readonly placeholder="Fetched content will appear here..."></textarea>
+            <div class="row-flex">
+                <button id="btn-take-snapshot" class="primary">📸 Take Snapshot</button>
+                <button id="btn-add-scraped-to-training">+ Add to Training Data</button>
+                <span id="scraper-status" style="font-size:10px;color:#555;"></span>
+            </div>
+            <hr>
+            <strong style="font-size:12px;">Saved Snapshots:</strong>
+            <div id="snapshots-list" style="max-height:200px;overflow-y:auto;">
+                <span style="color:#999;font-size:11px;">No snapshots yet.</span>
+            </div>
+            <button id="btn-clear-snapshots" style="margin-top:4px;font-size:10px;">Clear All Snapshots</button>
+        </div>
+    </div>
+
+    <!-- KNOWLEDGE WEB SECTION -->
+    <div class="section" id="sec-knowledge">
+        <h2>🕸️ Knowledge Web (N-gram Table)</h2>
+        <div class="row-flex">
+            <label>N-gram level:</label>
+            <select id="knowledge-n-level">
+                <option value="4">4-gram</option>
+                <option value="3">3-gram</option>
+                <option value="2">2-gram</option>
+                <option value="1">1-gram</option>
+            </select>
+            <label>Filter:</label>
+            <input type="text" id="knowledge-filter" placeholder="search context or next word..." style="flex:1;min-width:150px;">
+            <span id="knowledge-count" style="font-size:10px;color:#555;"></span>
+        </div>
+        <div class="scroll-table" id="knowledge-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Context (n words)</th>
+                        <th>Next Word</th>
+                        <th>Count</th>
+                        <th>Probability</th>
+                    </tr>
+                </thead>
+                <tbody id="knowledge-tbody">
+                    <tr><td colspan="5" style="color:#999;">Train the brain first to see knowledge web.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- BRAIN MANAGEMENT SECTION -->
+    <div class="section" id="sec-brain">
+        <h2>🧠 Brain Management</h2>
+        <div class="row-flex">
+            <button id="btn-download-brain2" class="primary">⬇️ Download Brain as .json</button>
+            <button id="btn-load-brain2">⬆️ Load Brain from .json</button>
+            <button id="btn-clear-brain2" class="danger">🗑️ Clear Brain</button>
+        </div>
+        <p style="margin:6px 0;font-size:11px;"><a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view/blob/main/README.md#trained-brains" target="_blank" style="color:#3498db;">Load a pretrained brain from the repository</a></p>
+        <div id="brain-info" style="font-size:11px;color:#555;margin-top:6px;">
+            Brain status: empty / not trained.
+        </div>
+        <input type="file" id="brain-file-input" accept=".json" style="display:none;">
+    </div>
+
+    <!-- README SECTION -->
+    <div class="section" id="sec-readme">
+        <h2>📖 README Documentation</h2>
+        <div id="readme-panel">
+            <div id="readme-content" style="color: #333; line-height: 1.6;">
+                <p style="text-align: center; color: #999;">Loading README...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // ==================== STORAGE KEY ====================
+            const STORAGE_KEY = 'markov_bot_brain_v2';
+            const PRETRAIN_SHOWN_KEY = 'markov_bot_pretrain_shown';
+            const DEFAULT_BRAIN_URL = 'https://raw.githubusercontent.com/OxillenGlow/MarkovChain-Online-test-and-view/main/brains/oxg/markov-brain-2026-05-06.json';
+            const README_URL = 'https://raw.githubusercontent.com/OxillenGlow/MarkovChain-Online-test-and-view/main/README.md';
+
+            // ==================== BRAIN DATA STRUCTURE ====================
+            let brain = null;
+
+            function getEmptyBrain() {
+                return {
+                    version: 2,
+                    trainedAt: null,
+                    totalTokens: 0,
+                    uniqueTokens: 0,
+                    ngrams: { '4': {}, '3': {}, '2': {}, '1': {} },
+                    vocabulary: {},
+                    snapshots: []
+                };
+            }
+
+            // ==================== MARKDOWN TO HTML CONVERTER ====================
+            function markdownToHtml(markdown) {
+                if (!markdown) return '';
+                
+                let html = markdown;
+                
+                // Headers
+                html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
+                html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
+                html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
+                
+                // Bold
+                html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
+                
+                // Italic
+                html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+                html = html.replace(/_(.*?)_/g, '<em>$1</em>');
+                
+                // Code blocks
+                html = html.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+                
+                // Inline code
+                html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+                
+                // Links
+                html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
+                
+                // Horizontal rules
+                html = html.replace(/^(---|\*\*\*|___)/gm, '<hr>');
+                
+                // Line breaks
+                html = html.replace(/\n\n/g, '</p><p>');
+                html = '<p>' + html + '</p>';
+                
+                // Lists
+                html = html.replace(/^- (.*?)$/gm, '<li>$1</li>');
+                html = html.replace(/(<li>.*?<\/li>)/s, '<ul>$1</ul>');
+                html = html.replace(/<\/ul>\s*<ul>/g, '');
+                
+                // Tables (basic support)
+                const tableRegex = /\|(.+)\|[\n\r]+\|[-:|]+\|[\n\r]+((?:\|.+\|[\n\r]*)*)/g;
+                html = html.replace(tableRegex, function(match) {
+                    const rows = match.split('\n').filter(r => r.trim());
+                    let tableHtml = '<table><thead><tr>';
+                    const headerCells = rows[0].split('|').filter(c => c.trim());
+                    headerCells.forEach(cell => {
+                        tableHtml += '<th>' + cell.trim() + '</th>';
+                    });
+                    tableHtml += '</tr></thead><tbody>';
+                    for (let i = 2; i < rows.length; i++) {
+                        const cells = rows[i].split('|').filter(c => c.trim());
+                        if (cells.length > 0) {
+                            tableHtml += '<tr>';
+                            cells.forEach(cell => {
+                                tableHtml += '<td>' + cell.trim() + '</td>';
+                            });
+                            tableHtml += '</tr>';
+                        }
+                    }
+                    tableHtml += '</tbody></table>';
+                    return tableHtml;
+                });
+                
+                return html;
+            }
+
+            // ==================== LOAD README ====================
+            async function loadReadme() {
+                try {
+                    const response = await fetch(README_URL);
+                    if (response.ok) {
+                        const markdown = await response.text();
+                        const html = markdownToHtml(markdown);
+                        document.getElementById('readme-content').innerHTML = html;
+                    } else {
+                        document.getElementById('readme-content').innerHTML = 
+                            '<p style="color: #e74c3c;">Failed to load README. Please visit the <a href="https://github.com/OxillenGlow/MarkovChain-Online-test-and-view" target="_blank">GitHub repository</a> to view the documentation.</p>';
+                    }
+                } catch (err) {
+                    console.error('Error loading README:', err);
+                    document.getElementById('readme-content').innerHTML = 
+                        '<p style="color: #e74c3c;">Error loading README: ' + err.message + '</p>';
+                }
+            }
+
+            // Load README on page load
+            window.addEventListener('load', loadReadme);
+
+            // ==================== LOAD / SAVE BRAIN ====================
+            function loadBrain() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_KEY);
+                    if (raw) {
+                        const parsed = JSON.parse(raw);
+                        if (parsed && parsed.version === 2 && parsed.ngrams && parsed.vocabulary) {
+                            brain = parsed;
+                            if (!brain.snapshots) brain.snapshots = [];
+                            if (!brain.ngrams['4']) brain.ngrams['4'] = {};
+                            if (!brain.ngrams['3']) brain.ngrams['3'] = {};
+                            if (!brain.ngrams['2']) brain.ngrams['2'] = {};
+                            if (!brain.ngrams['1']) brain.ngrams['1'] = {};
+                            return true;
+                        }
+                    }
+                } catch (e) {
+                    console.warn('Failed to load brain from localStorage:', e);
+                }
+                brain = getEmptyBrain();
+                return false;
+            }
+
+            function saveBrain() {
+                try {
+                    brain.trainedAt = Date.now();
+                    const json = JSON.stringify(brain);
+                    localStorage.setItem(STORAGE_KEY, json);
+                    return true;
+                } catch (e) {
+                    console.error('Failed to save brain:', e);
+                    alert('⚠️ Error saving brain to browser storage. It may be too large (' +
+                        (JSON.stringify(brain).length / 1024 / 1024).toFixed(1) + ' MB). Try reducing training data.');
+                    return false;
+                }
+            }
+
+            function clearBrain() {
+                if (confirm('Are you sure you want to clear the entire brain? This cannot be undone.')) {
+                    brain = getEmptyBrain();
+                    localStorage.removeItem(STORAGE_KEY);
+                    updateAllUI();
+                    showStatus('train-status', 'Brain cleared.', 'warn');
+                }
+            }
+
+            function downloadBrainJSON() {
+                const json = JSON.stringify(brain, null, 2);
+                const blob = new Blob([json], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'markov-brain-' + new Date().toISOString().slice(0, 10) + '.json';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            function loadBrainFromFile(file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const parsed = JSON.parse(e.target.result);
+                        if (parsed && parsed.ngrams && parsed.vocabulary) {
+                            parsed.version = 2;
+                            if (!parsed.snapshots) parsed.snapshots = [];
+                            if (!parsed.ngrams['4']) parsed.ngrams['4'] = {};
+                            if (!parsed.ngrams['3']) parsed.ngrams['3'] = {};
+                            if (!parsed.ngrams['2']) parsed.ngrams['2'] = {};
+                            if (!parsed.ngrams['1']) parsed.ngrams['1'] = {};
+                            brain = parsed;
+                            saveBrain();
+                            updateAllUI();
+                            showStatus('train-status', 'Brain loaded from file! (' +
+                                brain.totalTokens + ' tokens)', 'good');
+                            alert('✅ Brain loaded successfully!');
+                        } else {
+                            alert('❌ Invalid brain file format.');
+                        }
+                    } catch (err) {
+                        alert('❌ Error parsing JSON file: ' + err.message);
+                    }
+                };
+                reader.readAsText(file);
+            }
+
+            async function loadBrainFromURL(brainUrl) {
+                const statusEl = document.getElementById('external-brain-status');
+                if (!brainUrl || !brainUrl.trim()) {
+                    showStatus('external-brain-status', 'Please enter a brain JSON URL.', 'warn');
+                    return;
+                }
+                try {
+                    statusEl.textContent = 'Loading brain from URL...';
+                    statusEl.style.display = 'block';
+                    statusEl.className = 'status-msg';
+                    
+                    const response = await fetch(brainUrl.trim());
+                    if (!response.ok) {
+                        throw new Error('HTTP ' + response.status + ': ' + response.statusText);
+                    }
+                    const parsed = await response.json();
+                    if (parsed && parsed.ngrams && parsed.vocabulary) {
+                        parsed.version = 2;
+                        if (!parsed.snapshots) parsed.snapshots = [];
+                        if (!parsed.ngrams['4']) parsed.ngrams['4'] = {};
+                        if (!parsed.ngrams['3']) parsed.ngrams['3'] = {};
+                        if (!parsed.ngrams['2']) parsed.ngrams['2'] = {};
+                        if (!parsed.ngrams['1']) parsed.ngrams['1'] = {};
+                        brain = parsed;
+                        saveBrain();
+                        updateAllUI();
+                        showStatus('external-brain-status', '✅ Brain loaded from URL! (' + brain.totalTokens + ' tokens)', 'good');
+                        alert('✅ Brain loaded successfully from URL!');
+                    } else {
+                        showStatus('external-brain-status', '❌ Invalid brain file format from URL.', 'err');
+                        alert('❌ Invalid brain file format from URL.');
+                    }
+                } catch (err) {
+                    const errorMsg = (err && (err.message || err.toString())) || 'Unknown error';
+                    console.error('Load from URL error:', err);
+                    showStatus('external-brain-status', '❌ Error: ' + errorMsg, 'err');
+                    alert('❌ Error loading brain from URL: ' + errorMsg + '\n\nNote: The URL must be directly accessible and may require CORS support.');
+                }
+            }
+
+            // ==================== PRETRAIN MODAL FUNCTIONS ====================
+            function showPretrainModal() {
+                const modal = document.getElementById('pretrain-modal');
+                modal.classList.add('show');
+            }
+
+            function hidePretrainModal() {
+                const modal = document.getElementById('pretrain-modal');
+                modal.classList.remove('show');
+            }
+
+            async function loadDefaultBrain() {
+                const modal = document.getElementById('pretrain-modal');
+                const buttonsDiv = document.getElementById('pretrain-modal-buttons');
+                const loadingDiv = document.getElementById('pretrain-loading');
+
+                // Hide buttons, show loading
+                buttonsDiv.style.display = 'none';
+                loadingDiv.style.display = 'block';
+
+                try {
+                    const response = await fetch(DEFAULT_BRAIN_URL);
+                    if (!response.ok) {
+                        throw new Error('HTTP ' + response.status + ': ' + response.statusText);
+                    }
+                    const parsed = await response.json();
+                    if (parsed && parsed.ngrams && parsed.vocabulary) {
+                        parsed.version = 2;
+                        if (!parsed.snapshots) parsed.snapshots = [];
+                        if (!parsed.ngrams['4']) parsed.ngrams['4'] = {};
+                        if (!parsed.ngrams['3']) parsed.ngrams['3'] = {};
+                        if (!parsed.ngrams['2']) parsed.ngrams['2'] = {};
+                        if (!parsed.ngrams['1']) parsed.ngrams['1'] = {};
+                        brain = parsed;
+                        saveBrain();
+                        updateAllUI();
+                        localStorage.setItem(PRETRAIN_SHOWN_KEY, 'true');
+                        hidePretrainModal();
+                        showStatus('train-status', '✅ Default brain loaded! (' + brain.totalTokens + ' tokens)', 'good');
+                    } else {
+                        throw new Error('Invalid brain file format from URL.');
+                    }
+                } catch (err) {
+                    const errorMsg = (err && (err.message || err.toString())) || 'Unknown error';
+                    console.error('Load default brain error:', err);
+                    // Restore buttons
+                    buttonsDiv.style.display = 'flex';
+                    loadingDiv.style.display = 'none';
+                    alert('❌ Error loading default brain: ' + errorMsg);
+                }
+            }
+
+            // ==================== TOKENIZATION ====================
+            function tokenize(text) {
+                if (!text || typeof text !== 'string') return [];
+                return text.trim().split(/\s+/).filter(t => t.length > 0);
+            }
+
+            // ==================== PROMPT NORMALIZATION (link "un" → "UN") ====================
+            function normalizeSeedTokens(tokens) {
+                return tokens.map(token => {
+                    if (token.toLowerCase() === 'un') {
+                        return 'UN';
+                    }
+                    return token;
+                });
+            }
+
+            // ==================== BUILD N-GRAM MODELS ====================
+            function buildNGramModel(tokens, n) {
+                const model = {};
+                const windowSize = n + 1;
+                if (tokens.length < windowSize) return model;
+                for (let i = 0; i <= tokens.length - windowSize; i++) {
+                    const contextTokens = tokens.slice(i, i + n);
+                    const nextWord = tokens[i + n];
+                    const key = contextTokens.join('|||');
+                    if (!model[key]) model[key] = {};
+                    model[key][nextWord] = (model[key][nextWord] || 0) + 1;
+                }
+                return model;
+            }
+
+            function buildVocabulary(tokens) {
+                const vocab = {};
+                for (const t of tokens) {
+                    vocab[t] = (vocab[t] || 0) + 1;
+                }
+                return vocab;
+            }
+
+            function trainOnText(text) {
+                const tokens = tokenize(text);
+                if (tokens.length < 2) return { success: false, message: 'Need at least 2 tokens to train.' };
+
+                const ngram4 = buildNGramModel(tokens, 4);
+                const ngram3 = buildNGramModel(tokens, 3);
+                const ngram2 = buildNGramModel(tokens, 2);
+                const ngram1 = buildNGramModel(tokens, 1);
+                const vocab = buildVocabulary(tokens);
+
+                if (!brain || !brain.ngrams) brain = getEmptyBrain();
+
+                function mergeModel(target, source) {
+                    for (const [key, nextMap] of Object.entries(source)) {
+                        if (!target[key]) target[key] = {};
+                        for (const [word, count] of Object.entries(nextMap)) {
+                            target[key][word] = (target[key][word] || 0) + count;
+                        }
+                    }
+                }
+
+                mergeModel(brain.ngrams['4'], ngram4);
+                mergeModel(brain.ngrams['3'], ngram3);
+                mergeModel(brain.ngrams['2'], ngram2);
+                mergeModel(brain.ngrams['1'], ngram1);
+
+                for (const [word, count] of Object.entries(vocab)) {
+                    brain.vocabulary[word] = (brain.vocabulary[word] || 0) + count;
+                }
+
+                brain.totalTokens += tokens.length;
+                brain.uniqueTokens = Object.keys(brain.vocabulary).length;
+
+                const saved = saveBrain();
+                const totalNgrams =
+                    Object.keys(brain.ngrams['4']).length +
+                    Object.keys(brain.ngrams['3']).length +
+                    Object.keys(brain.ngrams['2']).length +
+                    Object.keys(brain.ngrams['1']).length;
+
+                return {
+                    success: saved,
+                    message: 'Trained on ' + tokens.length + ' tokens. ' +
+                        'Total brain tokens: ' + brain.totalTokens + '. ' +
+                        'Unique words: ' + brain.uniqueTokens + '. ' +
+                        'N-gram entries: ' + totalNgrams + '. ' +
+                        (saved ? 'Brain saved to browser.' : 'WARNING: Brain not saved!'),
+                    tokens: tokens.length,
+                    totalNgrams: totalNgrams
+                };
+            }
+
+            // ==================== STOP WORDS FOR ATTENTION ====================
+            const STOP_WORDS = new Set([
+                'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
+                'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
+                'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could',
+                'should', 'may', 'might', 'shall', 'can', 'need', 'this', 'that',
+                'these', 'those', 'it', 'its', 'i', 'me', 'my', 'we', 'our', 'you',
+                'your', 'he', 'him', 'his', 'she', 'her', 'they', 'them', 'their',
+                'what', 'which', 'who', 'whom', 'when', 'where', 'why', 'how',
+                'not', 'no', 'nor', 'so', 'if', 'then', 'than', 'too', 'very',
+                'just', 'all', 'each', 'every', 'both', 'few', 'more', 'most',
+                'other', 'some', 'such', 'only', 'own', 'same', 'into', 'over',
+                'from', 'up', 'down', 'out', 'off', 'about', 'above', 'after',
+                'again', 'against', 'as', 'before', 'between', 'during', 'through',
+                'under', 'while', 'any', 'because', 'until', 'now', 'also', 'here',
+                'there', 'like', 'get', 'got', 'make', 'made', 'say', 'said', 'go',
+                'went', 'come', 'came', 'see', 'saw', 'know', 'knew', 'think',
+                'thought', 'take', 'took', 'use', 'used', 'much', 'many', 'well',
+                'back', 'still', 'even', 'way', 'one', 'two', 'first', 'last',
+            ]);
+
+            function extractImportantWords(seedText) {
+                const tokens = tokenize(seedText);
+                const important = new Set();
+                for (const t of tokens) {
+                    const lower = t.toLowerCase().replace(/[^a-z0-9]/g, '');
+                    // Boost all non-stop words, regardless of length
+                    if (!STOP_WORDS.has(lower)) {
+                        important.add(t);
+                    }
+                }
+                // Also keep originally capitalized words as potentially important
+                for (const t of tokens) {
+                    if (/^[A-Z][a-z]{2,}$/.test(t)) {
+                        important.add(t);
+                    }
+                }
+                return important;
+            }
+
+            // ==================== GENERATION WITH BACKOFF & ATTENTION ====================
+            function weightedRandomPick(candidates, attentionSet, attentionFactor) {
+                const entries = Object.entries(candidates);
+                if (entries.length === 0) return null;
+
+                const adjustedWeights = entries.map(([word, count]) => {
+                    let weight = count;
+                    if (attentionSet && attentionSet.has(word) && attentionFactor > 1.0) {
+                        weight = count * attentionFactor;
+                    }
+                    return { word, weight };
+                });
+
+                const totalWeight = adjustedWeights.reduce((sum, item) => sum + item.weight, 0);
+                if (totalWeight <= 0) return entries[Math.floor(Math.random() * entries.length)][0];
+
+                let rand = Math.random() * totalWeight;
+                for (const item of adjustedWeights) {
+                    rand -= item.weight;
+                    if (rand <= 0) return item.word;
+                }
+                return adjustedWeights[adjustedWeights.length - 1].word;
+            }
+
+            function generateText(seedText, maxWords, attentionFactor) {
+                if (!brain || brain.totalTokens < 2) {
+                    return { text: '', debug: 'Brain is empty. Please train first.' };
+                }
+
+                let seedTokens = tokenize(seedText);
+                seedTokens = normalizeSeedTokens(seedTokens);
+
+                if (seedTokens.length === 0) {
+                    return { text: '', debug: 'Please provide a seed/prompt with at least 1 word.' };
+                }
+
+                const importantWords = extractImportantWords(seedText);
+                const generated = [...seedTokens];
+                const maxTotal = seedTokens.length + maxWords;
+                const maxExtra = 20; // safety cap to avoid infinite loops
+                const backoffUsed = { '4': 0, '3': 0, '2': 0, '1': 0, 'random': 0 };
+
+                while (generated.length < maxTotal + maxExtra) {
+                    let nextWord = null;
+                    let usedLevel = null;
+
+                    if (generated.length >= 4) {
+                        const ctx4 = generated.slice(generated.length - 4).join('|||');
+                        const candidates4 = brain.ngrams['4'][ctx4];
+                        if (candidates4 && Object.keys(candidates4).length > 0) {
+                            nextWord = weightedRandomPick(candidates4, importantWords, attentionFactor);
+                            usedLevel = '4';
+                        }
+                    }
+
+                    if (!nextWord && generated.length >= 3) {
+                        const ctx3 = generated.slice(generated.length - 3).join('|||');
+                        const candidates3 = brain.ngrams['3'][ctx3];
+                        if (candidates3 && Object.keys(candidates3).length > 0) {
+                            nextWord = weightedRandomPick(candidates3, importantWords, attentionFactor);
+                            usedLevel = '3';
+                        }
+                    }
+
+                    if (!nextWord && generated.length >= 2) {
+                        const ctx2 = generated.slice(generated.length - 2).join('|||');
+                        const candidates2 = brain.ngrams['2'][ctx2];
+                        if (candidates2 && Object.keys(candidates2).length > 0) {
+                            nextWord = weightedRandomPick(candidates2, importantWords, attentionFactor);
+                            usedLevel = '2';
+                        }
+                    }
+
+                    if (!nextWord && generated.length >= 1) {
+                        const ctx1 = generated[generated.length - 1];
+                        const candidates1 = brain.ngrams['1'][ctx1];
+                        if (candidates1 && Object.keys(candidates1).length > 0) {
+                            nextWord = weightedRandomPick(candidates1, importantWords, attentionFactor);
+                            usedLevel = '1';
+                        }
+                    }
+
+                    if (!nextWord) {
+                        const vocabEntries = Object.entries(brain.vocabulary);
+                        if (vocabEntries.length > 0) {
+                            const pick = weightedRandomPick(
+                                Object.fromEntries(vocabEntries),
+                                importantWords,
+                                attentionFactor
+                            );
+                            nextWord = pick || vocabEntries[Math.floor(Math.random() * vocabEntries.length)][0];
+                            usedLevel = 'random';
+                        } else {
+                            break;
+                        }
+                    }
+
+                    if (!nextWord) break;
+
+                    generated.push(nextWord);
+                    if (usedLevel) backoffUsed[usedLevel] = (backoffUsed[usedLevel] || 0) + 1;
+
+                    // Stop after maxTotal if the last token ends with . ? !
+                    if (generated.length > maxTotal && /[.?!]$/.test(generated[generated.length - 1])) {
+                        break;
+                    }
+                }
+
+                const debugStr =
+                    'Backoff stats: 4-gram=' + backoffUsed['4'] + ' 3-gram=' + backoffUsed['3'] +
+                    ' 2-gram=' + backoffUsed['2'] + ' 1-gram=' + backoffUsed['1'] +
+                    ' random=' + backoffUsed['random'] +
+                    ' | Important words: ' + (importantWords.size > 0 ? [...importantWords].slice(0, 15).join(', ') : 'none') +
+                    (importantWords.size > 15 ? '...' : '') +
+                    ' | Stopped by punctuation: ' + (generated.length > maxTotal && /[.?!]$/.test(generated[generated.length-1]) ? 'yes' : 'no');
+
+                return { text: generated.join(' '), debug: debugStr };
+            }
+
+            // ==================== WEBSITE SCRAPER ====================
+            async function fetchAndExtractText(url, proxyPrefix) {
+                let fetchUrl = url;
+                if (proxyPrefix && proxyPrefix.trim()) {
+                    fetchUrl = proxyPrefix.trim() + encodeURIComponent(url);
+                }
+                const response = await fetch(fetchUrl, {
+                    method: 'GET',
+                    headers: { 'Accept': 'text/html,text/plain,*/*' },
+                });
+                if (!response.ok) throw new Error('HTTP ' + response.status + ': ' + response.statusText);
+                const contentType = response.headers.get('content-type') || '';
+                const rawText = await response.text();
+
+                if (contentType.includes('text/html') || rawText.trim().startsWith('<!DOCTYPE') || rawText.trim().startsWith('<html') || rawText.includes('<body')) {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(rawText, 'text/html');
+                    const removals = doc.querySelectorAll('script, style, nav, header, footer, iframe, noscript, [role="navigation"], .nav, .sidebar, .footer, .header');
+                    removals.forEach(el => el.remove());
+                    const bodyText = doc.body ? doc.body.textContent : doc.documentElement.textContent;
+                    const cleaned = bodyText.replace(/[\t\r]+/g, ' ').replace(/\n{3,}/g, '\n\n').replace(/[ ]{2,}/g, ' ').trim();
+                    return cleaned || '(no text content extracted)';
+                } else {
+                    return rawText.replace(/[\t\r]+/g, ' ').replace(/\n{3,}/g, '\n\n').replace(/[ ]{2,}/g, ' ').trim();
+                }
+            }
+
+            function takeSnapshot(url, text) {
+                if (!text || text.trim().length < 10) {
+                    alert('Not enough text to snapshot. Minimum 10 characters.');
+                    return false;
+                }
+                if (!brain.snapshots) brain.snapshots = [];
+                brain.snapshots.push({
+                    url: url || '(no url)',
+                    text: text.trim().slice(0, 100000),
+                    date: new Date().toISOString()
+                });
+                saveBrain();
+                renderSnapshots();
+                return true;
+            }
+
+            function renderSnapshots() {
+                const container = document.getElementById('snapshots-list');
+                if (!brain.snapshots || brain.snapshots.length === 0) {
+                    container.innerHTML = '<span style="color:#999;font-size:11px;">No snapshots yet.</span>';
+                    return;
+                }
+                let html = '';
+                brain.snapshots.forEach((snap, idx) => {
+                    const preview = snap.text.slice(0, 200).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    html += '<div class="snapshot-item">' +
+                        '<strong>#' + (idx + 1) + '</strong> URL: ' + (snap.url || '(none)').replace(/</g, '&lt;').replace(/>/g, '&gt;') +
+                        ' | Date: ' + (snap.date || '?').slice(0, 10) +
+                        ' | Chars: ' + snap.text.length +
+                        ' <button onclick="window._addSnapshotToTraining(' + idx + ')" style="font-size:10px;padding:2px 6px;">+ Add to Training</button>' +
+                        ' <button onclick="window._removeSnapshot(' + idx + ')" style="font-size:10px;padding:2px 6px;color:#e74c3c;">🗑️</button>' +
+                        '<pre>' + preview + (snap.text.length > 200 ? '...' : '') + '</pre>' +
+                        '</div>';
+                });
+                container.innerHTML = html;
+            }
+
+            window._addSnapshotToTraining = function(idx) {
+                if (brain.snapshots && brain.snapshots[idx]) {
+                    const textarea = document.getElementById('training-input');
+                    const current = textarea.value;
+                    const snapText = brain.snapshots[idx].text;
+                    textarea.value = current + (current ? '\n\n' : '') + snapText;
+                    textarea.scrollTop = textarea.scrollHeight;
+                    showStatus('train-status', 'Snapshot #' + (idx + 1) + ' added to training field.', 'good');
+                    document.getElementById('sec-train').scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+            window._removeSnapshot = function(idx) {
+                if (brain.snapshots && brain.snapshots[idx]) {
+                    brain.snapshots.splice(idx, 1);
+                    saveBrain();
+                    renderSnapshots();
+                }
+            };
+
+            // ==================== UI UPDATE ====================
+            function updateBrainStats() {
+                const tokenStr = brain.totalTokens ? brain.totalTokens.toLocaleString() : '0';
+                const wordStr = brain.uniqueTokens ? brain.uniqueTokens.toLocaleString() : '0';
+                document.getElementById('brain-stats-top').textContent = 'Brain: ' + tokenStr + ' tokens | ' + wordStr + ' unique words';
+                document.getElementById('brain-info').textContent = 'Brain status: ' + tokenStr + ' tokens, ' + wordStr + ' unique words.';
+            }
+
+            function renderKnowledgeWeb() {
+                const level = document.getElementById('knowledge-n-level').value;
+                const filter = document.getElementById('knowledge-filter').value.toLowerCase();
+                const model = brain.ngrams[level];
+                const tbody = document.getElementById('knowledge-tbody');
+
+                if (!model || Object.keys(model).length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5" style="color:#999;">No data for this n-gram level.</td></tr>';
+                    document.getElementById('knowledge-count').textContent = '0 entries';
+                    return;
+                }
+
+                const entries = [];
+                for (const [context, nextWords] of Object.entries(model)) {
+                    const totalCount = Object.values(nextWords).reduce((a, b) => a + b, 0);
+                    for (const [word, count] of Object.entries(nextWords)) {
+                        if (!filter || context.toLowerCase().includes(filter) || word.toLowerCase().includes(filter)) {
+                            entries.push({
+                                context: context.replace(/\|\|\|/g, ' '),
+                                word: word,
+                                count: count,
+                                prob: (count / totalCount * 100).toFixed(1)
+                            });
+                        }
+                    }
+                }
+
+                entries.sort((a, b) => b.count - a.count);
+                const limit = 100;
+                let html = '';
+                entries.slice(0, limit).forEach((entry, idx) => {
+                    html += '<tr>' +
+                        '<td>' + (idx + 1) + '</td>' +
+                        '<td>' + entry.context.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</td>' +
+                        '<td><strong>' + entry.word.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</strong></td>' +
+                        '<td>' + entry.count + '</td>' +
+                        '<td>' + entry.prob + '%</td>' +
+                        '</tr>';
+                });
+
+                tbody.innerHTML = html || '<tr><td colspan="5" style="color:#999;">No matching entries.</td></tr>';
+                document.getElementById('knowledge-count').textContent = entries.length + ' entries' + (entries.length > limit ? ' (showing first ' + limit + ')' : '');
+            }
+
+            function updateAllUI() {
+                updateBrainStats();
+                renderKnowledgeWeb();
+            }
+
+            function showStatus(elementId, message, type) {
+                const el = document.getElementById(elementId);
+                el.textContent = message;
+                el.className = 'status-msg ' + (type || '');
+                el.style.display = 'block';
+            }
+
+            // ==================== EVENT LISTENERS ====================
+            document.getElementById('btn-train').addEventListener('click', () => {
+                const input = document.getElementById('training-input').value;
+                if (!input.trim()) {
+                    showStatus('train-status', 'Please paste some training data first.', 'warn');
+                    return;
+                }
+                const result = trainOnText(input);
+                showStatus('train-status', result.message, result.success ? 'good' : 'err');
+                updateAllUI();
+            });
+
+            document.getElementById('use-external-brain-toggle').addEventListener('change', (e) => {
+                document.getElementById('training-mode').style.display = e.target.checked ? 'none' : 'block';
+                document.getElementById('external-brain-panel').style.display = e.target.checked ? 'block' : 'none';
+            });
+
+            document.getElementById('btn-load-external-brain').addEventListener('click', () => {
+                const url = document.getElementById('external-brain-url').value;
+                loadBrainFromURL(url);
+            });
+
+            document.getElementById('btn-append-snapshots').addEventListener('click', () => {
+                if (!brain.snapshots || brain.snapshots.length === 0) {
+                    showStatus('train-status', 'No snapshots to append.', 'warn');
+                    return;
+                }
+                const allText = brain.snapshots.map(s => s.text).join('\n\n');
+                const textarea = document.getElementById('training-input');
+                textarea.value = textarea.value + (textarea.value ? '\n\n' : '') + allText;
+                showStatus('train-status', 'All snapshots (' + brain.snapshots.length + ') appended to training data.', 'good');
+            });
+
+            document.getElementById('btn-generate').addEventListener('click', () => {
+                const seed = document.getElementById('prompt-input').value;
+                const maxWords = parseInt(document.getElementById('max-words').value) || 60;
+                const attention = parseFloat(document.getElementById('attention-factor').value) || 1.8;
+                const result = generateText(seed, maxWords, attention);
+                document.getElementById('generated-output').value = result.text;
+                document.getElementById('gen-debug').textContent = '📊 ' + result.debug;
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                    const activeEl = document.activeElement;
+                    if (activeEl.id === 'training-input') {
+                        document.getElementById('btn-train').click();
+                    }
+                }
+                if ((e.ctrlKey || e.metaKey) && e.key === 'g') {
+                    e.preventDefault();
+                    document.getElementById('btn-generate').click();
+                }
+            });
+
+            document.getElementById('btn-fetch-url').addEventListener('click', async () => {
+                const url = document.getElementById('scraper-url').value;
+                const proxy = document.getElementById('scraper-proxy').value;
+                if (!url) {
+                    alert('Please enter a URL.');
+                    return;
+                }
+                try {
+                    const extracted = await fetchAndExtractText(url, proxy);
+                    document.getElementById('scraper-extracted').value = extracted;
+                    document.getElementById('scraper-panel').style.display = 'block';
+                } catch (err) {
+                    alert('Error fetching URL: ' + err.message);
+                }
+            });
+
+            document.getElementById('btn-take-snapshot').addEventListener('click', () => {
+                const url = document.getElementById('scraper-url').value;
+                const text = document.getElementById('scraper-extracted').value;
+                if (takeSnapshot(url, text)) {
+                    showStatus('scraper-status', '✅ Snapshot saved!', 'good');
+                }
+            });
+
+            document.getElementById('btn-add-scraped-to-training').addEventListener('click', () => {
+                const text = document.getElementById('scraper-extracted').value;
+                const textarea = document.getElementById('training-input');
+                textarea.value = textarea.value + (textarea.value ? '\n\n' : '') + text;
+                showStatus('scraper-status', 'Added to training data!', 'good');
+            });
+
+            document.getElementById('btn-clear-snapshots').addEventListener('click', () => {
+                if (confirm('Clear all snapshots?')) {
+                    brain.snapshots = [];
+                    saveBrain();
+                    renderSnapshots();
+                    showStatus('scraper-status', 'Snapshots cleared.', 'warn');
+                }
+            });
+
+            document.getElementById('knowledge-n-level').addEventListener('change', renderKnowledgeWeb);
+            document.getElementById('knowledge-filter').addEventListener('input', renderKnowledgeWeb);
+
+            document.getElementById('btn-download-brain').addEventListener('click', downloadBrainJSON);
+            document.getElementById('btn-download-brain2').addEventListener('click', downloadBrainJSON);
+
+            document.getElementById('btn-load-brain').addEventListener('click', () => {
+                document.getElementById('brain-file-input').click();
+            });
+            document.getElementById('btn-load-brain2').addEventListener('click', () => {
+                document.getElementById('brain-file-input').click();
+            });
+
+            document.getElementById('brain-file-input').addEventListener('change', (e) => {
+                if (e.target.files[0]) {
+                    loadBrainFromFile(e.target.files[0]);
+                    e.target.value = '';
+                }
+            });
+
+            document.getElementById('btn-clear-brain').addEventListener('click', clearBrain);
+            document.getElementById('btn-clear-brain2').addEventListener('click', clearBrain);
+
+            // ==================== EUPHORIA ROOM CLIENT ====================
+            // Minimal heim/euphoria websocket client. See:
+            // https://github.com/euphoria-io/heim/blob/master/doc/gen/api.md
+            class EuphoriaRoom {
+                constructor(room, opts = {}) {
+                    this.room = room;
+                    this.host = opts.host || 'euphoria.leet.nu';
+                    this.nick = opts.nick || null;
+                    this.autoReconnect = opts.autoReconnect !== false;
+
+                    this.ws = null;
+                    this.connected = false;
+                    this._msgId = 0;
+                    this._pending = new Map();
+                    this._listeners = { message: [], connect: [], disconnect: [], error: [] };
+                    this._reconnectDelay = 1000;
+                }
+
+                onMessage(fn) { this._listeners.message.push(fn); return this; }
+                onConnect(fn) { this._listeners.connect.push(fn); return this; }
+                onDisconnect(fn) { this._listeners.disconnect.push(fn); return this; }
+                onError(fn) { this._listeners.error.push(fn); return this; }
+
+                connect() {
+                    const url = 'wss://' + this.host + '/room/' + this.room + '/ws';
+                    this.ws = new WebSocket(url);
+
+                    this.ws.onopen = () => { this._reconnectDelay = 1000; };
+
+                    this.ws.onmessage = (evt) => {
+                        let packet;
+                        try {
+                            packet = JSON.parse(evt.data);
+                        } catch (e) {
+                            this._emit('error', e);
+                            return;
+                        }
+                        this._handlePacket(packet);
+                    };
+
+                    this.ws.onclose = () => {
+                        this.connected = false;
+                        this._emit('disconnect');
+                        if (this.autoReconnect) {
+                            setTimeout(() => this.connect(), this._reconnectDelay);
+                            this._reconnectDelay = Math.min(this._reconnectDelay * 2, 30000);
+                        }
+                    };
+
+                    this.ws.onerror = (e) => this._emit('error', e);
+                    return this;
+                }
+
+                disconnect() {
+                    this.autoReconnect = false;
+                    if (this.ws) this.ws.close();
+                }
+
+                _handlePacket(packet) {
+                    const { type, data, id } = packet;
+                    switch (type) {
+                        case 'ping-event':
+                            this._sendRaw({ type: 'ping-reply', data: { time: data.time } });
+                            break;
+                        case 'snapshot-event':
+                            this.connected = true;
+                            if (this.nick) this.setNick(this.nick);
+                            this._emit('connect', data);
+                            break;
+                        case 'send-event':
+                            this._emit('message', data);
+                            break;
+                        case 'send-reply':
+                        case 'nick-reply':
+                        case 'who-reply':
+                        case 'log-reply':
+                            if (id && this._pending.has(id)) {
+                                const { resolve } = this._pending.get(id);
+                                this._pending.delete(id);
+                                resolve(data);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                _sendRaw(packet) {
+                    const id = String(++this._msgId);
+                    packet.id = id;
+                    const p = new Promise((resolve, reject) => {
+                        this._pending.set(id, { resolve, reject });
+                    });
+                    this.ws.send(JSON.stringify(packet));
+                    return p;
+                }
+
+                send(content, parentId = null) {
+                    return this._sendRaw({ type: 'send', data: { content, parent: parentId || undefined } });
+                }
+
+                setNick(name) {
+                    this.nick = name;
+                    return this._sendRaw({ type: 'nick', data: { name } });
+                }
+
+                _emit(evt, payload) {
+                    for (const fn of this._listeners[evt]) {
+                        try { fn(payload); } catch (e) { console.error('EuphoriaRoom listener error (' + evt + '):', e); }
+                    }
+                }
+            }
+
+            // ==================== EUPHORIA UI WIRING ====================
+            let euphoriaRoom = null;
+
+            function euphoriaLog(text, cssColor) {
+                const log = document.getElementById('euphoria-log');
+                if (log.querySelector('span[data-empty]')) log.innerHTML = '';
+                const line = document.createElement('div');
+                line.textContent = text;
+                if (cssColor) line.style.color = cssColor;
+                log.appendChild(line);
+                log.scrollTop = log.scrollHeight;
+            }
+
+            function euphoriaSetStatus(message, type) {
+                showStatus('euphoria-status', message, type);
+            }
+
+            function handleEuphoriaCommand(room, msg) {
+                const content = (msg.content || '').trim();
+                const senderName = msg.sender && msg.sender.name;
+
+                // Never react to the bot's own messages (avoid feedback loops).
+                if (senderName && room.nick && senderName === room.nick) return;
+
+                euphoriaLog('[' + (senderName || '?') + '] ' + content);
+
+                if (/^!ping$/i.test(content)) {
+                    room.send('pong', msg.id);
+                    return;
+                }
+
+                if (/^!help\s+@Mkv$/i.test(content)) {
+                    room.send('Still under construction, 🚧 currently just here to train', msg.id);
+                    return;
+                }
+
+                const markovMatch = content.match(/^!realmarkov\s+(.+)/i);
+                if (markovMatch) {
+                    const seed = markovMatch[1].trim();
+                    const maxWords = parseInt(document.getElementById('max-words').value) || 60;
+                    const attention = parseFloat(document.getElementById('attention-factor').value) || 1.8;
+                    const result = generateText(seed, maxWords, attention);
+                    const reply = result.text ? result.text : "Brain's empty, train me first 🧠";
+                    room.send(reply, msg.id);
+                    return;
+                }
+            }
+
+            document.getElementById('btn-euphoria-connect').addEventListener('click', () => {
+                const roomName = document.getElementById('euphoria-room').value.trim().replace(/^&/, '');
+                const nick = document.getElementById('euphoria-nick').value.trim() || 'Mkv';
+                if (!roomName) {
+                    euphoriaSetStatus('Please enter a room name.', 'warn');
+                    return;
+                }
+
+                if (euphoriaRoom) euphoriaRoom.disconnect();
+
+                euphoriaRoom = new EuphoriaRoom(roomName, { nick });
+
+                euphoriaRoom.onConnect(() => {
+                    euphoriaSetStatus('Connected to &' + roomName + ' as ' + euphoriaRoom.nick, 'good');
+                    euphoriaLog('--- connected to &' + roomName + ' ---', '#27ae60');
+                    document.getElementById('btn-euphoria-connect').style.display = 'none';
+                    document.getElementById('btn-euphoria-disconnect').style.display = 'inline-block';
+                });
+
+                euphoriaRoom.onDisconnect(() => {
+                    euphoriaSetStatus('Disconnected from &' + roomName + '.', 'warn');
+                    euphoriaLog('--- disconnected ---', '#e74c3c');
+                    document.getElementById('btn-euphoria-connect').style.display = 'inline-block';
+                    document.getElementById('btn-euphoria-disconnect').style.display = 'none';
+                });
+
+                euphoriaRoom.onError((e) => {
+                    euphoriaSetStatus('Connection error (see console).', 'err');
+                    console.error('EuphoriaRoom error:', e);
+                });
+
+                euphoriaRoom.onMessage((msg) => handleEuphoriaCommand(euphoriaRoom, msg));
+
+                euphoriaSetStatus('Connecting to &' + roomName + '...', 'warn');
+                euphoriaRoom.connect();
+            });
+
+            document.getElementById('btn-euphoria-disconnect').addEventListener('click', () => {
+                if (euphoriaRoom) euphoriaRoom.disconnect();
+            });
+
+            // ==================== INITIALIZATION ====================
+            loadBrain();
+            updateAllUI();
+
+            if (!localStorage.getItem(PRETRAIN_SHOWN_KEY) && brain.totalTokens === 0) {
+                showPretrainModal();
+            }
+
+            document.getElementById('btn-load-default-brain').addEventListener('click', loadDefaultBrain);
+            document.getElementById('btn-skip-pretrain').addEventListener('click', hidePretrainModal);
+        })();
+    </script>
+</body>
+</html>
