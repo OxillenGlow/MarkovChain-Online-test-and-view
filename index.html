@@ -535,6 +535,11 @@
             <code>!realmarkov &lt;seed words&gt;</code>, <code>!help @Mkv</code>, and <code>!ping</code>.
             Uses the <b>Max words</b> / <b>Attention factor</b> settings from the Generate section above.
         </p>
+        <p style="margin:2px 0;font-size:10px;color:#666;">
+            Browsers can't connect straight to euphoria (it rejects the browser-set Origin header, same reason a bare page always failed).
+            Run the small local relay first: <code>npm install ws</code> then <code>node euphoria-relay.js</code> — it opens the real connection
+            just like BotBot does, and this page talks to it over localhost.
+        </p>
         <div class="row-flex">
             <label>Room:</label>
             <input type="text" id="euphoria-room" list="euphoria-room-suggestions" placeholder="xkcd" value="xkcd" style="width:150px;">
@@ -545,6 +550,8 @@
             </datalist>
             <label>Nick:</label>
             <input type="text" id="euphoria-nick" value="Mkv" style="width:110px;">
+            <label title="Local relay that bridges to euphoria (see euphoria-relay.js). Needed because browsers can't avoid sending an Origin header euphoria.leet.nu rejects.">Relay:</label>
+            <input type="text" id="euphoria-relay" value="localhost:8765" style="width:130px;">
             <button id="btn-euphoria-connect" class="primary">🔌 Connect</button>
             <button id="btn-euphoria-disconnect" class="danger" style="display:none;">⏹️ Disconnect</button>
         </div>
@@ -1456,6 +1463,7 @@
                 constructor(room, opts = {}) {
                     this.room = room;
                     this.host = opts.host || 'euphoria.leet.nu';
+                    this.relayHost = opts.relayHost || null; // e.g. 'localhost:8765'
                     this.nick = opts.nick || null;
                     this.autoReconnect = opts.autoReconnect !== false;
 
@@ -1474,7 +1482,13 @@
                 onError(fn) { this._listeners.error.push(fn); return this; }
 
                 connect() {
-                    const url = 'wss://' + this.host + '/room/' + this.room + '/ws';
+                    // Browsers can't avoid sending an Origin header, which euphoria.leet.nu
+                    // rejects. Route through a local relay (see euphoria-relay.js) that makes
+                    // the real upstream connection the same way non-browser clients (e.g.
+                    // BotBot/EuPy) do. Falls back to a direct connection if no relay is set.
+                    const url = this.relayHost
+                        ? 'ws://' + this.relayHost + '/room/' + this.room
+                        : 'wss://' + this.host + '/room/' + this.room + '/ws';
                     this.ws = new WebSocket(url);
 
                     this.ws.onopen = () => { this._reconnectDelay = 1000; };
@@ -1618,6 +1632,7 @@
             document.getElementById('btn-euphoria-connect').addEventListener('click', () => {
                 const roomName = document.getElementById('euphoria-room').value.trim().replace(/^&/, '');
                 const nick = document.getElementById('euphoria-nick').value.trim() || 'Mkv';
+                const relayHost = document.getElementById('euphoria-relay').value.trim() || null;
                 if (!roomName) {
                     euphoriaSetStatus('Please enter a room name.', 'warn');
                     return;
@@ -1625,7 +1640,7 @@
 
                 if (euphoriaRoom) euphoriaRoom.disconnect();
 
-                const thisRoom = new EuphoriaRoom(roomName, { nick });
+                const thisRoom = new EuphoriaRoom(roomName, { nick, relayHost });
                 euphoriaRoom = thisRoom;
 
                 thisRoom.onConnect(() => {
@@ -1642,7 +1657,7 @@
                     euphoriaSetStatus('Disconnected from &' + roomName + '.' + detail, 'warn');
                     euphoriaLog('--- disconnected' + detail + ' ---', '#e74c3c');
                     if (info && info.code === 1006 && !thisRoom.connected) {
-                        euphoriaLog('Hint: code 1006 right after connecting usually means the server refused the handshake — commonly because the page is opened via file:// instead of http(s)://, or the room name is wrong. Serve this file with a local server (e.g. "python3 -m http.server") and try again.', '#e67e22');
+                        euphoriaLog('Hint: code 1006 right after connecting usually means the relay isn\'t running. Start it with "node euphoria-relay.js" (after "npm install ws"), or check its terminal output for the real error from euphoria.', '#e67e22');
                     }
                     document.getElementById('btn-euphoria-connect').style.display = 'inline-block';
                     document.getElementById('btn-euphoria-disconnect').style.display = 'none';
